@@ -1,0 +1,113 @@
+export const dummySellers = {
+  ids: ["01", "02", "03", "04", "05", "06"],
+  entities: {
+    "01": {
+      seller_name: "ECO FOOD",
+      seller_description:
+        "ECO FOOD has been around for over a decade inspired by supplying the market with the finest raw products from all over the world, creating a loyal customer base along its fruitful journey by supplying essential commodities across the Belarusian region.",
+      seller_grades: [5, 4, 5, 5],
+      seller_contacts: {
+        seller_phone: "+375 25 456 42 42",
+        seller_site: "ecofood.by",
+        seller_instagram: "ecofood_by",
+        seller_viber: "+375 25 456 42 42",
+        seller_whatsapp: "",
+        seller_telegram: "",
+      },
+      seller_categories: ["fruits", "vegetables"],
+      seller_products_ids: [789, 790],
+      seller_buy_methods: ["site", "phone"],
+      seller_reviews_ids: [123, 124],
+    },
+    "02": {
+      seller_name: "Green Products",
+      seller_description:
+        "Green Products has been around for over a decade inspired by supplying the market with the finest raw products from all over the world, creating a loyal customer base along its fruitful journey by supplying essential commodities across the Belarusian region.",
+      seller_grades: [5, 4, 5, 5],
+      seller_contacts: {
+        seller_phone: "+375 25 456 42 55",
+        seller_site: "green.by",
+        seller_instagram: "ecofood_by",
+        seller_viber: "+375 25 456 42 55",
+        seller_whatsapp: "",
+        seller_telegram: "",
+      },
+      seller_categories: ["fruits", "vegetables", "eggs"],
+      seller_products_ids: [789, 790],
+      seller_buy_methods: ["site", "phone"],
+      seller_reviews_ids: [123, 124],
+    },
+    "03": {
+      seller_name: "Green-green",
+      seller_description:
+        "ECO FOOD has been around for over a decade inspired by supplying the market with the finest raw products from all over the world, creating a loyal customer base along its fruitful journey by supplying essential commodities across the Belarusian region.",
+      seller_grades: [5, 4, 5, 5],
+      seller_contacts: {
+        seller_phone: "+375 25 456 42 42",
+        seller_site: "ecofood.by",
+        seller_instagram: "ecofood_by",
+        seller_viber: "+375 25 456 42 42",
+        seller_whatsapp: "",
+        seller_telegram: "",
+      },
+      seller_categories: ["fruits", "vegetables"],
+      seller_products_ids: [789, 790],
+      seller_buy_methods: ["site", "phone"],
+      seller_reviews_ids: [123, 124],
+    },
+    "04": {
+      seller_name: "Best Farm",
+      seller_description:
+        "Green Products has been around for over a decade inspired by supplying the market with the finest raw products from all over the world, creating a loyal customer base along its fruitful journey by supplying essential commodities across the Belarusian region.",
+      seller_grades: [5, 4, 5, 5],
+      seller_contacts: {
+        seller_phone: "+375 25 456 42 55",
+        seller_site: "green.by",
+        seller_instagram: "ecofood_by",
+        seller_viber: "+375 25 456 42 55",
+        seller_whatsapp: "",
+        seller_telegram: "",
+      },
+      seller_categories: ["fruits", "vegetables", "eggs", "dairy"],
+      seller_products_ids: [789, 790],
+      seller_buy_methods: ["site", "phone"],
+      seller_reviews_ids: [123, 124],
+    },
+    "05": {
+      seller_name: "Shop Eco",
+      seller_description:
+        "ECO FOOD has been around for over a decade inspired by supplying the market with the finest raw products from all over the world, creating a loyal customer base along its fruitful journey by supplying essential commodities across the Belarusian region.",
+      seller_grades: [5, 4, 5, 5],
+      seller_contacts: {
+        seller_phone: "+375 25 456 42 42",
+        seller_site: "ecofood.by",
+        seller_instagram: "ecofood_by",
+        seller_viber: "+375 25 456 42 42",
+        seller_whatsapp: "",
+        seller_telegram: "",
+      },
+      seller_categories: ["fruits", "vegetables", "dairy"],
+      seller_products_ids: [789, 790],
+      seller_buy_methods: ["site", "phone"],
+      seller_reviews_ids: [123, 124],
+    },
+    "06": {
+      seller_name: "LOVE ECO",
+      seller_description:
+        "Green Products has been around for over a decade inspired by supplying the market with the finest raw products from all over the world, creating a loyal customer base along its fruitful journey by supplying essential commodities across the Belarusian region.",
+      seller_grades: [5, 4, 5, 5],
+      seller_contacts: {
+        seller_phone: "+375 25 456 42 55",
+        seller_site: "green.by",
+        seller_instagram: "ecofood_by",
+        seller_viber: "+375 25 456 42 55",
+        seller_whatsapp: "",
+        seller_telegram: "",
+      },
+      seller_categories: ["fruits", "vegetables", "eggs"],
+      seller_products_ids: [789, 790],
+      seller_buy_methods: ["site", "phone"],
+      seller_reviews_ids: [123, 124],
+    },
+  },
+};
