@@ -1,0 +1,5 @@
+com\epam\FarmFood\controllers\LoggerController.class
+com\epam\FarmFood\configs\WebConfiguration.class
+com\epam\FarmFood\FarmFoodApplication.class
+com\epam\FarmFood\enums\Role.class
+com\epam\FarmFood\constants\Endpoints.class
