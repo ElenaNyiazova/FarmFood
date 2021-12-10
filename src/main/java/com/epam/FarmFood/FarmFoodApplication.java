@@ -1,4 +1,4 @@
-package epam.FarmFood;
+package com.epam.FarmFood;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

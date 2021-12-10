@@ -1,4 +1,4 @@
-package epam.FarmFood.constants;
+package com.epam.FarmFood.constants;
 
 @SuppressWarnings("squid:S1214")
 public interface Endpoints {
