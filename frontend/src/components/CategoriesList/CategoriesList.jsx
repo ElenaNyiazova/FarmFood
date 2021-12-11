@@ -3,7 +3,7 @@ import { ListGroup } from "react-bootstrap";
 
 import { CATEGORIES } from "../../consts/consts";
 
-const CategoriesList = ({ handleCategoryClick }) => {
+export const CategoriesList = ({ handleCategoryClick }) => {
   const categories = Object.values(CATEGORIES);
 
   return (
@@ -30,5 +30,3 @@ const CategoriesList = ({ handleCategoryClick }) => {
     </ListGroup>
   );
 };
-
-export default CategoriesList;

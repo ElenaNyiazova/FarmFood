@@ -6,7 +6,7 @@ import { Card } from "react-bootstrap";
 import { selectSellerById } from "../../store/sellersSlice";
 import { CATEGORIES, ROUTES } from "../../consts/consts";
 
-const SellerCard = ({ id, filter }) => {
+export const SellerCard = ({ id, filter }) => {
   const sellerInfo = useSelector((state) => selectSellerById(state, id));
   const { seller_name, seller_categories, seller_products } = sellerInfo;
 
@@ -46,5 +46,3 @@ const SellerCard = ({ id, filter }) => {
     )
   );
 };
-
-export default SellerCard;

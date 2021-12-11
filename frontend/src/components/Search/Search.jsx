@@ -5,7 +5,7 @@ import { Form } from "react-bootstrap";
 import { selectAllAvailableProducts } from "../../store/sellersSlice";
 import "./Search.css";
 
-const Search = ({ handleSearch }) => {
+export const Search = ({ handleSearch }) => {
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState("");
   const allProducts = useSelector((state) => selectAllAvailableProducts(state));
@@ -69,5 +69,3 @@ const Search = ({ handleSearch }) => {
     </div>
   );
 };
-
-export default Search;
