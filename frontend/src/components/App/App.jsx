@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { ROUTES } from '../../consts/consts';
-import HomePage from '../pages/HomePage';
-import { SellerPage } from '../pages/SellerPage';
+import { ROUTES } from "../../consts/consts";
+import HomePage from "../pages/HomePage";
+import { SellerPage } from "../pages/SellerPage";
 
 function App() {
   return (
