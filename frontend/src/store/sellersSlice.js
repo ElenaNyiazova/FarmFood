@@ -2,6 +2,7 @@ import {
   // createAsyncThunk,
   createSlice,
   createEntityAdapter,
+  createSelector,
 } from "@reduxjs/toolkit";
 
 import { dummySellers } from "./dummySellers";
@@ -28,3 +29,14 @@ export const {
   selectIds: selectSellersIds,
   selectById: selectSellerById,
 } = sellersAdapter.getSelectors((state) => state.sellers);
+
+export const selectAllAvailableProducts = createSelector(
+  selectSellers,
+  (sellers) => {
+    const allProducts = sellers.reduce(
+      (acc, seller) => [...acc, ...seller.seller_products],
+      []
+    );
+    return [...new Set(allProducts)];
+  }
+);

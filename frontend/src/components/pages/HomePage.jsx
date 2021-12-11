@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import SellerCard from "../SellerCard/SellerCard";
 import CategoriesList from "../CategoriesList/CategoriesList";
+import Search from "../Search/Search";
 
 import { CATEGORIES } from "../../consts/consts";
 import { selectSellersIds } from "../../store/sellersSlice";
@@ -16,8 +17,17 @@ const HomePage = () => {
     setFilter(category);
   };
 
+  const handleSearch = (productFromSearch) => {
+    setFilter(productFromSearch);
+  };
+
   return (
     <Container fluid>
+      <Row>
+        <Col xs={8} md={4}>
+          <Search handleSearch={handleSearch} />
+        </Col>
+      </Row>
       <Row>
         <CategoriesList handleCategoryClick={handleCategoryClick} />
         {sellersIds.map((id) => (
