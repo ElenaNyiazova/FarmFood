@@ -5,23 +5,33 @@ import { useSelector } from 'react-redux';
 import { selectSellerById } from '../../store/sellersSlice';
 import { selectProductsBySellerId } from '../../store/productsSlice';
 import { Container, Card, Row } from 'react-bootstrap';
+import { Header } from '../commonComponents/Header';
 
 export const SellerPage = () => {
   let { id } = useParams();
   console.log(id);
-  const sellerInfo = useSelector(state => selectSellerById(state, id));
-  const sellersProducts = useSelector(state => selectProductsBySellerId(state, id));
+  const sellerInfo = useSelector((state) => selectSellerById(state, id));
+  const sellersProducts = useSelector((state) =>
+    selectProductsBySellerId(state, id)
+  );
   const {
     seller_name,
     seller_description,
     seller_buy_methods,
-    seller_contacts: { seller_phone, seller_site, seller_instagram, seller_viber },
+    seller_contacts: {
+      seller_phone,
+      seller_site,
+      seller_instagram,
+      seller_viber,
+    },
     seller_products,
   } = sellerInfo;
   console.log(sellerInfo);
   console.log(sellersProducts);
   return (
-    <Container className="mt-5" fluid>
+    <Container fluid>
+      <Header />
+
       <Card>
         <Card.Body>
           <Card.Title className="text-center">{seller_name}</Card.Title>
@@ -36,12 +46,16 @@ export const SellerPage = () => {
         </Card.Footer>
       </Card>
       <Row className="mt-3">
-        {sellersProducts.map(item => {
+        {sellersProducts.map((item) => {
           return (
             <Card
               bg="light"
               key={item.product_name}
-              style={{ width: '18rem', marginRight: '1rem', marginBottom: '1rem' }}
+              style={{
+                width: '18rem',
+                marginRight: '1rem',
+                marginBottom: '1rem',
+              }}
             >
               <Card.Body>
                 <Card.Text>{item.product_name}</Card.Text>

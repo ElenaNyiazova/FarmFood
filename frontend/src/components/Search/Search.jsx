@@ -47,7 +47,7 @@ export const Search = ({ handleSearch }) => {
       <Form.Control
         type="text"
         placeholder="Search by product name"
-        style={{ margin: "1rem" }}
+        style={{ margin: "1rem", marginLeft: "0" }}
         value={searchInput}
         onChange={(e) => handleInputChange(e)}
         onBlur={(e) => handleBlur(e)}

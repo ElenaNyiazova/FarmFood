@@ -10,4 +10,13 @@ export const CATEGORIES = {
 export const ROUTES = {
   HOME: '/',
   SELLER: '/seller/:id',
+  LOGIN: '/login',
+};
+
+export const CITIES = {
+  MINSK: 'Minsk',
+  KIEV: 'Kiev',
+  ALA: 'Almaty',
+  SPB: 'Saint Petersburg',
+  YEREVAN: 'Yerevan',
 };
