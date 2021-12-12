@@ -10,6 +10,7 @@ export const CATEGORIES = {
 export const ROUTES = {
   HOME: '/',
   SELLER: '/seller/:id',
+  PROFILE: '/profile',
 };
 
 export const CITIES = {
