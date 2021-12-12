@@ -34,19 +34,19 @@ export const App = () => {
   };
 
   return (
-    <Container fluid>
-      <LocationModal
-        show={showLocationModal}
-        handleClose={handleCloseLocationModal}
-      />
-      <LoginModal show={showLoginForm} handleClose={handleCloseLoginForm} />
-      <Header handleLoginClick={handleLoginClick} />
-      <BrowserRouter>
+    <BrowserRouter>
+      <Container fluid>
+        <LocationModal
+          show={showLocationModal}
+          handleClose={handleCloseLocationModal}
+        />
+        <LoginModal show={showLoginForm} handleClose={handleCloseLoginForm} />
+        <Header handleLoginClick={handleLoginClick} />
         <Routes>
           <Route exact path={ROUTES.HOME} element={<HomePage />} />
           <Route exact path={ROUTES.SELLER} element={<SellerPage />} />
         </Routes>
-      </BrowserRouter>
-    </Container>
+      </Container>
+    </BrowserRouter>
   );
 };
