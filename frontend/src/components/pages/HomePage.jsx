@@ -10,12 +10,13 @@ import { CATEGORIES } from '../../consts/consts';
 import { selectSellersIds } from '../../store/sellersSlice';
 
 export const HomePage = () => {
-  const [showLoginForm, setShowLoginForm] = useState(false);
   const [filter, setFilter] = useState(CATEGORIES.ALL);
   const sellersIds = useSelector((state) => selectSellersIds(state));
+  const [searchResult, setSearchResult] = useState('');
 
   const handleCategoryClick = (category) => {
     setFilter(category);
+    setSearchResult('');
   };
 
   const handleSearch = (productFromSearch) => {
@@ -26,7 +27,11 @@ export const HomePage = () => {
     <>
       <Row>
         <Col xs={8} md={4}>
-          <Search handleSearch={handleSearch} />
+          <Search
+            handleSearch={handleSearch}
+            setSearchResult={setSearchResult}
+          />
+          {searchResult && <p>Search results for {searchResult}</p>}
         </Col>
       </Row>
       <Row style={{ paddingLeft: '0.8rem' }}>

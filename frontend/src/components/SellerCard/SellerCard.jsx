@@ -1,10 +1,10 @@
-import React from "react";
-import { generatePath, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { Card } from "react-bootstrap";
+import React from 'react';
+import { generatePath, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Card } from 'react-bootstrap';
 
-import { selectSellerById } from "../../store/sellersSlice";
-import { CATEGORIES, ROUTES } from "../../consts/consts";
+import { selectSellerById } from '../../store/sellersSlice';
+import { CATEGORIES, ROUTES } from '../../consts/consts';
 
 export const SellerCard = ({ id, filter }) => {
   const sellerInfo = useSelector((state) => selectSellerById(state, id));
@@ -30,7 +30,12 @@ export const SellerCard = ({ id, filter }) => {
     isVisible && (
       <Card
         bg="light"
-        style={{ width: "18rem", marginRight: "1rem", marginBottom: "1rem" }}
+        style={{
+          width: '18rem',
+          marginRight: '1rem',
+          marginBottom: '1rem',
+          cursor: 'pointer',
+        }}
         onClick={handleCardClick}
       >
         <Card.Header>{seller_name}</Card.Header>
