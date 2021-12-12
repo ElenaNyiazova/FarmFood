@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap';
 
 import { CitiesDropdown } from './CitiesDropdown';
 
-export const Header = () => {
+export const Header = ({ handleLoginClick }) => {
   return (
     <Navbar>
       <Navbar.Brand href="/">LOGO</Navbar.Brand>
@@ -11,7 +11,12 @@ export const Header = () => {
       <Navbar.Collapse className="justify-content-end">
         <CitiesDropdown />
         <Navbar.Text>
-          <a href="/login">Sign In</a>
+          <span
+            style={{ textDecoration: 'underline', cursor: 'pointer' }}
+            onClick={handleLoginClick}
+          >
+            Sign In
+          </span>
         </Navbar.Text>
       </Navbar.Collapse>
     </Navbar>

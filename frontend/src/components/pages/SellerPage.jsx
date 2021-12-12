@@ -4,8 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectSellerById } from '../../store/sellersSlice';
 import { selectProductsBySellerId } from '../../store/productsSlice';
-import { Container, Card, Row } from 'react-bootstrap';
-import { Header } from '../commonComponents/Header';
+import { Card, Row } from 'react-bootstrap';
 
 export const SellerPage = () => {
   let { id } = useParams();
@@ -29,9 +28,7 @@ export const SellerPage = () => {
   console.log(sellerInfo);
   console.log(sellersProducts);
   return (
-    <Container fluid>
-      <Header />
-
+    <>
       <Card>
         <Card.Body>
           <Card.Title className="text-center">{seller_name}</Card.Title>
@@ -66,6 +63,6 @@ export const SellerPage = () => {
           );
         })}
       </Row>
-    </Container>
+    </>
   );
 };

@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { CitiesDropdown } from '../commonComponents/CitiesDropdown';
 
-export const LocationModal = () => {
-  const [show, setShow] = useState(true);
-
-  const handleClose = () => setShow(false);
-
+export const LocationModal = ({ show, handleClose }) => {
   return (
     <>
       <Modal show={show} onHide={handleClose}>

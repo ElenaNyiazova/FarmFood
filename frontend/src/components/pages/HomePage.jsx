@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Container, Row, Col } from 'react-bootstrap';
-import { Header } from '../commonComponents/Header';
+import { Row, Col } from 'react-bootstrap';
 import { SellerCard } from '../SellerCard/SellerCard';
 import { CategoriesList } from '../CategoriesList/CategoriesList';
 import { Search } from '../Search/Search';
-import { LocationModal } from '../LocationModal/LocationModal';
 
 import { CATEGORIES } from '../../consts/consts';
 import { selectSellersIds } from '../../store/sellersSlice';
 
 export const HomePage = () => {
+  const [showLoginForm, setShowLoginForm] = useState(false);
   const [filter, setFilter] = useState(CATEGORIES.ALL);
   const sellersIds = useSelector((state) => selectSellersIds(state));
 
@@ -24,9 +23,7 @@ export const HomePage = () => {
   };
 
   return (
-    <Container fluid>
-      <LocationModal />
-      <Header />
+    <>
       <Row>
         <Col xs={8} md={4}>
           <Search handleSearch={handleSearch} />
@@ -38,6 +35,6 @@ export const HomePage = () => {
           <SellerCard id={id} key={id} filter={filter} />
         ))}
       </Row>
-    </Container>
+    </>
   );
 };
