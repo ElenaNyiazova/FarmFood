@@ -1,9 +1,17 @@
 package com.epam.FarmFood.model.rest;
 
 import com.epam.FarmFood.enums.GoodsCategory;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.File;
 
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class GoodsRest {//контретные товары
 
     private Long id;

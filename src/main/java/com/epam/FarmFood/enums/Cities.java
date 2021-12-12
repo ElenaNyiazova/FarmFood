@@ -1,7 +1,7 @@
 package com.epam.FarmFood.enums;
 
 
-public enum Sities {
+public enum Cities {
     ALLWORLD,
     MINSK,
     KIEV,

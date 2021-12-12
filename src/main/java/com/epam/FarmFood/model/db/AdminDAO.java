@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
-public class UserDAO {
+public class AdminDAO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +31,5 @@ public class UserDAO {
     @Column(nullable = false)
     private Role role;
 
-    private List<Long> favoriteSellers;
-    private List<Long> userReviewsIds;
+
 }
