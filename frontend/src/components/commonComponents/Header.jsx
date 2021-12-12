@@ -13,7 +13,9 @@ export const Header = ({ handleLoginClick }) => {
 
   return (
     <Navbar>
-      <Navbar.Brand onClick={handleLogoClick}>LOGO</Navbar.Brand>
+      <Navbar.Brand style={{ cursor: 'pointer' }} onClick={handleLogoClick}>
+        LOGO
+      </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         <CitiesDropdown />
