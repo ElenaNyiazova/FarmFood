@@ -1,9 +1,9 @@
-package com.epam.FarmFood.enums;
+package com.gpec.FarmFood.enums;
 
 public enum Role {
     NO_AUTOR_USER("no_autor_user"),
-    USER_ROLE("user_role"),
-    SELLER("seller"),
+    BUYER_ROLE("buyer_role"),
+    SELLER_ROLE("seller_role"),
     ADMIN_ROLE("admin_role");
 
     private String name;
