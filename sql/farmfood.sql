@@ -16,6 +16,9 @@
 -- DROP TABLE IF EXISTS seller_products;
 -- DROP TABLE IF EXISTS seller_contacts;
 -- DROP TABLE IF EXISTS users;
+-- DROP TABLE IF EXISTS roles;
+-- DROP TABLE IF EXISTS users_roles;
+-- DROP TABLE IF EXISTS reviews;
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`categories`
@@ -103,8 +106,8 @@ CREATE TABLE IF NOT EXISTS seller_products (
 -- Table `farmfood`.`seller_contacts`
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS seller_contacts (
-    seller_id integer NOT NULL,
-    contacts_id integer NOT NULL
+  seller_id integer NOT NULL,
+  contacts_id integer NOT NULL
 );
 
 -- -------------------------------------------------------
@@ -119,6 +122,33 @@ CREATE TABLE IF NOT EXISTS users (
   email TEXT UNIQUE NOT NULL,
   image TEXT,
   image_blob BYTEA
+);
+
+-- -------------------------------------------------------
+-- Table `farmfood`.`roles`
+-- -------------------------------------------------------
+CREATE TABLE IF NOT EXISTS roles (
+  id SERIAL PRIMARY KEY,
+  name TEXT
+);
+
+-- -------------------------------------------------------
+-- Table `farmfood`.`users_roles`
+-- -------------------------------------------------------
+CREATE TABLE users_roles (
+  user_id BIGINT NOT NULL,
+  role_id BIGINT NOT NULL
+);
+
+-- -------------------------------------------------------
+-- Table `farmfood`.`reviews`
+-- -------------------------------------------------------
+CREATE TABLE IF NOT EXISTS reviews (
+  id SERIAL PRIMARY KEY,
+  user_id   BIGINT NOT NULL,
+  seller_id BIGINT NOT NULL,
+  rating    INTEGER,
+  comment   TEXT
 );
 
 -- --------------------------------------------------------------------------------------------
@@ -313,10 +343,61 @@ INSERT INTO contacts (id, name, phone, email, site, instagram, viber, whatsapp, 
  (DEFAULT, 'Seller 1', '+375 25 456 42 42', 'contact@ecofood.by', 'ecofood.by', 'ecofood_by', '+375 25 456 42 42', '', '');
 
 -- -------------------------------------------------------
--- Table `farmfood`.`users`
+-- Users
 -- -------------------------------------------------------
-INSERT INTO users (id, login, password, firstname, lastname, email) VALUES
- (DEFAULT, 'User1', '123456', 'User1 first name', 'User1 last name', 'test@example.com');
+INSERT INTO users (id, login, password, email, firstname, lastname) VALUES
+  (DEFAULT, 'sami',   'sami',   'gstream@gmail.com', 'Sami',             'Keinänen'),
+  (DEFAULT, 'magnum', 'magnum', 'sami@gmail.com',    'Sami',             'Wolking'),
+  (DEFAULT, 'kalma',  'kalma',  'kalma@gmail.com',   'Nick',             'Gore'),
+  (DEFAULT, 'kita',   'kita',   'kita@gmail.com',    'Sampsa',           'Astala'),
+  (DEFAULT, 'user',   'user',   'user@gmail.com',    'User firstname',   'User lastname');
+
+INSERT INTO users (id, login, password, email, firstname, lastname) VALUES
+  (DEFAULT, 'otus',   'otus',   'otus@gmail.com',    'Tonmi',            'Kristian Lillman'),
+  (DEFAULT, 'oxx',    'oxx',    'oxx@gmail.com',     'Samer',            'el Nahhal'),
+  (DEFAULT, 'amen',   'amen',   'amen@gmail.com',    'Jussi',            'Sydänmaa'),
+  (DEFAULT, 'mana',   'mana',   'mana@gmail.com',    'Antto',            'Nikolai Tuomainen'),
+  (DEFAULT, 'seller', 'seller', 'seller@gmail.com',  'Seller firstname', 'Seller lastname');
+
+INSERT INTO users (id, login, password, email, firstname, lastname) VALUES
+  (DEFAULT, 'tomi',   'tomi',   'tomi@gmail.com',    'Tomi',             'Petteri Putaansuu'),
+  (DEFAULT, 'hella',  'hella',  'hella@gmail.com',   'Henna-Riikka',     'Tuulia Broda'),
+  (DEFAULT, 'awa',    'awa',    'awa@gmail.com',     'Leena',            'Maria Peisa'),
+  (DEFAULT, 'admin',  'admin',  'admin@gmail.com',   'Admin firstname',  'Admin lastname');
+
+-- --------------------------------------------------------------------------------------------
+-- Roles
+-- --------------------------------------------------------------------------------------------
+INSERT INTO roles (id, name) VALUES(DEFAULT, 'NO_AUTOR_USER');
+INSERT INTO roles (id, name) VALUES(DEFAULT, 'USER');
+INSERT INTO roles (id, name) VALUES(DEFAULT, 'SELLER');
+INSERT INTO roles (id, name) VALUES(DEFAULT, 'ADMIN');
+
+-- --------------------------------------------------------------------------------------------
+-- Users Roles
+-- --------------------------------------------------------------------------------------------
+WITH roleId AS (SELECT id FROM roles WHERE name = 'USER')
+INSERT INTO users_roles (user_id, role_id) VALUES
+  ((SELECT id FROM users WHERE login = 'sami'),   (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'magnum'), (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'kalma'),  (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'kita'),   (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'user'),   (SELECT id FROM roleId));
+
+WITH roleId AS (SELECT id FROM roles WHERE name = 'SELLER')
+INSERT INTO users_roles (user_id, role_id) VALUES
+  ((SELECT id FROM users WHERE login = 'otus'),   (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'oxx'),    (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'amen'),   (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'mana'),   (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'seller'), (SELECT id FROM roleId));
+
+WITH roleId AS (SELECT id FROM roles WHERE name = 'ADMIN')
+INSERT INTO users_roles (user_id, role_id) VALUES
+  ((SELECT id FROM users WHERE login = 'tomi'),   (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'hella'),  (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'awa'),    (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'admin'),  (SELECT id FROM roleId));
 
 -- --------------------------------------------------------------------------------------------
 -- Sellers
@@ -325,13 +406,13 @@ INSERT INTO sellers (id, name, description, grade, user_id) VALUES
  (DEFAULT, 'ECO FOOD', 'The best natural food', 5, (SELECT id FROM users WHERE login = 'User1'));
  
 -- -------------------------------------------------------
--- Table `farmfood`.`seller_contacts`
+-- Seller contacts
 -- -------------------------------------------------------
 INSERT INTO seller_contacts (seller_id, contacts_id) VALUES
  ((SELECT id FROM contacts WHERE name = 'Seller 1'), (SELECT id FROM sellers WHERE name = 'ECO FOOD'));
 
 -- -------------------------------------------------------
--- Table `farmfood`.`seller_categories`
+-- Seller categories
 -- -------------------------------------------------------
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
 INSERT INTO seller_categories (seller_id, category_id) VALUES
@@ -357,7 +438,7 @@ INSERT INTO seller_categories (seller_id, category_id) VALUES
  ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Bakery'));
  
 -- -------------------------------------------------------
--- Table `farmfood`.`seller_products`
+-- Seller products
 -- -------------------------------------------------------
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
 INSERT INTO seller_products (seller_id, product_id) VALUES
@@ -381,3 +462,11 @@ INSERT INTO seller_products (seller_id, product_id) VALUES
  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Champignon')),
 -- 10. Bakery
  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baguette'));
+
+-- -------------------------------------------------------
+-- Reviews
+-- -------------------------------------------------------
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
+INSERT INTO reviews (id, user_id, seller_id, rating, comment) VALUES
+ (DEFAULT, (SELECT id FROM sellerId), (SELECT id FROM users WHERE login = 'admin'), 5, 'Excellent');
+ 
