@@ -113,9 +113,12 @@ CREATE TABLE IF NOT EXISTS seller_contacts (
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   login TEXT,
+  password TEXT,
   firstname TEXT,
   lastname TEXT,
-  email TEXT UNIQUE NOT NULL
+  email TEXT UNIQUE NOT NULL,
+  image TEXT,
+  image_blob BYTEA
 );
 
 -- --------------------------------------------------------------------------------------------
@@ -312,8 +315,8 @@ INSERT INTO contacts (id, name, phone, email, site, instagram, viber, whatsapp, 
 -- -------------------------------------------------------
 -- Table `farmfood`.`users`
 -- -------------------------------------------------------
-INSERT INTO users (id, login, firstname, lastname, email) VALUES
- (DEFAULT, 'User1', 'User1 first name', 'User1 last name', 'test@example.com');
+INSERT INTO users (id, login, password, firstname, lastname, email) VALUES
+ (DEFAULT, 'User1', '123456', 'User1 first name', 'User1 last name', 'test@example.com');
 
 -- --------------------------------------------------------------------------------------------
 -- Sellers
