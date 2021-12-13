@@ -8,10 +8,13 @@
 
 -- DROP TABLE IF EXISTS categories;
 -- DROP TABLE IF EXISTS products;
+-- DROP TABLE IF EXISTS product_categories;
 -- DROP TABLE IF EXISTS cities;
+-- DROP TABLE IF EXISTS contacts;
 -- DROP TABLE IF EXISTS sellers;
 -- DROP TABLE IF EXISTS seller_categories;
 -- DROP TABLE IF EXISTS seller_products;
+-- DROP TABLE IF EXISTS seller_contacts;
 -- DROP TABLE IF EXISTS users;
 
 -- -------------------------------------------------------
@@ -33,11 +36,12 @@ CREATE TABLE IF NOT EXISTS products (
   description TEXT,
   weight REAL,
   price REAL,
-  image TEXT
+  image TEXT,
+  image_blob BYTEA
 );
 
 -- -------------------------------------------------------
--- Table `farmfood`.`seller_categories`
+-- Table `farmfood`.`product_categories`
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS product_categories (
   product_id BIGINT NOT NULL,
@@ -54,12 +58,29 @@ CREATE TABLE IF NOT EXISTS cities (
 );
 
 -- -------------------------------------------------------
+-- Table `farmfood`.`contacts`
+-- -------------------------------------------------------
+CREATE TABLE IF NOT EXISTS contacts (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  phone TEXT,
+  email TEXT,
+  site TEXT,
+  instagram TEXT,
+  viber TEXT,
+  whatsapp TEXT,
+  telegram TEXT
+);
+
+-- -------------------------------------------------------
 -- Table `farmfood`.`sellers`
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS sellers (
   id SERIAL PRIMARY KEY,
   name TEXT,
-  description TEXT
+  description TEXT,
+  grade INTEGER,
+  user_id BIGINT
 );
 
 -- -------------------------------------------------------
@@ -79,10 +100,19 @@ CREATE TABLE IF NOT EXISTS seller_products (
 );
 
 -- -------------------------------------------------------
+-- Table `farmfood`.`seller_contacts`
+-- -------------------------------------------------------
+CREATE TABLE IF NOT EXISTS seller_contacts (
+    seller_id integer NOT NULL,
+    contacts_id integer NOT NULL
+);
+
+-- -------------------------------------------------------
 -- Table `farmfood`.`users`
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
+  login TEXT,
   firstname TEXT,
   lastname TEXT,
   email TEXT UNIQUE NOT NULL
@@ -178,7 +208,7 @@ INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flower ho
 -- 9. Mushrooms                                                                                                                
 INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Champignon',                1, 15, 'champignon.jpg'                );
 -- 10. Bakery
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Baguette',                  1, 15, 'baguette.jpg'                 );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Baguette',                  1, 15, 'baguette.jpg'                  );
 
 -- --------------------------------------------------------------------------------------------
 -- Cities
@@ -189,3 +219,162 @@ INSERT INTO cities (id, name) VALUES(DEFAULT, 'Saint-Petersburg');
 INSERT INTO cities (id, name) VALUES(DEFAULT, 'Budapest');
 INSERT INTO cities (id, name) VALUES(DEFAULT, 'Yerevan');
 INSERT INTO cities (id, name) VALUES(DEFAULT, 'Almaty');
+
+-- -------------------------------------------------------
+-- Product_categories
+-- -------------------------------------------------------
+-- 1. Eggs
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Eggs')
+INSERT INTO product_categories (product_id, category_id) VALUES
+ ((SELECT id FROM products WHERE name = 'Chicken eggs'),          (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Quail eggs'  ),          (SELECT id FROM categoryId));
+-- 2. Milk and dairy products
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Milk and dairy products')
+INSERT INTO product_categories (product_id, category_id) VALUES 
+ ((SELECT id FROM products WHERE name = 'Cow milk'),              (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Goat milk'),             (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Fermented baked milk'),  (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Curd'),                  (SELECT id FROM categoryId));
+-- 3. Cheese
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Cheese')
+INSERT INTO product_categories (product_id, category_id) VALUES 
+ ((SELECT id FROM products WHERE name = 'Circassian cheese'),     (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Brynza cheese'),         (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Suluguni cheese'),       (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Mozzarella cheese'),     (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Hard-pressed cheese'),   (SELECT id FROM categoryId));
+-- 4. Butter
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Butter')
+INSERT INTO product_categories (product_id, category_id) VALUES 
+ ((SELECT id FROM products WHERE name = 'Butter'),                (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Melted butter'),         (SELECT id FROM categoryId));
+-- 5. Meat and meat products
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Meat and meat products')
+INSERT INTO product_categories (product_id, category_id) VALUES 
+ ((SELECT id FROM products WHERE name = 'Chicken meat'),          (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Quail meat'),            (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Turkey meat'),           (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Duck meet'),             (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Rabbit meat'),           (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pork'),                  (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beef'),                  (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Home-made sausage'),     (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Bacon'),                 (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lard'),                  (SELECT id FROM categoryId));
+-- 6. Vegetables
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Vegetables')
+INSERT INTO product_categories (product_id, category_id) VALUES 
+ ((SELECT id FROM products WHERE name = 'Grapes'),                 (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cucumber'),              (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Tomato'),                (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Potato'),                (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Carrot'),                (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Onion'),                 (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Broccoli'),              (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Garlic'),                (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cabbage'),               (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beetroot'),              (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lettuce'),               (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pepper'),                (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Radish'),                (SELECT id FROM categoryId));
+-- 7. Fruits and berries
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Fruits and berries')
+INSERT INTO product_categories (product_id, category_id) VALUES 
+ ((SELECT id FROM products WHERE name = 'Apple'),                 (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Apricot'),               (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pear'),                  (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Plum'),                  (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Grape'),                 (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Raspberry'),             (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Strawberry'),            (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Blackberry'),            (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cherry'),                (SELECT id FROM categoryId));
+-- 8. Honey
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Honey')
+INSERT INTO product_categories (product_id, category_id) VALUES 
+ ((SELECT id FROM products WHERE name = 'Honey in combs'),        (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flower honey'),          (SELECT id FROM categoryId));
+-- 9. Mushrooms
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Mushrooms')
+INSERT INTO product_categories (product_id, category_id) VALUES 
+ ((SELECT id FROM products WHERE name = 'Champignon'),            (SELECT id FROM categoryId));
+-- 10. Bakery
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Bakery')
+INSERT INTO product_categories (product_id, category_id) VALUES
+ ((SELECT id FROM products WHERE name = 'Baguette'),              (SELECT id FROM categoryId));
+
+-- -------------------------------------------------------
+-- Contacts
+-- -------------------------------------------------------
+INSERT INTO contacts (id, name, phone, email, site, instagram, viber, whatsapp, telegram) VALUES
+ (DEFAULT, 'Seller 1', '+375 25 456 42 42', 'contact@ecofood.by', 'ecofood.by', 'ecofood_by', '+375 25 456 42 42', '', '');
+
+-- -------------------------------------------------------
+-- Table `farmfood`.`users`
+-- -------------------------------------------------------
+INSERT INTO users (id, login, firstname, lastname, email) VALUES
+ (DEFAULT, 'User1', 'User1 first name', 'User1 last name', 'test@example.com');
+
+-- --------------------------------------------------------------------------------------------
+-- Sellers
+-- --------------------------------------------------------------------------------------------
+INSERT INTO sellers (id, name, description, grade, user_id) VALUES
+ (DEFAULT, 'ECO FOOD', 'The best natural food', 5, (SELECT id FROM users WHERE login = 'User1'));
+ 
+-- -------------------------------------------------------
+-- Table `farmfood`.`seller_contacts`
+-- -------------------------------------------------------
+INSERT INTO seller_contacts (seller_id, contacts_id) VALUES
+ ((SELECT id FROM contacts WHERE name = 'Seller 1'), (SELECT id FROM sellers WHERE name = 'ECO FOOD'));
+
+-- -------------------------------------------------------
+-- Table `farmfood`.`seller_categories`
+-- -------------------------------------------------------
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
+INSERT INTO seller_categories (seller_id, category_id) VALUES
+-- 1. Eggs
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Eggs')),
+-- 2. Milk and dairy products
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Milk and dairy products')),
+-- 3. Cheese
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Cheese')),
+-- 4. Butter
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Butter')),
+-- 5. Meat and meat products
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Meat and meat products')),
+-- 6. Vegetables
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Vegetables')),
+-- 7. Fruits and berries
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Fruits and berries')),
+-- 8. Honey
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Honey')),
+-- 9. Mushrooms
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Mushrooms')),
+-- 10. Bakery
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Bakery'));
+ 
+-- -------------------------------------------------------
+-- Table `farmfood`.`seller_products`
+-- -------------------------------------------------------
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
+INSERT INTO seller_products (seller_id, product_id) VALUES
+-- 1. Eggs
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Chicken eggs')),
+-- 2. Milk and dairy products
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Cow milk')),
+-- 3. Cheese
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Circassian cheese')),
+-- 4. Butter
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Butter')),
+-- 5. Meat and meat products
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Chicken meat')),
+-- 6. Vegetables
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Grapes')),
+-- 7. Fruits and berries
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Apple')),
+-- 8. Honey
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Honey in combs')),
+-- 9. Mushrooms
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Champignon')),
+-- 10. Bakery
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baguette'));
