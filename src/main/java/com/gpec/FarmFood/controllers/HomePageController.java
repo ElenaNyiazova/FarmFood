@@ -12,39 +12,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-//@RestController
 @Controller
 public class HomePageController {
 
    // @Autowired
     private SellerServises sellerServises;
-    //    @Value("${spring.application.name}")
-//    String appName;
-
-
-//There is no city selected by default Minsk is used
-
-
-//    public String homePage(Model model) {
-//        model.addAttribute("appName", appName);
-//        return "home";
-//    }
 
     @Autowired
     public HomePageController(SellerServises sellerServises) {
         this.sellerServises = sellerServises;
     }
 
-
     @GetMapping(value = Endpoints.HOME_PAGE)
-    public  List<SellerDAO> getLocalSellers(@PathVariable(name = "city") String city) {
-        //JsonNode
+    public  String getLocalSellers(@PathVariable(name = "city") String city) {
+
 //        if(role == null){  //not used yet
 //            role = "no_autor_user";
 //        }
-//        ;new Gson().toJson(
 
-//        ) ;
-        return SellerServises.getLocalSellers(city);
+        List<SellerDAO> sellers = SellerServises.getLocalSellers(city);
+        String json = new Gson().toJson(sellers);
+        System.out.println(json);
+
+        return json;
     }
 }
