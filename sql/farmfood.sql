@@ -121,33 +121,33 @@ INSERT INTO categories (id, name) VALUES(DEFAULT, 'Bakery');
 -- Products
 -- --------------------------------------------------------------------------------------------
 -- 1. Eggs
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken eggs',              1, 14, 'Chicken eggs.jpg'              );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail eggs',                1, 14, 'Quail eggs.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken eggs',              1, 14, 'chicken_eggs.jpg'              );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail eggs',                1, 14, 'quail_eggs.jpg'                );
 -- 2. Milk and dairy products
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cow milk',                  1, 14, 'Cow milk.jpg'                  );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Goat milk',                 1, 14, 'Goat milk.jpg'                 );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Fermented baked milk',      1, 14, 'Fermented baked milk.jpg'      );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Curd',                      1, 14, 'Curd.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cow milk',                  1, 14, 'cow_milk.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Goat milk',                 1, 14, 'goat_milk.jpg'                 );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Fermented baked milk',      1, 14, 'fermented_baked_milk.jpg'      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Curd',                      1, 14, 'curd.jpg'                      );
 -- 3. Cheese
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Circassian cheese',         1, 14, 'Circassian cheese.jpg'         );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Brynza cheese',             1, 14, 'Brynza cheese.jpg'             );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Suluguni cheese',           1, 14, 'Suluguni cheese.jpg'           );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Mozzarella cheese',         1, 14, 'Mozzarella cheese.jpg'         );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Hard-pressed cheese',       1, 14, 'Hard-pressed cheese.jpg'       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Circassian cheese',         1, 14, 'circassian_cheese.jpg'         );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Brynza cheese',             1, 14, 'brynza_cheese.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Suluguni cheese',           1, 14, 'suluguni_cheese.jpg'           );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Mozzarella cheese',         1, 14, 'mozzarella_cheese.jpg'         );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Hard-pressed cheese',       1, 14, 'hard-pressed_cheese.jpg'       );
 -- 4. Butter
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Butter',                    1, 14, 'Butter.jpg'                    );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Melted butter',             1, 14, 'Melted butter.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Butter',                    1, 14, 'butter.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Melted butter',             1, 14, 'melted_butter.jpg'             );
 -- 5. Meat and meat products
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken meat',              1, 14, 'Chicken meat.jpg'              );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail meat',                1, 14, 'Quail meat.jpg'                );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Turkey meat',               1, 14, 'Turkey meat.jpg'               );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Duck meet',                 1, 14, 'Duck meet.jpg'                 );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Rabbit meat',               1, 14, 'Rabbit meat.jpg'               );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pork',                      1, 14, 'Pork.jpg'                      );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beef',                      1, 14, 'Beef.jpg'                      );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Home-made sausage',         1, 14, 'Home-made sausage.jpg'         );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bacon',                     1, 14, 'Bacon.jpg'                     );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lard',                      1, 14, 'Lard.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken meat',              1, 14, 'chicken_meat.jpg'              );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail meat',                1, 14, 'quail_meat.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Turkey meat',               1, 14, 'turkey_meat.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Duck meet',                 1, 14, 'duck_meet.jpg'                 );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Rabbit meat',               1, 14, 'rabbit_meat.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pork',                      1, 14, 'pork.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beef',                      1, 14, 'beef.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Home-made sausage',         1, 14, 'home_made_sausage.jpg'         );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bacon',                     1, 14, 'bacon.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lard',                      1, 14, 'lard.jpg'                      );
 -- 6. Vegetables
 INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Grapes',                    1, 14, 'grapes.jpg'                    );
 INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cucumber',                  1, 16, 'cucumber.jpg'                  );
@@ -178,7 +178,7 @@ INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flower ho
 -- 9. Mushrooms                                                                                                                
 INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Champignon',                1, 15, 'champignon.jpg'                );
 -- 10. Bakery
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Champignon',                1, 15, 'champignon.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Baguette',                  1, 15, 'baguette.jpg'                 );
 
 -- --------------------------------------------------------------------------------------------
 -- Cities
