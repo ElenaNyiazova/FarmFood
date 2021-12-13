@@ -13,6 +13,7 @@ import { ROUTES } from '../../consts/consts';
 import { HomePage } from '../pages/HomePage';
 import { SellerPage } from '../pages/SellerPage';
 import { UserProfilePage } from '../pages/UserProfilePage';
+import { ProfileUpdatePage } from '../pages/ProfileUpdatePage';
 
 export const App = () => {
   const showLocationModal = useSelector(
@@ -70,6 +71,11 @@ export const App = () => {
             element={
               isLoggedIn ? <UserProfilePage /> : <Navigate to={ROUTES.HOME} />
             }
+          />
+          <Route
+            exact
+            path={ROUTES.UPDATE_PROFILE}
+            element={<ProfileUpdatePage />}
           />
         </Routes>
       </Container>

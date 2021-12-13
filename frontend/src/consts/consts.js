@@ -11,6 +11,7 @@ export const ROUTES = {
   HOME: '/',
   SELLER: '/seller/:id',
   PROFILE: '/profile',
+  UPDATE_PROFILE: '/profile-update',
 };
 
 export const CITIES = {
