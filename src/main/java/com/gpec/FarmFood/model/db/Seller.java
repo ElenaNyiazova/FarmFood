@@ -1,18 +1,20 @@
 package com.gpec.FarmFood.model.db;
 
-import com.gpec.FarmFood.enums.Role;
+import com.gpec.FarmFood.enums.RoleEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
-@Table(name = "seller")
+@Table(name = "sellers")
 @NoArgsConstructor
-public class SellerDAO{
+public class Seller {
 
     @Id
+    @Column(name="user_type", insertable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -27,8 +29,12 @@ public class SellerDAO{
 
     @ManyToOne
     @JoinColumn(name = "id")
-    private CityDAO cityDAO;
+    private City city;
 
 //    @Column(nullable = false)
-    private Role role;
+    private RoleEnum roleEnum;
+
+    @Transient
+    @OneToMany(mappedBy = "user_reviews")
+    private List<Long> userReviews;
 }

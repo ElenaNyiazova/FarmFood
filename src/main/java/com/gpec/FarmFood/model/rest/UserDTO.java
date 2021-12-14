@@ -1,6 +1,6 @@
 package com.gpec.FarmFood.model.rest;
 
-import com.gpec.FarmFood.enums.Role;
+import com.gpec.FarmFood.enums.RoleEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminRest {
+public class UserDTO {
 
     private Long id;
     private String name;
@@ -18,5 +18,5 @@ public class AdminRest {
     private String password;
     private String favoriteSity;
 
-    private Role role;
+    private RoleEnum roleEnum;
 }

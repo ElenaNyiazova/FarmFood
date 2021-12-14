@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CityDAO {
+public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,15 +23,17 @@ public class CityDAO {
     String city;
 
     @OneToMany(mappedBy = "report", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    List<SellerDAO> localSellersByCity(String city){
+    List<Seller> localSellersByCity(String city){
        return SellerServises.getLocalSellers(city);
     }
+
 //    @JoinColumn(name = "city", nullable = false)
 //    ALLWORLD,
+
 //    MINSK,
-//    KIEV,
-//    SAINT_PITERBURG,
-//    BUDAPEST,
+//    KEIV,
+//    SAINT_PETERBURG,
 //    YEREVAN,
 //    ALMATY
+
 }

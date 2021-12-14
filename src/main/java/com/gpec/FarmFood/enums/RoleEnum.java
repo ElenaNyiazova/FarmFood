@@ -1,14 +1,14 @@
 package com.gpec.FarmFood.enums;
 
-public enum Role {
+public enum RoleEnum {
     NO_AUTOR_USER("no_autor_user"),
-    BUYER_ROLE("buyer_role"),
+    USER_ROLE("user_role"),
     SELLER_ROLE("seller_role"),
     ADMIN_ROLE("admin_role");
 
     private String name;
 
-    Role(final String role) {
+    RoleEnum(final String role) {
         this.name = role;
     }
 
