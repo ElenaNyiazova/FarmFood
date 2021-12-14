@@ -15,6 +15,7 @@
 -- DROP TABLE IF EXISTS seller_categories CASCADE;
 -- DROP TABLE IF EXISTS seller_products CASCADE;
 -- DROP TABLE IF EXISTS seller_contacts CASCADE;
+-- DROP TABLE IF EXISTS seller_cities CASCADE;
 -- DROP TABLE IF EXISTS users CASCADE;
 -- DROP TABLE IF EXISTS roles CASCADE;
 -- DROP TABLE IF EXISTS users_roles CASCADE;
@@ -120,6 +121,17 @@ CREATE TABLE IF NOT EXISTS seller_contacts (
   PRIMARY KEY (seller_id, contact_id),
   CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
   CONSTRAINT fk_contacts FOREIGN KEY(contact_id) REFERENCES contacts(id)
+);
+
+-- -------------------------------------------------------
+-- Table `farmfood`.`seller_cities`
+-- -------------------------------------------------------
+CREATE TABLE IF NOT EXISTS seller_cities (
+  seller_id BIGINT NOT NULL,
+  city_id BIGINT NOT NULL,
+  PRIMARY KEY (seller_id, city_id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
+  CONSTRAINT fk_cities FOREIGN KEY(city_id) REFERENCES cities(id)
 );
 
 -- -------------------------------------------------------
@@ -479,7 +491,19 @@ INSERT INTO seller_products (seller_id, product_id) VALUES
  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Champignon')),
 -- 10. Bakery
  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baguette'));
-
+ 
+-- -------------------------------------------------------
+-- Seller cities
+-- -------------------------------------------------------
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
+INSERT INTO seller_cities (seller_id, city_id) VALUES
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Minsk')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Kyiv')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Saint-Petersburg')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Budapest')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Yerevan')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Almaty'));
+ 
 -- -------------------------------------------------------
 -- Reviews
 -- -------------------------------------------------------
