@@ -1,0 +1,31 @@
+.search-container {
+  position: relative;
+  /* outline: 1px green solid; */
+}
+
+.suggestions {
+  position: absolute;
+  z-index: 100;
+  left: 1rem;
+  top: 2.4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+
+  width: 90%;
+  background: rgba(255, 255, 255, 0.8);
+
+  /* outline: 1px green solid; */
+}
+
+.suggestions--hidden {
+  display: none;
+}
+
+.suggestion {
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  font-weight: 600;
+}
