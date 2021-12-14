@@ -5,17 +5,20 @@ import com.gpec.FarmFood.repositories.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class SellerServises {
 
     @Autowired
-    static
-    SellerRepository sellerRepository;
+    private SellerRepository sellerRepository;
 
-    public static List<Seller> getLocalSellers(String city){
+    public List<Seller> getLocalSellers(String city){
 
-        return sellerRepository.findAllByCity(city);
+//        List<Seller> list = new ArrayList<Seller>();
+//        list.add(new Seller());
+//        return list;
+        return sellerRepository.findAll();
     }
 }

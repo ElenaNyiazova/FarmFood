@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import static com.gpec.FarmFood.constants.Endpoints.API_HOME;
+import static com.gpec.FarmFood.constants.Endpoints.API_SELLER;
 
 @RestController
 public class HomePageController {
@@ -31,11 +32,15 @@ public class HomePageController {
 //            role = "no_autor_user";
 //        }
 //
-//        List<Seller> sellers = SellerServises.getLocalSellers(city);
-//        String json = new Gson().toJson(sellers);
-//        System.out.println(json);
-//
-//        return json;
-        return city;
+        List<Seller> sellers = SellerServises.getLocalSellers(city);
+        String json = new Gson().toJson(sellers);
+
+        return json;
+//        return city;
     }
+//    @GetMapping(value = API_SELLER)
+//    public String getSellerById(@PathVariable(name = "seller_id") Long sellerId){
+//
+//        return null;
+//    }
 }

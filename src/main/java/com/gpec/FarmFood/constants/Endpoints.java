@@ -49,6 +49,8 @@ public interface Endpoints {
 
     String API_HOME = API_SELLERS + "/{city}";
 
+    String API_SELLER = API_SELLERS + ID;
+
     /**
      * User management
      */
