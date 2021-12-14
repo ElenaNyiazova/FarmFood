@@ -6,19 +6,19 @@
 -- CREATE DATABASE farmfood WITH OWNER = postgres ENCODING = 'UTF8' TABLESPACE = pg_default CONNECTION LIMIT = -1;
 --/c farmfood;
 
--- DROP TABLE IF EXISTS categories;
--- DROP TABLE IF EXISTS products;
--- DROP TABLE IF EXISTS product_categories;
--- DROP TABLE IF EXISTS cities;
--- DROP TABLE IF EXISTS contacts;
--- DROP TABLE IF EXISTS sellers;
--- DROP TABLE IF EXISTS seller_categories;
--- DROP TABLE IF EXISTS seller_products;
--- DROP TABLE IF EXISTS seller_contacts;
--- DROP TABLE IF EXISTS users;
--- DROP TABLE IF EXISTS roles;
--- DROP TABLE IF EXISTS users_roles;
--- DROP TABLE IF EXISTS reviews;
+-- DROP TABLE IF EXISTS categories CASCADE;
+-- DROP TABLE IF EXISTS products CASCADE;
+-- DROP TABLE IF EXISTS product_categories CASCADE;
+-- DROP TABLE IF EXISTS cities CASCADE;
+-- DROP TABLE IF EXISTS contacts CASCADE;
+-- DROP TABLE IF EXISTS sellers CASCADE;
+-- DROP TABLE IF EXISTS seller_categories CASCADE;
+-- DROP TABLE IF EXISTS seller_products CASCADE;
+-- DROP TABLE IF EXISTS seller_contacts CASCADE;
+-- DROP TABLE IF EXISTS users CASCADE;
+-- DROP TABLE IF EXISTS roles CASCADE;
+-- DROP TABLE IF EXISTS users_roles CASCADE;
+-- DROP TABLE IF EXISTS reviews CASCADE;
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`categories`
@@ -48,7 +48,10 @@ CREATE TABLE IF NOT EXISTS products (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS product_categories (
   product_id BIGINT NOT NULL,
-  category_id BIGINT NOT NULL
+  category_id BIGINT NOT NULL,
+  PRIMARY KEY (product_id, category_id),
+  CONSTRAINT fk_categories FOREIGN KEY(category_id) REFERENCES categories(id),
+  CONSTRAINT fk_products FOREIGN KEY(product_id) REFERENCES products(id)
 );
 
 -- -------------------------------------------------------
@@ -91,7 +94,10 @@ CREATE TABLE IF NOT EXISTS sellers (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS seller_categories (
   seller_id BIGINT NOT NULL,
-  category_id BIGINT NOT NULL
+  category_id BIGINT NOT NULL,
+  PRIMARY KEY (seller_id, category_id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
+  CONSTRAINT fk_categories FOREIGN KEY(category_id) REFERENCES categories(id)
 );
 
 -- -------------------------------------------------------
@@ -99,7 +105,10 @@ CREATE TABLE IF NOT EXISTS seller_categories (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS seller_products (
   seller_id BIGINT NOT NULL,
-  product_id BIGINT NOT NULL
+  product_id BIGINT NOT NULL,
+  PRIMARY KEY (seller_id, product_id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
+  CONSTRAINT fk_products FOREIGN KEY(product_id) REFERENCES products(id)
 );
 
 -- -------------------------------------------------------
@@ -107,7 +116,10 @@ CREATE TABLE IF NOT EXISTS seller_products (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS seller_contacts (
   seller_id integer NOT NULL,
-  contacts_id integer NOT NULL
+  contact_id integer NOT NULL,
+  PRIMARY KEY (seller_id, contact_id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
+  CONSTRAINT fk_contacts FOREIGN KEY(contact_id) REFERENCES contacts(id)
 );
 
 -- -------------------------------------------------------
@@ -137,7 +149,10 @@ CREATE TABLE IF NOT EXISTS roles (
 -- -------------------------------------------------------
 CREATE TABLE users_roles (
   user_id BIGINT NOT NULL,
-  role_id BIGINT NOT NULL
+  role_id BIGINT NOT NULL,
+  PRIMARY KEY (user_id, role_id),
+  CONSTRAINT fk_users FOREIGN KEY(user_id) REFERENCES users(id),
+  CONSTRAINT fk_roles FOREIGN KEY(role_id) REFERENCES roles(id)
 );
 
 -- -------------------------------------------------------
@@ -148,7 +163,9 @@ CREATE TABLE IF NOT EXISTS reviews (
   user_id   BIGINT NOT NULL,
   seller_id BIGINT NOT NULL,
   rating    INTEGER,
-  comment   TEXT
+  comment   TEXT,
+  CONSTRAINT fk_users FOREIGN KEY(user_id) REFERENCES users(id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id)
 );
 
 -- --------------------------------------------------------------------------------------------
@@ -408,7 +425,7 @@ INSERT INTO sellers (id, name, description, grade, user_id) VALUES
 -- -------------------------------------------------------
 -- Seller contacts
 -- -------------------------------------------------------
-INSERT INTO seller_contacts (seller_id, contacts_id) VALUES
+INSERT INTO seller_contacts (seller_id, contact_id) VALUES
  ((SELECT id FROM contacts WHERE name = 'Seller 1'), (SELECT id FROM sellers WHERE name = 'ECO FOOD'));
 
 -- -------------------------------------------------------
@@ -467,6 +484,6 @@ INSERT INTO seller_products (seller_id, product_id) VALUES
 -- Reviews
 -- -------------------------------------------------------
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
-INSERT INTO reviews (id, user_id, seller_id, rating, comment) VALUES
+INSERT INTO reviews (id, seller_id, user_id, rating, comment) VALUES
  (DEFAULT, (SELECT id FROM sellerId), (SELECT id FROM users WHERE login = 'admin'), 5, 'Excellent');
  
