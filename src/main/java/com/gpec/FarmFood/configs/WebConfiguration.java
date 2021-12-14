@@ -1,6 +1,7 @@
 package com.gpec.FarmFood.configs;
 
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;

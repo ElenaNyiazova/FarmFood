@@ -23,8 +23,6 @@ public interface Endpoints {
 
     String PAGE_USER_PROFILE = "/user";
 
-    String USER_ID = "/{id}";
-
     String PAGE_USER_REGISTRATION = PAGE_USER_PROFILE + "/registration";
 
     /**
@@ -46,6 +44,10 @@ public interface Endpoints {
      */
 
     String API_PREFIX = "/api/v1";
+
+    String API_SELLERS = API_PREFIX + "/sellers";
+
+    String API_HOME = API_SELLERS + "/{city}";
 
     /**
      * User management
