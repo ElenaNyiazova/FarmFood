@@ -1,6 +1,6 @@
 package com.gpec.FarmFood.servises;
 
-import com.gpec.FarmFood.model.db.SellerDAO;
+import com.gpec.FarmFood.model.db.Seller;
 import com.gpec.FarmFood.repositories.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class SellerServises {
     static
     SellerRepository sellerRepository;
 
-    public static List<SellerDAO> getLocalSellers(String city){
+    public static List<Seller> getLocalSellers(String city){
 
         return sellerRepository.findAllByCity(city);
     }
