@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 //@NoArgsConstructor
-public class SellerRest extends AdminRest {
+public class SellerDTO extends UserDTO {
 }

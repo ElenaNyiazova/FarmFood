@@ -1,6 +1,5 @@
 package com.gpec.FarmFood.configs;
 
-import com.gpec.FarmFood.security.SecurityConfig;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -18,15 +17,12 @@ public class WebConfiguration extends AbstractAnnotationConfigDispatcherServletI
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        //create the root Spring application context
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-       //todo rootContext.register(ApplicationConfig.class, SecurityConfig.class);
+       rootContext.register(MainConfig.class, SecurityConfig.class);
 
         servletContext.addListener(new ContextLoaderListener(rootContext));
-
-        //Create the dispatcher servlet's Spring application context
         AnnotationConfigWebApplicationContext servletAppContext = new AnnotationConfigWebApplicationContext();
-        //todo servletAppContext.register(MVCConfig.class);
+        servletAppContext.register(MvcConfig.class);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(servletAppContext);
         // throw NoHandlerFoundException to controller ExceptionHandler.class. Used for <error-page> analogue
@@ -43,6 +39,7 @@ public class WebConfiguration extends AbstractAnnotationConfigDispatcherServletI
         encodingFilter.setInitParameter("forceEncoding", "true");
         encodingFilter.addMappingForUrlPatterns(null, true, "/*");
     }
+
 
     /**
      * added to load spring security filter in root context (created in onStartup())

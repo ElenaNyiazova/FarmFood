@@ -1,8 +1,7 @@
 package com.gpec.FarmFood.controllers;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.google.gson.Gson;
-import com.gpec.FarmFood.model.db.SellerDAO;
+import com.gpec.FarmFood.model.db.Seller;
 import com.gpec.FarmFood.servises.SellerServises;
 import com.gpec.FarmFood.constants.Endpoints;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ import java.util.List;
 @Controller
 public class HomePageController {
 
-   // @Autowired
+    @Autowired
     private SellerServises sellerServises;
 
     @Autowired
@@ -24,13 +23,13 @@ public class HomePageController {
     }
 
     @GetMapping(value = Endpoints.HOME_PAGE)
-    public  String getLocalSellers(@PathVariable(name = "city") String city) {
+    public String getLocalSellers(@PathVariable(name = "city") String city) {
 
 //        if(role == null){  //not used yet
 //            role = "no_autor_user";
 //        }
 
-        List<SellerDAO> sellers = SellerServises.getLocalSellers(city);
+        List<Seller> sellers = SellerServises.getLocalSellers(city);
         String json = new Gson().toJson(sellers);
         System.out.println(json);
 

@@ -1,6 +1,6 @@
 package com.gpec.FarmFood.model.rest;
 
-import com.gpec.FarmFood.enums.ProductsCategory;
+import com.gpec.FarmFood.model.db.ProductsCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +12,7 @@ import java.io.File;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductsRest {//контретные товары
+public class ProductsDTO {//контретные товары
 
     private Long id;
     private String name;
