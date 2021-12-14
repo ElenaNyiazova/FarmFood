@@ -6,19 +6,20 @@
 -- CREATE DATABASE farmfood WITH OWNER = postgres ENCODING = 'UTF8' TABLESPACE = pg_default CONNECTION LIMIT = -1;
 --/c farmfood;
 
--- DROP TABLE IF EXISTS categories;
--- DROP TABLE IF EXISTS products;
--- DROP TABLE IF EXISTS product_categories;
--- DROP TABLE IF EXISTS cities;
--- DROP TABLE IF EXISTS contacts;
--- DROP TABLE IF EXISTS sellers;
--- DROP TABLE IF EXISTS seller_categories;
--- DROP TABLE IF EXISTS seller_products;
--- DROP TABLE IF EXISTS seller_contacts;
--- DROP TABLE IF EXISTS users;
--- DROP TABLE IF EXISTS roles;
--- DROP TABLE IF EXISTS users_roles;
--- DROP TABLE IF EXISTS reviews;
+-- DROP TABLE IF EXISTS categories CASCADE;
+-- DROP TABLE IF EXISTS products CASCADE;
+-- DROP TABLE IF EXISTS product_categories CASCADE;
+-- DROP TABLE IF EXISTS cities CASCADE;
+-- DROP TABLE IF EXISTS contacts CASCADE;
+-- DROP TABLE IF EXISTS sellers CASCADE;
+-- DROP TABLE IF EXISTS seller_categories CASCADE;
+-- DROP TABLE IF EXISTS seller_products CASCADE;
+-- DROP TABLE IF EXISTS seller_contacts CASCADE;
+-- DROP TABLE IF EXISTS seller_cities CASCADE;
+-- DROP TABLE IF EXISTS users CASCADE;
+-- DROP TABLE IF EXISTS roles CASCADE;
+-- DROP TABLE IF EXISTS users_roles CASCADE;
+-- DROP TABLE IF EXISTS reviews CASCADE;
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`categories`
@@ -48,7 +49,10 @@ CREATE TABLE IF NOT EXISTS products (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS product_categories (
   product_id BIGINT NOT NULL,
-  category_id BIGINT NOT NULL
+  category_id BIGINT NOT NULL,
+  PRIMARY KEY (product_id, category_id),
+  CONSTRAINT fk_categories FOREIGN KEY(category_id) REFERENCES categories(id),
+  CONSTRAINT fk_products FOREIGN KEY(product_id) REFERENCES products(id)
 );
 
 -- -------------------------------------------------------
@@ -91,7 +95,10 @@ CREATE TABLE IF NOT EXISTS sellers (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS seller_categories (
   seller_id BIGINT NOT NULL,
-  category_id BIGINT NOT NULL
+  category_id BIGINT NOT NULL,
+  PRIMARY KEY (seller_id, category_id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
+  CONSTRAINT fk_categories FOREIGN KEY(category_id) REFERENCES categories(id)
 );
 
 -- -------------------------------------------------------
@@ -99,7 +106,10 @@ CREATE TABLE IF NOT EXISTS seller_categories (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS seller_products (
   seller_id BIGINT NOT NULL,
-  product_id BIGINT NOT NULL
+  product_id BIGINT NOT NULL,
+  PRIMARY KEY (seller_id, product_id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
+  CONSTRAINT fk_products FOREIGN KEY(product_id) REFERENCES products(id)
 );
 
 -- -------------------------------------------------------
@@ -107,7 +117,21 @@ CREATE TABLE IF NOT EXISTS seller_products (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS seller_contacts (
   seller_id integer NOT NULL,
-  contacts_id integer NOT NULL
+  contact_id integer NOT NULL,
+  PRIMARY KEY (seller_id, contact_id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
+  CONSTRAINT fk_contacts FOREIGN KEY(contact_id) REFERENCES contacts(id)
+);
+
+-- -------------------------------------------------------
+-- Table `farmfood`.`seller_cities`
+-- -------------------------------------------------------
+CREATE TABLE IF NOT EXISTS seller_cities (
+  seller_id BIGINT NOT NULL,
+  city_id BIGINT NOT NULL,
+  PRIMARY KEY (seller_id, city_id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id),
+  CONSTRAINT fk_cities FOREIGN KEY(city_id) REFERENCES cities(id)
 );
 
 -- -------------------------------------------------------
@@ -137,7 +161,10 @@ CREATE TABLE IF NOT EXISTS roles (
 -- -------------------------------------------------------
 CREATE TABLE users_roles (
   user_id BIGINT NOT NULL,
-  role_id BIGINT NOT NULL
+  role_id BIGINT NOT NULL,
+  PRIMARY KEY (user_id, role_id),
+  CONSTRAINT fk_users FOREIGN KEY(user_id) REFERENCES users(id),
+  CONSTRAINT fk_roles FOREIGN KEY(role_id) REFERENCES roles(id)
 );
 
 -- -------------------------------------------------------
@@ -148,7 +175,9 @@ CREATE TABLE IF NOT EXISTS reviews (
   user_id   BIGINT NOT NULL,
   seller_id BIGINT NOT NULL,
   rating    INTEGER,
-  comment   TEXT
+  comment   TEXT,
+  CONSTRAINT fk_users FOREIGN KEY(user_id) REFERENCES users(id),
+  CONSTRAINT fk_sellers FOREIGN KEY(seller_id) REFERENCES sellers(id)
 );
 
 -- --------------------------------------------------------------------------------------------
@@ -340,30 +369,34 @@ INSERT INTO product_categories (product_id, category_id) VALUES
 -- Contacts
 -- -------------------------------------------------------
 INSERT INTO contacts (id, name, phone, email, site, instagram, viber, whatsapp, telegram) VALUES
- (DEFAULT, 'Seller 1', '+375 25 456 42 42', 'contact@ecofood.by', 'ecofood.by', 'ecofood_by', '+375 25 456 42 42', '', '');
-
+ (DEFAULT, 'Seller 1', '+375 25 456 42 42', 'contact@ecofood.by',           'ecofood.by',             'ecofood_by',         '+375 25 456 42 42', '', ''),
+ (DEFAULT, 'Seller 2', '+123 45 678 90 90', 'name_surname@gmail.com',       'name_surname.com',       'name_surname',       '+123 45 678 90 90', '', ''),
+ (DEFAULT, 'Seller 3', '+098 76 543 21 21', 'viktar_astapkovich@gmail.com', 'viktar_astapkovich.com', 'viktar_astapkovich', '+098 76 543 21 21', '', '');
+ 
 -- -------------------------------------------------------
 -- Users
 -- -------------------------------------------------------
 INSERT INTO users (id, login, password, email, firstname, lastname) VALUES
-  (DEFAULT, 'sami',   'sami',   'gstream@gmail.com', 'Sami',             'Keinänen'),
-  (DEFAULT, 'magnum', 'magnum', 'sami@gmail.com',    'Sami',             'Wolking'),
-  (DEFAULT, 'kalma',  'kalma',  'kalma@gmail.com',   'Nick',             'Gore'),
-  (DEFAULT, 'kita',   'kita',   'kita@gmail.com',    'Sampsa',           'Astala'),
-  (DEFAULT, 'user',   'user',   'user@gmail.com',    'User firstname',   'User lastname');
+  (DEFAULT, 'sami',    'sami',     'gstream@gmail.com',  'Sami',              'Keinänen'),
+  (DEFAULT, 'magnum',  'magnum',   'sami@gmail.com',     'Sami',              'Wolking'),
+  (DEFAULT, 'kalma',   'kalma',    'kalma@gmail.com',    'Nick',              'Gore'),
+  (DEFAULT, 'kita',    'kita',     'kita@gmail.com',     'Sampsa',            'Astala'),
+  (DEFAULT, 'user',    'user',     'user@gmail.com',     'User firstname',    'User lastname');
 
 INSERT INTO users (id, login, password, email, firstname, lastname) VALUES
-  (DEFAULT, 'otus',   'otus',   'otus@gmail.com',    'Tonmi',            'Kristian Lillman'),
-  (DEFAULT, 'oxx',    'oxx',    'oxx@gmail.com',     'Samer',            'el Nahhal'),
-  (DEFAULT, 'amen',   'amen',   'amen@gmail.com',    'Jussi',            'Sydänmaa'),
-  (DEFAULT, 'mana',   'mana',   'mana@gmail.com',    'Antto',            'Nikolai Tuomainen'),
-  (DEFAULT, 'seller', 'seller', 'seller@gmail.com',  'Seller firstname', 'Seller lastname');
+  (DEFAULT, 'otus',    'otus',     'otus@gmail.com',     'Tonmi',             'Kristian Lillman'),
+  (DEFAULT, 'oxx',     'oxx',      'oxx@gmail.com',      'Samer',             'el Nahhal'),
+  (DEFAULT, 'amen',    'amen',     'amen@gmail.com',     'Jussi',             'Sydänmaa'),
+  (DEFAULT, 'mana',    'mana',     'mana@gmail.com',     'Antto',             'Nikolai Tuomainen'),
+  (DEFAULT, 'seller',  'seller',   'seller@gmail.com',   'Seller firstname',  'Seller lastname'),
+  (DEFAULT, 'seller1', 'seller1',  'seller1@gmail.com',  'Seller1 firstname', 'Seller1 lastname'),
+  (DEFAULT, 'seller2', 'seller2',  'seller2@gmail.com',  'Seller2 firstname', 'Seller2 lastname');
 
 INSERT INTO users (id, login, password, email, firstname, lastname) VALUES
-  (DEFAULT, 'tomi',   'tomi',   'tomi@gmail.com',    'Tomi',             'Petteri Putaansuu'),
-  (DEFAULT, 'hella',  'hella',  'hella@gmail.com',   'Henna-Riikka',     'Tuulia Broda'),
-  (DEFAULT, 'awa',    'awa',    'awa@gmail.com',     'Leena',            'Maria Peisa'),
-  (DEFAULT, 'admin',  'admin',  'admin@gmail.com',   'Admin firstname',  'Admin lastname');
+  (DEFAULT, 'tomi',    'tomi',     'tomi@gmail.com',     'Tomi',              'Petteri Putaansuu'),
+  (DEFAULT, 'hella',   'hella',    'hella@gmail.com',    'Henna-Riikka',      'Tuulia Broda'),
+  (DEFAULT, 'awa',     'awa',      'awa@gmail.com',      'Leena',             'Maria Peisa'),
+  (DEFAULT, 'admin',   'admin',    'admin@gmail.com',    'Admin firstname',   'Admin lastname');
 
 -- --------------------------------------------------------------------------------------------
 -- Roles
@@ -378,37 +411,41 @@ INSERT INTO roles (id, name) VALUES(DEFAULT, 'ADMIN');
 -- --------------------------------------------------------------------------------------------
 WITH roleId AS (SELECT id FROM roles WHERE name = 'USER')
 INSERT INTO users_roles (user_id, role_id) VALUES
-  ((SELECT id FROM users WHERE login = 'sami'),   (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'magnum'), (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'kalma'),  (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'kita'),   (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'user'),   (SELECT id FROM roleId));
+  ((SELECT id FROM users WHERE login = 'sami'),    (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'magnum'),  (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'kalma'),   (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'kita'),    (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'user'),    (SELECT id FROM roleId));
 
 WITH roleId AS (SELECT id FROM roles WHERE name = 'SELLER')
 INSERT INTO users_roles (user_id, role_id) VALUES
-  ((SELECT id FROM users WHERE login = 'otus'),   (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'oxx'),    (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'amen'),   (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'mana'),   (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'seller'), (SELECT id FROM roleId));
+  ((SELECT id FROM users WHERE login = 'otus'),    (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'oxx'),     (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'amen'),    (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'mana'),    (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'seller'),  (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'seller1'), (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'seller2'), (SELECT id FROM roleId));
 
 WITH roleId AS (SELECT id FROM roles WHERE name = 'ADMIN')
 INSERT INTO users_roles (user_id, role_id) VALUES
-  ((SELECT id FROM users WHERE login = 'tomi'),   (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'hella'),  (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'awa'),    (SELECT id FROM roleId)),
-  ((SELECT id FROM users WHERE login = 'admin'),  (SELECT id FROM roleId));
+  ((SELECT id FROM users WHERE login = 'tomi'),    (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'hella'),   (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'awa'),     (SELECT id FROM roleId)),
+  ((SELECT id FROM users WHERE login = 'admin'),   (SELECT id FROM roleId));
 
 -- --------------------------------------------------------------------------------------------
 -- Sellers
 -- --------------------------------------------------------------------------------------------
 INSERT INTO sellers (id, name, description, grade, user_id) VALUES
- (DEFAULT, 'ECO FOOD', 'The best natural food', 5, (SELECT id FROM users WHERE login = 'User1'));
+ (DEFAULT, 'ECO FOOD',           'The best eco food',       5, (SELECT id FROM users WHERE login = 'seller')),
+ (DEFAULT, 'Name Surname',       'The best natural food',   3, (SELECT id FROM users WHERE login = 'seller1')),
+ (DEFAULT, 'Viktar Astapkovich', 'The best grapes',         4, (SELECT id FROM users WHERE login = 'seller2'));
  
 -- -------------------------------------------------------
 -- Seller contacts
 -- -------------------------------------------------------
-INSERT INTO seller_contacts (seller_id, contacts_id) VALUES
+INSERT INTO seller_contacts (seller_id, contact_id) VALUES
  ((SELECT id FROM contacts WHERE name = 'Seller 1'), (SELECT id FROM sellers WHERE name = 'ECO FOOD'));
 
 -- -------------------------------------------------------
@@ -421,13 +458,19 @@ INSERT INTO seller_categories (seller_id, category_id) VALUES
 -- 2. Milk and dairy products
  ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Milk and dairy products')),
 -- 3. Cheese
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Cheese')),
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Cheese'));
+
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Name Surname')
+INSERT INTO seller_categories (seller_id, category_id) VALUES
 -- 4. Butter
  ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Butter')),
 -- 5. Meat and meat products
  ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Meat and meat products')),
 -- 6. Vegetables
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Vegetables')),
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Vegetables'));
+ 
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Viktar Astapkovich')
+INSERT INTO seller_categories (seller_id, category_id) VALUES
 -- 7. Fruits and berries
  ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Fruits and berries')),
 -- 8. Honey
@@ -462,11 +505,30 @@ INSERT INTO seller_products (seller_id, product_id) VALUES
  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Champignon')),
 -- 10. Bakery
  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baguette'));
-
+ 
+-- -------------------------------------------------------
+-- Seller cities
+-- -------------------------------------------------------
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
+INSERT INTO seller_cities (seller_id, city_id) VALUES
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Minsk')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Kyiv')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Saint-Petersburg')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Budapest')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Yerevan')),
+ ((SELECT id FROM sellerId), (SELECT id FROM cities WHERE name = 'Almaty'));
+ 
 -- -------------------------------------------------------
 -- Reviews
 -- -------------------------------------------------------
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
-INSERT INTO reviews (id, user_id, seller_id, rating, comment) VALUES
- (DEFAULT, (SELECT id FROM sellerId), (SELECT id FROM users WHERE login = 'admin'), 5, 'Excellent');
- 
+INSERT INTO reviews (id, seller_id, user_id, rating, comment) VALUES
+ (DEFAULT, (SELECT id FROM sellerId), (SELECT id FROM users WHERE login = 'seller'), 5, 'Excellent');
+
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Name Surname')
+INSERT INTO reviews (id, seller_id, user_id, rating, comment) VALUES
+ (DEFAULT, (SELECT id FROM sellerId), (SELECT id FROM users WHERE login = 'seller1'), 3, 'Satisfactory');
+
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Viktar Astapkovich')
+INSERT INTO reviews (id, seller_id, user_id, rating, comment) VALUES
+ (DEFAULT, (SELECT id FROM sellerId), (SELECT id FROM users WHERE login = 'seller2'), 4, 'Good');
