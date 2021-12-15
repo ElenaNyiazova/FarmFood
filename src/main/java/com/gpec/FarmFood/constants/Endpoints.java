@@ -17,7 +17,7 @@ public interface Endpoints {
 
     String PAGE_ERROR = "/error";
 
-    String HOME_PAGE = "/home";
+    String HOME = "/home";
 
     String PAGE_LOGIN = "/login";
 

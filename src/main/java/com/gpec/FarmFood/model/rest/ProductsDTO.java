@@ -1,6 +1,6 @@
 package com.gpec.FarmFood.model.rest;
 
-import com.gpec.FarmFood.model.db.ProductsCategory;
+import com.gpec.FarmFood.model.db.Category;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +18,7 @@ public class ProductsDTO {//контретные товары
     private String name;
     private String description;
 
-    private ProductsCategory productsCategory;
+    private Category category;
     private Long sellerId;
     private Double weight; //пока в кг по умолчанию, потом можно граммовку/унции добавить
     private Long price;//по умолчанию в долларах

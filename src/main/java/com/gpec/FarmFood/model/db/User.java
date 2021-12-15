@@ -1,12 +1,14 @@
 package com.gpec.FarmFood.model.db;
 
 import com.gpec.FarmFood.enums.RoleEnum;
+import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.io.File;
 import java.util.Collection;
 import java.util.List;
 
@@ -17,37 +19,45 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
-    private String name;
-
+    @NotNull
+    @Column(unique = true)
     private String email;
 
+    @NotNull
     private String password;
+    private String userName;
+    private File image;
+    private File image_blob;
 
-    @Transient
-    private String favoriteSity;
+//    @Transient
+//    private String favoriteSity;
 
     @ManyToOne
     @JoinColumn(name = "role", nullable = false)
     private Role role;
 
     @Transient
-    @ManyToMany(mappedBy = "sellers")
+
     private List<Long> favoriteSellers;
 
-    @Transient
+    @ManyToMany(mappedBy = "sellers")
+    @JoinTable(name = "users_roles", //the table that connects them
+            joinColumns = @JoinColumn(name = "id"),//todo rename id ?
+            inverseJoinColumns = @JoinColumn(name = "id"))//todo rename id ?
     private List<Long> userReviewsIds;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
-    }
+    }//todo return role with Privileges
 
     @Override
     public String getUsername() {
-        return name;
+        return email;
     }
 
     @Override
@@ -62,7 +72,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override

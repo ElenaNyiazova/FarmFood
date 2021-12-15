@@ -14,7 +14,7 @@ public class SellerServises {
     @Autowired
     private SellerRepository sellerRepository;
 
-    public static List<Seller> getLocalSellers(String city){
+    public List<Seller> getLocalSellers(String city){
 
         List<Seller> list = new ArrayList<Seller>();
         list.add(new Seller());

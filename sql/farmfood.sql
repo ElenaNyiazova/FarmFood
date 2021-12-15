@@ -24,25 +24,25 @@
 -- -------------------------------------------------------
 -- Table `farmfood`.`categories`
 -- -------------------------------------------------------
-CREATE TABLE IF NOT EXISTS categories (
-  id SERIAL PRIMARY KEY,
-  name TEXT,
-  description TEXT,
-  parent_id BIGINT
-);
+--CREATE TABLE IF NOT EXISTS categories (
+--  id SERIAL PRIMARY KEY,
+--  name TEXT,
+--  description TEXT,
+--  parent_id BIGINT
+--);
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`products`
 -- -------------------------------------------------------
-CREATE TABLE IF NOT EXISTS products (
-  id SERIAL PRIMARY KEY,
-  name TEXT,
-  description TEXT,
-  weight REAL,
-  price REAL,
-  image TEXT,
-  image_blob BYTEA
-);
+--CREATE TABLE IF NOT EXISTS products (
+--  id SERIAL PRIMARY KEY,
+--  name TEXT,
+--  description TEXT,
+--  weight REAL,
+--  price REAL,
+--  image TEXT,
+--  image_blob BYTEA
+--);
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`product_categories`
@@ -58,37 +58,37 @@ CREATE TABLE IF NOT EXISTS product_categories (
 -- -------------------------------------------------------
 -- Table `farmfood`.`cities`
 -- -------------------------------------------------------
-CREATE TABLE IF NOT EXISTS cities (
-  id SERIAL PRIMARY KEY,
-  name TEXT,
-  description TEXT
-);
+--CREATE TABLE IF NOT EXISTS cities (
+--  id SERIAL PRIMARY KEY,
+--  name TEXT,
+--  description TEXT
+--);
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`contacts`
 -- -------------------------------------------------------
-CREATE TABLE IF NOT EXISTS contacts (
-  id SERIAL PRIMARY KEY,
-  name TEXT,
-  phone TEXT,
-  email TEXT,
-  site TEXT,
-  instagram TEXT,
-  viber TEXT,
-  whatsapp TEXT,
-  telegram TEXT
-);
+--CREATE TABLE IF NOT EXISTS contacts (
+--  id SERIAL PRIMARY KEY,
+--  name TEXT,
+--  phone TEXT,
+--  email TEXT,
+--  site TEXT,
+--  instagram TEXT,
+--  viber TEXT,
+--  whatsapp TEXT,
+--  telegram TEXT
+--);
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`sellers`
 -- -------------------------------------------------------
-CREATE TABLE IF NOT EXISTS sellers (
-  id SERIAL PRIMARY KEY,
-  name TEXT,
-  description TEXT,
-  grade INTEGER,
-  user_id BIGINT
-);
+--CREATE TABLE IF NOT EXISTS sellers (
+--  id SERIAL PRIMARY KEY,
+--  name TEXT,
+--  description TEXT,
+--  grade INTEGER,
+--  user_id BIGINT
+--);
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`seller_categories`
@@ -139,10 +139,8 @@ CREATE TABLE IF NOT EXISTS seller_cities (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
-  login TEXT,
   password TEXT,
-  firstname TEXT,
-  lastname TEXT,
+  userName TEXT,
   email TEXT UNIQUE NOT NULL,
   image TEXT,
   image_blob BYTEA
