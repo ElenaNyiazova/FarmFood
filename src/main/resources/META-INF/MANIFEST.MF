@@ -1,5 +1,3 @@
-[20:30] Viktor Hryshcnehko
 Manifest-Version: 1.0
-Created-By: <JDK Version> (Oracle Corporation)
-Main-Class: testpackage.Test
+Main-Class: com.gpec.FarmFood.FarmFoodApplication
 
