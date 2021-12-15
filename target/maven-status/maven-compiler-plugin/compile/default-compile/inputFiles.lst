@@ -4,6 +4,7 @@ C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\repositorie
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\FarmFoodApplication.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\rest\UserDTO.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\repositories\CategoriesRepository.java
+C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\repositories\RoleRepository.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\rest\SellerDTO.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\Seller.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\Role.java
@@ -20,6 +21,7 @@ C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\controllers
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\User.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\configs\WebConfiguration.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\configs\MvcConfig.java
+C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\Contact.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\controllers\HomePageController.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\controllers\StaticPageController.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\repositories\ProductsRepository.java
