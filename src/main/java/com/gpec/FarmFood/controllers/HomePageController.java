@@ -2,6 +2,7 @@ package com.gpec.FarmFood.controllers;
 
 import com.google.gson.Gson;
 import com.gpec.FarmFood.model.db.Seller;
+import com.gpec.FarmFood.repositories.RoleRepository;
 import com.gpec.FarmFood.repositories.SellerRepository;
 import com.gpec.FarmFood.servises.SellerServises;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class HomePageController {
     private SellerServises sellerServises;
 
     @Autowired
-    SellerRepository sellerRepository;
+    com.gpec.FarmFood.repositories.RoleRepository RoleRepository;
 
 //    @Autowired
 //    public HomePageController(SellerServises sellerServises) {
@@ -42,7 +43,7 @@ public class HomePageController {
 //
 //        return json;
 //        return city;
-        return sellerRepository.findAll().toString();
+        return RoleRepository.findAll().toString();
     }
 //    @GetMapping(value = API_SELLER)
 //    public String getSellerById(@PathVariable(name = "seller_id") Long sellerId){
