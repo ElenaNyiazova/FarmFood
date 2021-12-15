@@ -44,11 +44,12 @@ public class User implements UserDetails {
 
     private List<Long> favoriteSellers;
 
-    @ManyToMany(mappedBy = "sellers")
-    @JoinTable(name = "users_roles", //the table that connects them
-            joinColumns = @JoinColumn(name = "id"),//todo rename id ?
-            inverseJoinColumns = @JoinColumn(name = "id"))//todo rename id ?
-    private List<Long> userReviewsIds;
+    @ManyToMany//(mappedBy = "id")
+    @JoinTable(name = "users_roles")
+//    @JoinTable(name = "users_roles", //the table that connects them
+//            joinColumns = @JoinColumn(name = "id"),//todo rename id ?
+//            inverseJoinColumns = @JoinColumn(name = "id"))//todo rename id ?
+    private List<Reviews> userReviews;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

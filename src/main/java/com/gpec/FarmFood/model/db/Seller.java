@@ -14,7 +14,7 @@ import java.util.List;
 public class Seller {
 
     @Id
-    @Column(name="id", insertable = false, updatable = false)
+//    @Column(name="id", insertable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -32,6 +32,6 @@ public class Seller {
     private RoleEnum roleEnum;
 
     @Transient
-   // @OneToMany(mappedBy = "user_reviews")
+    @OneToMany(mappedBy = "user_reviews")
     private List<Long> userReviews;
 }

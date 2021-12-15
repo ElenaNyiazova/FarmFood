@@ -14,13 +14,13 @@ public class Products {
 
     @Id
     @Column(name="Id")
-    @ManyToOne
-    @JoinTable(
-            name = "product_categories",
-            joinColumns = @JoinColumn(
-                    name = "role_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(
-                    name = "privilege_id", referencedColumnName = "id"))
+//    @ManyToOne
+//    @JoinTable(
+//            name = "product_categories",
+//            joinColumns = @JoinColumn(
+//                    name = "role_id", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(
+//                    name = "privilege_id", referencedColumnName = "id"))
 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
