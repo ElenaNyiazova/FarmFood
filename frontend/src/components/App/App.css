@@ -4,3 +4,9 @@ body {
 .main_container {
   padding: 0;
 }
+
+@media only screen and (max-width: 1400px) {
+  body {
+    font-size: 13.5px;
+  }
+}

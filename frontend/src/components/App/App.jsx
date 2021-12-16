@@ -55,11 +55,12 @@ export const App = () => {
         <LocationModal
           show={showLocationModal}
           handleClose={handleCloseLocationModal}
+          handleLogin={handleLoginClick}
         />
         <LoginModal
           show={showLoginForm}
           handleClose={handleCloseLoginForm}
-          handleSubmit={handleLoginSubmit}
+          handleLoginSubmit={handleLoginSubmit}
         />
         <Header
           handleLoginClick={handleLoginClick}

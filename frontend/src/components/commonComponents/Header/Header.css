@@ -25,9 +25,10 @@
   font-family: 'TTNorms';
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   color: white;
+  letter-spacing: 0.01rem;
 
   /* outline: 1px yellow solid; */
 }
@@ -54,4 +55,11 @@
 .nav-link:focus,
 .nav-link:hover {
   color: #06717a;
+}
+
+@media only screen and (max-width: 1400px) {
+  .header__txt {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
 }

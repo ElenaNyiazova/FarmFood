@@ -63,7 +63,7 @@ export const Header = ({
                 </>
               )}
             </Navbar.Text>
-            <CitiesDropdown />
+            <CitiesDropdown theme={null} />
           </Navbar.Collapse>
         </Navbar>
       </Container>
