@@ -11,7 +11,8 @@ import seller01 from './seller01.png';
 
 export const SellerCard = ({ id, filter }) => {
   const sellerInfo = useSelector((state) => selectSellerById(state, id));
-  const { seller_name, seller_categories, seller_products } = sellerInfo;
+  const { seller_name, seller_categories, seller_products, seller_grade } =
+    sellerInfo;
 
   const isVisible =
     filter === CATEGORIES.ALL
@@ -45,7 +46,9 @@ export const SellerCard = ({ id, filter }) => {
             })}
           </ul>
           <div className="sellerCard__bottom">
-            <span className="sellerCard__rating">4.8 (15)</span>
+            <span className="sellerCard__rating">
+              {seller_grade} <span className="sellerCard_review">(15)</span>
+            </span>
             <button className="sellerCard__follow">Follow</button>
           </div>
         </Card.Body>

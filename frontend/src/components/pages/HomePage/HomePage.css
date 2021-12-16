@@ -1,5 +1,6 @@
 .home__container {
   padding-top: 1.5rem;
+  position: relative;
 }
 
 .home__left {
@@ -13,7 +14,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .home__subheader {

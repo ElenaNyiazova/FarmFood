@@ -11,9 +11,15 @@
   border-radius: 0.8rem;
 
   margin-bottom: 1.5rem;
+  margin-right: 1.6rem;
+}
+
+.sellerCard:nth-child(3n) {
+  margin-right: 0;
 }
 
 .sellerCard__body {
+  cursor: pointer;
   position: relative;
   /* outline: 1px red solid; */
   padding: 0.8rem;
@@ -83,6 +89,11 @@
   background-image: url('./rating_icon.svg');
   left: 0;
   top: -0.2rem;
+}
+
+.sellerCard_review {
+  font-weight: normal;
+  font-size: 0.9rem;
 }
 
 .sellerCard__follow {

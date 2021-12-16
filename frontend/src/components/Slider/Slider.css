@@ -74,6 +74,11 @@
 .carousel-control-prev:hover {
   opacity: 0;
   filter: alpha(opacity=0);
+  pointer-events: none;
+}
+
+.carousel-control-prev--disabled {
+  pointer-events: none;
 }
 
 /* .carousel-control-next,
