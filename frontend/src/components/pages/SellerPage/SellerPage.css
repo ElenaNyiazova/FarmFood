@@ -109,6 +109,16 @@
   align-items: center;
   padding: 12px 24px;
   margin: 40px 0;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+/* .seller-search .search__container {
+  margin-right: 0;
+} */
+
+.seller-search .search__input {
+  border: 1px solid #64797b;
 }
 
 .seller-dropdown-item,
