@@ -54,6 +54,7 @@ export const App = () => {
         <LocationModal
           show={showLocationModal}
           handleClose={handleCloseLocationModal}
+          handleLogin={handleLoginClick}
         />
         <LoginModal
           show={showLoginForm}
