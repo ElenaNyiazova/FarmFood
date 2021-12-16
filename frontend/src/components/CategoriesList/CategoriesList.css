@@ -187,3 +187,9 @@
   font-size: 1rem;
   line-height: 1.2rem;
 }
+
+@media only screen and (max-width: 1400px) {
+  .categories__list {
+    width: 16.5rem;
+  }
+}
