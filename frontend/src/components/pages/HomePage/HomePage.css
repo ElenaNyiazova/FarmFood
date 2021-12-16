@@ -18,7 +18,7 @@
 }
 
 .home__subheader {
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 0.8rem;
   margin-bottom: 1.5rem;
 
@@ -28,6 +28,6 @@
   font-family: 'TTNorms';
   font-style: normal;
   font-weight: bold;
-  font-size: 42px;
-  line-height: 50px;
+  font-size: 2rem;
+  line-height: 2rem;
 }

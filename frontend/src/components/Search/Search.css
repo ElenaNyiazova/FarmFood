@@ -1,6 +1,43 @@
-.search-container {
+.search__container {
+  width: 20rem;
   position: relative;
+  padding: 0;
+  margin-right: 20rem;
   /* outline: 1px green solid; */
+}
+
+.search__form {
+  position: relative;
+  /* outline: 1px yellow solid; */
+}
+
+.search__input {
+  background-color: white;
+  border-radius: 2rem;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  padding-right: 2.5rem;
+
+  color: #64797b;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.01rem;
+}
+
+.search__button {
+  position: absolute;
+  right: 1rem;
+  top: 0.6rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0;
+
+  background-color: white;
+  background-image: url(./search_icon.svg);
+  font-size: 0;
 }
 
 .suggestions {
@@ -8,13 +45,14 @@
   z-index: 100;
   left: 1rem;
   top: 2.4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
+  padding: 0;
+  border-radius: 0 0 0.8rem 0.8rem;
+  /* padding-top: 1rem;
+  padding-bottom: 1rem; */
+  padding-left: 1rem;
 
   width: 90%;
-  background: rgba(255, 255, 255, 0.8);
-
+  background-color: white;
   /* outline: 1px green solid; */
 }
 
@@ -23,6 +61,8 @@
 }
 
 .suggestion {
+  list-style: none;
+  padding: 0.5rem 0;
   cursor: pointer;
 }
 

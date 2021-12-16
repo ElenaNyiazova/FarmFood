@@ -4,6 +4,7 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { Container, Navbar } from 'react-bootstrap';
 import { ROUTES } from '../../../consts/consts';
 import { CitiesDropdown } from '../CitiesDropdown/CitiesDropdown';
+import { Search } from '../../Search/Search';
 
 import './Header.css';
 import logo from './farm-food_logo.svg';
@@ -21,16 +22,21 @@ export const Header = ({
   const handleUsernameClick = () => {
     navigate(generatePath(ROUTES.PROFILE));
   };
+  const handleSearch = (productFromSearch) => {
+    console.log(productFromSearch);
+    navigate(generatePath(ROUTES.PRODUCTS, { query: productFromSearch }));
+  };
 
   return (
     <Container fluid className="header">
       <Container>
         <Navbar className="header__navbar">
-          <Navbar.Brand style={{ cursor: 'pointer' }} onClick={handleLogoClick}>
+          <Navbar.Brand onClick={handleLogoClick}>
             <img src={logo} alt="Logo" className="header__logo" />;
           </Navbar.Brand>
           <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
+          <Navbar.Collapse className="justify-content-end  header__navbar-collapse">
+            <Search handleSearch={handleSearch} />
             <Navbar.Text>
               {!isLoggedIn && (
                 <span

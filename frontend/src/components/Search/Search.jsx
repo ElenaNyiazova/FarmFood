@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 import { selectAllAvailableProducts } from '../../store/sellersSlice';
 import './Search.css';
 
-export const Search = ({ handleSearch, setSearchResult }) => {
+export const Search = ({ handleSearch }) => {
   const [searchInput, setSearchInput] = useState('');
   const allProducts = useSelector((state) => selectAllAvailableProducts(state));
   const [suggestions, setSuggestions] = useState(allProducts);
@@ -15,9 +15,7 @@ export const Search = ({ handleSearch, setSearchResult }) => {
   const handleInputChange = (e) => {
     const newVal = e.target.value;
     suggestionsBlock.current.className = 'suggestions';
-
     setSearchInput(newVal);
-    setSearchResult(newVal);
     newVal === ''
       ? setSuggestions(allProducts)
       : setSuggestions(
@@ -25,32 +23,42 @@ export const Search = ({ handleSearch, setSearchResult }) => {
             item.toLowerCase().includes(newVal.toLowerCase())
           )
         );
-    handleSearch(newVal.toLowerCase());
   };
 
   const handleItemClick = (e, product) => {
-    setSearchResult(product);
     setSearchInput('');
     setSuggestions([]);
     handleSearch(product);
-    suggestionsBlock.current.className = 'suggestions  suggestions--hidden';
   };
 
-  const handleBlur = (e) => {
+  const handleBlur = (e) => {};
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(searchInput.toLowerCase());
     setSearchInput('');
-    suggestionsBlock.current.className = 'suggestions  suggestions--hidden';
+    setSuggestions([]);
   };
 
   return (
-    <div className="search-container">
-      <Form.Control
-        type="text"
-        placeholder="Search by product name"
-        style={{ margin: '1rem', marginLeft: '0' }}
-        value={searchInput}
-        onChange={(e) => handleInputChange(e)}
+    <div className="search__container">
+      <Form
+        className="search__form"
+        onSubmit={handleSearchSubmit}
         onBlur={(e) => handleBlur(e)}
-      />
+      >
+        <Form.Control
+          type="text"
+          placeholder="Search by product name"
+          className="search__input"
+          value={searchInput}
+          onChange={(e) => handleInputChange(e)}
+        />
+        <button type="submit" className="search__button">
+          Submit
+        </button>
+      </Form>
+
       <ul ref={suggestionsBlock} className="suggestions  suggestions--hidden">
         {suggestions.map((product) => {
           return (
@@ -59,7 +67,7 @@ export const Search = ({ handleSearch, setSearchResult }) => {
               onMouseDown={(e) => handleItemClick(e, product)}
               className="suggestion"
             >
-              {product}
+              {product.toLowerCase()}
             </li>
           );
         })}

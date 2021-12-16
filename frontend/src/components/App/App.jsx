@@ -14,8 +14,10 @@ import { HomePage } from '../pages/HomePage/HomePage';
 import { SellerPage } from '../pages/SellerPage';
 import { UserProfilePage } from '../pages/UserProfilePage';
 import { ProfileUpdatePage } from '../pages/ProfileUpdatePage';
+import { ProductsPage } from '../pages/ProductsPage/ProductsPage';
 
 import './App.css';
+import productsSlice from '../../store/productsSlice';
 
 export const App = () => {
   const showLocationModal = useSelector(
@@ -49,10 +51,10 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Container fluid className="main_container">
-        {/* <LocationModal
+        <LocationModal
           show={showLocationModal}
           handleClose={handleCloseLocationModal}
-        /> */}
+        />
         <LoginModal
           show={showLoginForm}
           handleClose={handleCloseLoginForm}
@@ -68,6 +70,7 @@ export const App = () => {
           <Routes>
             <Route exact path={ROUTES.HOME} element={<HomePage />} />
             <Route exact path={ROUTES.SELLER} element={<SellerPage />} />
+            <Route exact path={ROUTES.PRODUCTS} element={<ProductsPage />} />
             <Route
               exact
               path={ROUTES.PROFILE}

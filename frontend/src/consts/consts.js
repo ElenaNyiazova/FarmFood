@@ -18,6 +18,7 @@ export const FRUITS = {};
 export const ROUTES = {
   HOME: '/',
   SELLER: '/seller/:id',
+  PRODUCTS: '/product/:query',
   PROFILE: '/profile',
   UPDATE_PROFILE: '/profile-update',
 };

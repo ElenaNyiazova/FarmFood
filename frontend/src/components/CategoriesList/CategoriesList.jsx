@@ -1,11 +1,15 @@
 import React from 'react';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { ListGroup } from 'react-bootstrap';
 
+import { ROUTES } from '../../consts/consts';
 import { CATEGORIES } from '../../consts/consts';
 
 import './CategoriesList.css';
 
 export const CategoriesList = () => {
+  const navigate = useNavigate();
+
   const categories = Object.values(CATEGORIES);
 
   const collapseAll = () => {
@@ -29,7 +33,6 @@ export const CategoriesList = () => {
       const sublist = document.querySelector(sublistClassName);
       sublist.classList.add('categories__sublist--visible');
 
-      // turn off sliders previous button
       const sliderPrevBtn = document.querySelector('.carousel-control-prev');
       if (sliderPrevBtn) {
         sliderPrevBtn.classList.add('carousel-control-prev--disabled');
@@ -42,7 +45,8 @@ export const CategoriesList = () => {
   };
 
   const handleProductClick = (product) => {
-    console.log(product);
+    // console.log(product);
+    navigate(generatePath(ROUTES.PRODUCTS, { query: product.toLowerCase() }));
   };
 
   return (
@@ -81,28 +85,28 @@ export const CategoriesList = () => {
                 <li
                   className="categories__subitem"
                   key={'01'}
-                  onMouseDown={() => handleProductClick('product_name')}
+                  onMouseDown={() => handleProductClick('Apple')}
                 >
                   Apple
                 </li>
                 <li
                   className="categories__subitem"
                   key={'02'}
-                  onMouseDown={() => handleProductClick('product_name')}
+                  onMouseDown={() => handleProductClick('Pear')}
                 >
                   Pear
                 </li>
                 <li
                   className="categories__subitem"
                   key={'03'}
-                  onMouseDown={() => handleProductClick('product_name')}
+                  onMouseDown={() => handleProductClick('Plum')}
                 >
                   Plum
                 </li>
                 <li
                   className="categories__subitem"
                   key={'04'}
-                  onMouseDown={() => handleProductClick('product_name')}
+                  onMouseDown={() => handleProductClick('Peach')}
                 >
                   Peach
                 </li>

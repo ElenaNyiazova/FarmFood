@@ -7,10 +7,15 @@
   padding: 0;
 }
 
+.header__navbar-collapse {
+  /* outline: 1px yellow solid; */
+}
+
 .header__logo {
   margin: 0;
   width: 5.3rem;
   height: 5.1rem;
+  cursor: pointer;
 }
 
 .header__txt {
