@@ -1,0 +1,57 @@
+.header {
+  background-color: #043b40;
+  padding: 0;
+}
+
+.header__navbar {
+  padding: 0;
+}
+
+.header__navbar-collapse {
+  /* outline: 1px yellow solid; */
+}
+
+.header__logo {
+  margin: 0;
+  width: 5.3rem;
+  height: 5.1rem;
+  cursor: pointer;
+}
+
+.header__txt {
+  cursor: pointer;
+  margin-right: 2rem;
+
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: white;
+
+  /* outline: 1px yellow solid; */
+}
+
+.header__txt:hover {
+  color: #06717a;
+}
+
+.header__txt--profile {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.header__txt--profile::before {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('./login_icon.svg');
+  left: 0;
+  top: 0;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: #06717a;
+}

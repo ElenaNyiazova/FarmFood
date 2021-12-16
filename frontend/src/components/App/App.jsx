@@ -7,13 +7,18 @@ import { LocationModal } from '../LocationModal/LocationModal';
 import { showLocationModalToggled } from '../../store/citiesSlice';
 import { logInToggle } from '../../store/userSlice';
 import { LoginModal } from '../LoginModal/LoginModal';
-import { Header } from '../commonComponents/Header';
+import { Header } from '../commonComponents/Header/Header';
 
 import { ROUTES } from '../../consts/consts';
-import { HomePage } from '../pages/HomePage';
+import { HomePage } from '../pages/HomePage/HomePage';
 import { SellerPage } from '../pages/SellerPage/SellerPage';
+
 import { UserProfilePage } from '../pages/UserProfilePage';
 import { ProfileUpdatePage } from '../pages/ProfileUpdatePage';
+import { ProductsPage } from '../pages/ProductsPage/ProductsPage';
+
+import './App.css';
+import productsSlice from '../../store/productsSlice';
 
 export const App = () => {
   const showLocationModal = useSelector(
@@ -46,7 +51,7 @@ export const App = () => {
 
   return (
     <BrowserRouter>
-      <Container fluid>
+      <Container fluid className="main_container">
         <LocationModal
           show={showLocationModal}
           handleClose={handleCloseLocationModal}
@@ -62,22 +67,25 @@ export const App = () => {
           handleLogOutClick={handleLogOutClick}
           userName={loggedInUser.user_name}
         />
-        <Routes>
-          <Route exact path={ROUTES.HOME} element={<HomePage />} />
-          <Route exact path={ROUTES.SELLER} element={<SellerPage />} />
-          <Route
-            exact
-            path={ROUTES.PROFILE}
-            element={
-              isLoggedIn ? <UserProfilePage /> : <Navigate to={ROUTES.HOME} />
-            }
-          />
-          <Route
-            exact
-            path={ROUTES.UPDATE_PROFILE}
-            element={<ProfileUpdatePage />}
-          />
-        </Routes>
+        <Container>
+          <Routes>
+            <Route exact path={ROUTES.HOME} element={<HomePage />} />
+            <Route exact path={ROUTES.SELLER} element={<SellerPage />} />
+            <Route exact path={ROUTES.PRODUCTS} element={<ProductsPage />} />
+            <Route
+              exact
+              path={ROUTES.PROFILE}
+              element={
+                isLoggedIn ? <UserProfilePage /> : <Navigate to={ROUTES.HOME} />
+              }
+            />
+            <Route
+              exact
+              path={ROUTES.UPDATE_PROFILE}
+              element={<ProfileUpdatePage />}
+            />
+          </Routes>
+        </Container>
       </Container>
     </BrowserRouter>
   );

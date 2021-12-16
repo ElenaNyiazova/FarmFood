@@ -1,0 +1,124 @@
+.sellerCard {
+  flex-grow: 0; /* do not grow   - initial value: 0 */
+  flex-shrink: 0; /* do not shrink - initial value: 1 */
+  flex-basis: 19em; /* width/height  - initial value: auto */
+
+  width: 19rem;
+  height: 28rem;
+  cursor: 'pointer';
+  border: 0;
+  background: none;
+  border-radius: 0.8rem;
+
+  margin-bottom: 1.5rem;
+  margin-right: 1.6rem;
+}
+
+.sellerCard:nth-child(3n) {
+  margin-right: 0;
+}
+
+.sellerCard__body {
+  cursor: pointer;
+  position: relative;
+  /* outline: 1px red solid; */
+  padding: 0.8rem;
+  background-color: white;
+  border-radius: 0.8rem;
+}
+
+.sellerCard__img {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.sellerCard__name {
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.05rem;
+}
+
+.sellerCard__categories {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  /* outline: 1px red solid; */
+}
+
+.sellerCard__category {
+  margin-right: 1rem;
+
+  list-style: none;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+}
+
+.sellerCard__bottom {
+  position: absolute;
+  width: 17.3rem;
+  bottom: 0.8rem;
+  left: 0.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* outline: 1px red solid; */
+}
+
+.sellerCard__rating {
+  padding-left: 1.8rem;
+  position: relative;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+.sellerCard__rating::before {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('./rating_icon.svg');
+  left: 0;
+  top: -0.2rem;
+}
+
+.sellerCard_review {
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.sellerCard__follow {
+  position: relative;
+  background: none;
+  border: 2px solid #000000;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  padding-left: 2.4rem;
+
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+.sellerCard__follow::before {
+  content: '';
+  position: absolute;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-image: url('./wish_icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0.6rem;
+  top: 0.5rem;
+}

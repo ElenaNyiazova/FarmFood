@@ -2,7 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavDropdown } from 'react-bootstrap';
 
-import { selectedCityChanged } from '../../store/citiesSlice';
+import { selectedCityChanged } from '../../../store/citiesSlice';
+import './CitiesDropdown.css';
 
 export const CitiesDropdown = () => {
   const selectedCity = useSelector((state) => state.cities.selectedCity);
@@ -28,7 +29,7 @@ export const CitiesDropdown = () => {
     <NavDropdown
       title={selectedCity}
       id="basic-nav-dropdown"
-      style={{ marginRight: '1rem' }}
+      className="cities-dropdowm__txt"
     >
       {navDropdownItems}
     </NavDropdown>
