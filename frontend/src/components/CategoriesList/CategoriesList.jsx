@@ -55,7 +55,7 @@ export const CategoriesList = () => {
         let classSuffix = category.split(' ')[0].toLowerCase();
         classSuffix = classSuffix === "today's" ? 'deals' : classSuffix;
         const collapsed =
-          category === CATEGORIES.FRUITS || category === CATEGORIES.VEGETABLES
+          category === CATEGORIES.DAIRY_EGGS
             ? 'categories__item--collapsed'
             : '';
         const classes = `categories__item  categories__item--${classSuffix}  ${collapsed}`;
@@ -85,30 +85,16 @@ export const CategoriesList = () => {
                 <li
                   className="categories__subitem"
                   key={'01'}
-                  onMouseDown={() => handleProductClick('Apple')}
+                  onMouseDown={() => handleProductClick('Chicken eggs')}
                 >
-                  Apple
+                  Chicken eggs
                 </li>
                 <li
                   className="categories__subitem"
                   key={'02'}
-                  onMouseDown={() => handleProductClick('Pear')}
+                  onMouseDown={() => handleProductClick('Quail eggs')}
                 >
-                  Pear
-                </li>
-                <li
-                  className="categories__subitem"
-                  key={'03'}
-                  onMouseDown={() => handleProductClick('Plum')}
-                >
-                  Plum
-                </li>
-                <li
-                  className="categories__subitem"
-                  key={'04'}
-                  onMouseDown={() => handleProductClick('Peach')}
-                >
-                  Peach
+                  Quail eggs
                 </li>
               </ul>
             )}

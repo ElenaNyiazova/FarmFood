@@ -21,6 +21,7 @@ export const ROUTES = {
   PRODUCTS: '/product/:query',
   PROFILE: '/profile',
   UPDATE_PROFILE: '/profile-update',
+  SEARCH_FAIL: '/search-fail',
 };
 
 export const CITIES = {
@@ -30,3 +31,7 @@ export const CITIES = {
   SPB: 'Saint Petersburg',
   YEREVAN: 'Yerevan',
 };
+
+// DAIRY_EGGS = {
+
+// }

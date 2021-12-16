@@ -20,49 +20,67 @@ import whatsup from './whatsup.svg';
 
 export const SellerPage = () => {
   let { id } = useParams();
-  console.log(id);
   const sellerInfo = useSelector((state) => selectSellerById(state, id));
   const sellersProducts = useSelector((state) =>
     selectProductsBySellerId(state, id)
   );
+  // console.log(sellersProducts);
+
+  const renderedProducts = sellersProducts.map((product) => {
+    return (
+      <Col
+        xl="3"
+        className="mt-3"
+        key={`${product.product_name}-${product.seller_id}`}
+      >
+        <ProductCard
+          name={product.product_name}
+          weight={product.product_weight}
+          price={product.product_price}
+          image={product.product_image}
+          sellerId={product.seller_id}
+          isSeller={false}
+        />
+      </Col>
+    );
+  });
+
   const {
     seller_name,
     seller_description,
-    seller_buy_methods,
     seller_contacts: {
       seller_phone,
       seller_site,
       seller_instagram,
       seller_viber,
     },
-    seller_products,
+    seller_grade,
   } = sellerInfo;
 
-  const [searchResult, setSearchResult] = useState('');
-  const [filter, setFilter] = useState(CATEGORIES.ALL);
+  // const [searchResult, setSearchResult] = useState('');
+  // const [filter, setFilter] = useState(CATEGORIES.ALL);
 
-  const handleSearch = (productFromSearch) => {
-    setFilter(productFromSearch);
-  };
+  // const handleSearch = (productFromSearch) => {
+  //   setFilter(productFromSearch);
+  // };
 
   return (
     <Container className="mt-5">
       <div className="d-flex seller-block">
         <div>
-          <Image src="https://via.placeholder.com/381x232" />
+          <Image src={`../images/sellers/seller${id}.png`} />
         </div>
         <div className="ps-4 seller-info">
           <div className="d-flex align-items-center ">
-            {/* {seller_name} */}
             <div>
-              <span className="seller-name">Andej Klimovich</span>
+              <span className="seller-name">{seller_name}</span>
             </div>
             <div className="d-flex align-items-center ms-4">
               <div>
                 <Image src={star} />
               </div>
               <div className="d-flex align-items-center">
-                <span className="seller-rating ms-2">4.7</span>
+                <span className="seller-rating ms-2">{seller_grade}</span>
                 <span className="seller-reviews ms-2">(36)</span>
                 <span className="seller-reviews-link ms-2">Reviews</span>
               </div>
@@ -102,7 +120,7 @@ export const SellerPage = () => {
           <div className="seller-contacts mt-4">
             <span className="d-block seller-contacts-text">Phone number</span>
             <span className="d-block seller-contacts-number mt-1">
-              +380 96 214-37-37
+              {seller_phone}
             </span>
           </div>
           <div className="seller-social-media mt-4">
@@ -118,7 +136,7 @@ export const SellerPage = () => {
       </div>
       <div className="seller-search">
         <span className="seller-products-number">15 products</span>
-        <Search handleSearch={handleSearch} setSearchResult={setSearchResult} />
+        {/* <Search handleSearch={handleSearch} setSearchResult={setSearchResult} /> */}
         <Dropdown className="seller-dropdown">
           <Dropdown.Toggle
             className="seller-dropdown-button"
@@ -138,7 +156,8 @@ export const SellerPage = () => {
         </Dropdown>
       </div>
       <Row>
-        <Col xl="3" className="mt-3">
+        {renderedProducts}
+        {/* <Col xl="3" className="mt-3">
           <ProductCard name="Apple Gala" weight="1kg" price="2.5" />
         </Col>
         <Col xl="3" className="mt-3">
@@ -152,7 +171,7 @@ export const SellerPage = () => {
         </Col>
         <Col xl="3" className="mt-3">
           <ProductCard name="Apple Gala" weight="1kg" price="2.5" />
-        </Col>
+        </Col> */}
       </Row>
     </Container>
   );
