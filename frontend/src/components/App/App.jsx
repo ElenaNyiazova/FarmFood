@@ -11,7 +11,7 @@ import { Header } from '../commonComponents/Header';
 
 import { ROUTES } from '../../consts/consts';
 import { HomePage } from '../pages/HomePage';
-import { SellerPage } from '../pages/SellerPage';
+import { SellerPage } from '../pages/SellerPage/SellerPage';
 import { UserProfilePage } from '../pages/UserProfilePage';
 import { ProfileUpdatePage } from '../pages/ProfileUpdatePage';
 
