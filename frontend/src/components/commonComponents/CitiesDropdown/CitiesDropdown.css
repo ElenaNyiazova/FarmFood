@@ -1,0 +1,39 @@
+.cities-dropdowm__txt {
+  padding-left: 0.8rem;
+
+  cursor: pointer;
+  color: white;
+
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+
+  /* outline: 1px yellow solid; */
+}
+
+.cities-dropdowm__txt::before {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('./location_icon.svg');
+  left: 0;
+  top: 0.4rem;
+}
+
+.cities-dropdowm__txt a {
+  color: white;
+}
+
+.cities-dropdowm__txt a:link,
+.cities-dropdowm__txt a:hover,
+.cities-dropdowm__txt a:visited,
+.cities-dropdowm__txt a:active {
+  color: #06717a;
+}
+
+.cities-dropdowm__txt .dropdown-item {
+  color: #043b40;
+}

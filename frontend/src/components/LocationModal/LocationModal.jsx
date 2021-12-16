@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { CitiesDropdown } from '../commonComponents/CitiesDropdown';
+import { CitiesDropdown } from '../commonComponents/CitiesDropdown/CitiesDropdown';
 
 export const LocationModal = ({ show, handleClose }) => {
   return (
