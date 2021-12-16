@@ -4,9 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>FarmFood</artifactId>
+    <groupId>com.grec.FarmFood</groupId>
+    <artifactId>FarmFoodApplication</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+<!--    <distributionManagement>-->
+<!--    <repository>-->
+<!--        <id>dev</id>-->
+<!--        <name>Local repository</name>-->
+<!--        <url>file://${user.home}/.m2/repository</url>-->
+<!--    </repository>-->
+<!--    </distributionManagement>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,7 +30,30 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>corp1</id>
+            <name>decvgj4hiok1gh</name>
+            <url>jdbc:postgresql://ec2-52-30-133-191.eu-west-1.compute.amazonaws.com:5432/decvgj4hiok1gh?sslmode=require</url>
+            <layout>default</layout>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.0.12.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>

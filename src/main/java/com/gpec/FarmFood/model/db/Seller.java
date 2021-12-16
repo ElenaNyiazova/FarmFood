@@ -14,21 +14,18 @@ import java.util.List;
 public class Seller {
 
     @Id
-    @Column(name="user_type", insertable = false, updatable = false)
+//    @Column(name="id", insertable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 //    @Column(nullable = false)
     private String name;
-
-//    @Column(nullable = false)
-    private String email;
-
-//    @Column(nullable = false)
-    private String password;
+    private String description;
+    int grade;
+    Long user_id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "city.id")
     private City city;
 
 //    @Column(nullable = false)

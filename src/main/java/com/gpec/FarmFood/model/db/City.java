@@ -19,21 +19,14 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-//    @NotNull
     String city;
 
-    @OneToMany(mappedBy = "report", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    String description;
+
+    //@OneToMany(mappedBy = "report", cascade = CascadeType.ALL)
     List<Seller> localSellersByCity(String city){
-       return SellerServises.getLocalSellers(city);
+       return null; //SellerServises.getLocalSellers(city);
     }
 
 //    @JoinColumn(name = "city", nullable = false)
-//    ALLWORLD,
-
-//    MINSK,
-//    KEIV,
-//    SAINT_PETERBURG,
-//    YEREVAN,
-//    ALMATY
-
 }

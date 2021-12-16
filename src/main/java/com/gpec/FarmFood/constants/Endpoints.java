@@ -17,7 +17,7 @@ public interface Endpoints {
 
     String PAGE_ERROR = "/error";
 
-    String HOME_PAGE = "/home";
+    String HOME = "/home";
 
     String PAGE_LOGIN = "/login";
 
@@ -48,6 +48,8 @@ public interface Endpoints {
     String API_SELLERS = API_PREFIX + "/sellers";
 
     String API_HOME = API_SELLERS + "/{city}";
+
+    String API_SELLER = API_SELLERS + ID;
 
     /**
      * User management

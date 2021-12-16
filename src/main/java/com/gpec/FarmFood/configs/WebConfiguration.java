@@ -1,5 +1,6 @@
 package com.gpec.FarmFood.configs;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.context.ContextLoaderListener;
@@ -13,6 +14,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+@Configuration
 @EnableSpringDataWebSupport
 public class WebConfiguration extends AbstractAnnotationConfigDispatcherServletInitializer {
 

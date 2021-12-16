@@ -3,8 +3,8 @@
 -- -------------------------------------------------------
 
 -- DROP DATABASE IF EXISTS farmfood;
--- CREATE DATABASE farmfood WITH OWNER = postgres ENCODING = 'UTF8' TABLESPACE = pg_default CONNECTION LIMIT = -1;
---/c farmfood;
+ CREATE DATABASE farmfood WITH OWNER = postgres ENCODING = 'UTF8' TABLESPACE = pg_default CONNECTION LIMIT = -1;
+/c farmfood;
 
 -- DROP TABLE IF EXISTS categories CASCADE;
 -- DROP TABLE IF EXISTS products CASCADE;
@@ -139,10 +139,8 @@ CREATE TABLE IF NOT EXISTS seller_cities (
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
-  login TEXT,
   password TEXT,
-  firstname TEXT,
-  lastname TEXT,
+  userName TEXT,
   email TEXT UNIQUE NOT NULL,
   image TEXT,
   image_blob BYTEA
