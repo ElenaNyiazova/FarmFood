@@ -814,6 +814,10 @@ INSERT INTO sellers (id, name, description, grade, user_id) VALUES
 -- -------------------------------------------------------
 INSERT INTO seller_contacts (seller_id, contact_id) VALUES
  ((SELECT id FROM contacts WHERE name = 'Seller 1'), (SELECT id FROM sellers WHERE name = 'ECO FOOD'));
+INSERT INTO seller_contacts (seller_id, contact_id) VALUES
+ ((SELECT id FROM contacts WHERE name = 'Seller 2'), (SELECT id FROM sellers WHERE name = 'Name Surname'));
+ INSERT INTO seller_contacts (seller_id, contact_id) VALUES
+ ((SELECT id FROM contacts WHERE name = 'Seller 3'), (SELECT id FROM sellers WHERE name = 'Viktar Astapkovich'));
 
 -- -------------------------------------------------------
 -- Seller categories
