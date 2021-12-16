@@ -189,89 +189,272 @@ CREATE TABLE IF NOT EXISTS reviews (
 -- Categories
 -- --------------------------------------------------------------------------------------------
 
--- 1. Eggs
-INSERT INTO categories (id, name) VALUES(DEFAULT, 'Eggs');
--- 2. Milk and dairy products
-INSERT INTO categories (id, name) VALUES(DEFAULT, 'Milk and dairy products');
--- 3. Cheese
-INSERT INTO categories (id, name) VALUES(DEFAULT, 'Cheese');
--- 4. Butter
-INSERT INTO categories (id, name) VALUES(DEFAULT, 'Butter');
--- 5. Meat and meat products
-INSERT INTO categories (id, name) VALUES(DEFAULT, 'Meat and meat products');
--- 6. Vegetables
-INSERT INTO categories (id, name) VALUES(DEFAULT, 'Vegetables');
--- 7. Fruits and berries                                                                                                                     
-INSERT INTO categories (id, name) VALUES(DEFAULT, 'Fruits and berries');
--- 8. Honey                                                                                                                    
+-- 1. Berries
+INSERT INTO categories (id, name) VALUES(DEFAULT, 'Berries');
+-- 2. Dairy_Eggs
+INSERT INTO categories (id, name) VALUES(DEFAULT, 'Dairy_Eggs');
+-- 3. Fish
+INSERT INTO categories (id, name) VALUES(DEFAULT, 'Fish');
+-- 4. Fruits
+INSERT INTO categories (id, name) VALUES(DEFAULT, 'Fruits');
+-- 5. Honey
 INSERT INTO categories (id, name) VALUES(DEFAULT, 'Honey');
--- 9. Mushrooms                                                                                                                
-INSERT INTO categories (id, name) VALUES(DEFAULT, 'Mushrooms');
--- 10. Bakery
+-- 6. Meat
+INSERT INTO categories (id, name) VALUES(DEFAULT, 'Meat');
+-- 7. Vegetables                                                                                                                     
+INSERT INTO categories (id, name) VALUES(DEFAULT, 'Vegetables');
+-- 8. Bakery
 INSERT INTO categories (id, name) VALUES(DEFAULT, 'Bakery');
 
 -- --------------------------------------------------------------------------------------------
 -- Products
 -- --------------------------------------------------------------------------------------------
--- 1. Eggs
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken eggs',              1, 14, 'chicken_eggs.jpg'              );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail eggs',                1, 14, 'quail_eggs.jpg'                );
--- 2. Milk and dairy products
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cow milk',                  1, 14, 'cow_milk.jpg'                  );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Goat milk',                 1, 14, 'goat_milk.jpg'                 );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Fermented baked milk',      1, 14, 'fermented_baked_milk.jpg'      );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Curd',                      1, 14, 'curd.jpg'                      );
--- 3. Cheese
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Circassian cheese',         1, 14, 'circassian_cheese.jpg'         );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Brynza cheese',             1, 14, 'brynza_cheese.jpg'             );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Suluguni cheese',           1, 14, 'suluguni_cheese.jpg'           );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Mozzarella cheese',         1, 14, 'mozzarella_cheese.jpg'         );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Hard-pressed cheese',       1, 14, 'hard-pressed_cheese.jpg'       );
--- 4. Butter
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Butter',                    1, 14, 'butter.jpg'                    );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Melted butter',             1, 14, 'melted_butter.jpg'             );
--- 5. Meat and meat products
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken meat',              1, 14, 'chicken_meat.jpg'              );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail meat',                1, 14, 'quail_meat.jpg'                );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Turkey meat',               1, 14, 'turkey_meat.jpg'               );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Duck meet',                 1, 14, 'duck_meet.jpg'                 );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Rabbit meat',               1, 14, 'rabbit_meat.jpg'               );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pork',                      1, 14, 'pork.jpg'                      );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beef',                      1, 14, 'beef.jpg'                      );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Home-made sausage',         1, 14, 'home_made_sausage.jpg'         );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bacon',                     1, 14, 'bacon.jpg'                     );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lard',                      1, 14, 'lard.jpg'                      );
--- 6. Vegetables
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Grapes',                    1, 14, 'grapes.jpg'                    );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cucumber',                  1, 16, 'cucumber.jpg'                  );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Tomato',                    1, 17, 'tomato.jpg'                    );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Potato',                    1, 18, 'potato.jpg'                    );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carrot',                    1, 19, 'carrot.jpg'                    );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Onion',                     1, 20, 'onion.jpg'                     );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Broccoli',                  1, 21, 'broccoli.jpg'                  );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Garlic',                    1, 22, 'garlic.jpg'                    );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cabbage',                   1, 23, 'cabbage.jpg'                   );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beetroot',                  1, 23, 'beetroot.jpg'                  );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lettuce',                   1, 23, 'lettuce.jpg'                   );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pepper',                    1, 23, 'pepper.jpg'                    );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Radish',                    1, 23, 'radish.jpg'                    );
--- 7. Fruits and berries                                                                                                                     
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Apple',                     1, 8 , 'apple.jpg'                     );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Apricot',                   1, 12, 'apricot.jpg'                   );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pear',                      1, 13, 'pear.jpg'                      );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Plum',                      1, 15, 'plum.jpg'                      );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Grape',                     1, 15, 'grape.jpg'                     );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Raspberry',                 1, 15, 'raspberry.jpg'                 );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Strawberry',                1, 15, 'strawberry.jpg'                );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Blackberry',                1, 15, 'blackberry.jpg'                );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cherry',                    1, 15, 'cherry.jpg'                    );
--- 8. Honey                                                                                                                    
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey in combs',            1, 15, 'honey_in_combs.jpg'            );
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flower honey',              1, 15, 'flower_honey.jpg'              );
--- 9. Mushrooms                                                                                                                
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Champignon',                1, 15, 'champignon.jpg'                );
--- 10. Bakery
-INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Baguette',                  1, 15, 'baguette.jpg'                  );
+-- 1. Berries
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Blackberry_1'     , 1, 1, 'Berries\Blackberry_1.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Blackberry_2'     , 1, 1, 'Berries\Blackberry_2.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Blackberry_3'     , 1, 1, 'Berries\Blackberry_3.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Blackberry_4'     , 1, 1, 'Berries\Blackberry_4.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cherry_1'         , 1, 1, 'Berries\Cherry_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cherry_2'         , 1, 1, 'Berries\Cherry_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cherry_3'         , 1, 1, 'Berries\Cherry_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cherry_4'         , 1, 1, 'Berries\Cherry_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Grape_1'          , 1, 1, 'Berries\Grape_1.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Grape_2'          , 1, 1, 'Berries\Grape_2.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Grape_3'          , 1, 1, 'Berries\Grape_3.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Grape_4'          , 1, 1, 'Berries\Grape_4.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Raspberry_1'      , 1, 1, 'Berries\Raspberry_1.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Raspberry_2'      , 1, 1, 'Berries\Raspberry_2.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Raspberry_3'      , 1, 1, 'Berries\Raspberry_3.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Raspberry_4'      , 1, 1, 'Berries\Raspberry_4.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Strawberry_1'     , 1, 1, 'Berries\Strawberry_1.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Strawberry_2'     , 1, 1, 'Berries\Strawberry_2.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Strawberry_3'     , 1, 1, 'Berries\Strawberry_3.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Strawberry_4'     , 1, 1, 'Berries\Strawberry_4.jpg'               );
+
+-- 2. Dairy_Eggs
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Butter_1'         , 1, 2, 'Dairy_Eggs\Butter_1.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Butter_2'         , 1, 2, 'Dairy_Eggs\Butter_2.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Butter_3'         , 1, 2, 'Dairy_Eggs\Butter_3.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Butter_4'         , 1, 2, 'Dairy_Eggs\Butter_4.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cheese_1'         , 1, 2, 'Dairy_Eggs\Cheese_1.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cheese_2'         , 1, 2, 'Dairy_Eggs\Cheese_2.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cheese_3'         , 1, 2, 'Dairy_Eggs\Cheese_3.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cheese_4'         , 1, 2, 'Dairy_Eggs\Cheese_4.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cottage_cheese_1' , 1, 2, 'Dairy_Eggs\Cottage_cheese_1.jpg'        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cottage_cheese_2' , 1, 2, 'Dairy_Eggs\Cottage_cheese_2.jpg'        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cottage_cheese_3' , 1, 2, 'Dairy_Eggs\Cottage_cheese_3.jpg'        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cottage_cheese_4' , 1, 2, 'Dairy_Eggs\Cottage_cheese_4.jpg'        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Eggs_1'           , 1, 2, 'Dairy_Eggs\Eggs_1.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Eggs_2'           , 1, 2, 'Dairy_Eggs\Eggs_2.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Eggs_3'           , 1, 2, 'Dairy_Eggs\Eggs_3.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Eggs_4'           , 1, 2, 'Dairy_Eggs\Eggs_4.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Milk_1'           , 1, 2, 'Dairy_Eggs\Milk_1.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Milk_2'           , 1, 2, 'Dairy_Eggs\Milk_2.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Milk_3'           , 1, 2, 'Dairy_Eggs\Milk_3.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Milk_4'           , 1, 2, 'Dairy_Eggs\Milk_4.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Sour_cream_1'     , 1, 2, 'Dairy_Eggs\Sour_cream_1.jpg'            );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Sour_cream_2'     , 1, 2, 'Dairy_Eggs\Sour_cream_2.jpg'            );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Sour_cream_3'     , 1, 2, 'Dairy_Eggs\Sour_cream_3.jpg'            );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Sour_cream_4'     , 1, 2, 'Dairy_Eggs\Sour_cream_4.jpg'            );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Yogurt_1'         , 1, 2, 'Dairy_Eggs\Yogurt_1.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Yogurt_2'         , 1, 2, 'Dairy_Eggs\Yogurt_2.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Yogurt_3'         , 1, 2, 'Dairy_Eggs\Yogurt_3.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Yogurt_4'         , 1, 2, 'Dairy_Eggs\Yogurt_4.jpg'                );
+
+-- 3. Fish
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bream_1'          , 1, 3, 'Fish\Bream_1.jpg'                       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bream_2'          , 1, 3, 'Fish\Bream_2.jpg'                       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bream_3'          , 1, 3, 'Fish\Bream_3.jpg'                       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bream_4'          , 1, 3, 'Fish\Bream_4.jpg'                       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carp_1'           , 1, 3, 'Fish\Carp_1.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carp_2'           , 1, 3, 'Fish\Carp_2.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carp_3'           , 1, 3, 'Fish\Carp_3.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carp_4'           , 1, 3, 'Fish\Carp_4.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Catfish_1'        , 1, 3, 'Fish\Catfish_1.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Catfish_2'        , 1, 3, 'Fish\Catfish_2.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Catfish_3'        , 1, 3, 'Fish\Catfish_3.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Catfish_4'        , 1, 3, 'Fish\Catfish_4.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Crusian_1'        , 1, 3, 'Fish\Crusian_1.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Crusian_2'        , 1, 3, 'Fish\Crusian_2.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Crusian_3'        , 1, 3, 'Fish\Crusian_3.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Crusian_4'        , 1, 3, 'Fish\Crusian_4.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Salmon_1'         , 1, 3, 'Fish\Salmon_1.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Salmon_2'         , 1, 3, 'Fish\Salmon_2.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Salmon_3'         , 1, 3, 'Fish\Salmon_3.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Salmon_4'         , 1, 3, 'Fish\Salmon_4.jpg'                      );
+
+-- 4. Fruits
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Apple_1'          , 1, 4, 'Fruits\Apple_1.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Apple_2'          , 1, 4, 'Fruits\Apple_2.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Apple_3'          , 1, 4, 'Fruits\Apple_3.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Apple_4'          , 1, 4, 'Fruits\Apple_4.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Peach_1'          , 1, 4, 'Fruits\Peach_1.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Peach_2'          , 1, 4, 'Fruits\Peach_2.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Peach_3'          , 1, 4, 'Fruits\Peach_3.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Peach_4'          , 1, 4, 'Fruits\Peach_4.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pear_1'           , 1, 4, 'Fruits\Pear_1.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pear_2'           , 1, 4, 'Fruits\Pear_2.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pear_3'           , 1, 4, 'Fruits\Pear_3.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pear_4'           , 1, 4, 'Fruits\Pear_4.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Plum_1'           , 1, 4, 'Fruits\Plum_1.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Plum_2'           , 1, 4, 'Fruits\Plum_2.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Plum_3'           , 1, 4, 'Fruits\Plum_3.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Plum_4'           , 1, 4, 'Fruits\Plum_4.jpg'                      );
+
+-- 5. Honey
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey_in_combs_1' , 1, 5, 'Honey\Honey_in_combs_1.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey_in_combs_2' , 1, 5, 'Honey\Honey_in_combs_2.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey_in_combs_3' , 1, 5, 'Honey\Honey_in_combs_3.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey_in_combs_4' , 1, 5, 'Honey\Honey_in_combs_4.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey_in_jars_1'  , 1, 5, 'Honey\Honey_in_jars_1.jpg'              );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey_in_jars_2'  , 1, 5, 'Honey\Honey_in_jars_2.jpg'              );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey_in_jars_3'  , 1, 5, 'Honey\Honey_in_jars_3.jpg'              );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Honey_in_jars_4'  , 1, 5, 'Honey\Honey_in_jars_4.jpg'              );
+
+-- 6. Meat
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Backon_1'         , 1, 6, 'Meat\Backon_1.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Backon_2'         , 1, 6, 'Meat\Backon_2.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Backon_3'         , 1, 6, 'Meat\Backon_3.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Backon_4'         , 1, 6, 'Meat\Backon_4.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beef_1'           , 1, 6, 'Meat\Beef_1.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beef_2'           , 1, 6, 'Meat\Beef_2.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beef_3'           , 1, 6, 'Meat\Beef_3.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beef_4'           , 1, 6, 'Meat\Beef_4.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken_1'        , 1, 6, 'Meat\Chicken_1.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken_2'        , 1, 6, 'Meat\Chicken_2.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Chicken_3'        , 1, 6, 'Meat\Chicken_3.jpg'                     );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Duck_1'           , 1, 6, 'Meat\Duck_1.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Duck_2'           , 1, 6, 'Meat\Duck_2.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Duck_3'           , 1, 6, 'Meat\Duck_3.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Duck_4'           , 1, 6, 'Meat\Duck_4.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lard_1'           , 1, 6, 'Meat\Lard_1.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lard_2'           , 1, 6, 'Meat\Lard_2.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lard_3'           , 1, 6, 'Meat\Lard_3.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lard_4'           , 1, 6, 'Meat\Lard_4.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pork_1'           , 1, 6, 'Meat\Pork_1.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pork_2'           , 1, 6, 'Meat\Pork_2.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pork_3'           , 1, 6, 'Meat\Pork_3.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pork_4'           , 1, 6, 'Meat\Pork_4.jpg'                        );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail_1'          , 1, 6, 'Meat\Quail_1.jpg'                       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail_2'          , 1, 6, 'Meat\Quail_2.jpg'                       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail_3'          , 1, 6, 'Meat\Quail_3.jpg'                       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Quail_4'          , 1, 6, 'Meat\Quail_4.jpg'                       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Rabbit_1'         , 1, 6, 'Meat\Rabbit_1.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Rabbit_3'         , 1, 6, 'Meat\Rabbit_3.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Rabbit_4'         , 1, 6, 'Meat\Rabbit_4.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Sousages_1'       , 1, 6, 'Meat\Sousages_1.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Sousages_2'       , 1, 6, 'Meat\Sousages_2.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Sousages_3'       , 1, 6, 'Meat\Sousages_3.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Sousages_4'       , 1, 6, 'Meat\Sousages_4.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Turkey_1'         , 1, 6, 'Meat\Turkey_1.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Turkey_2'         , 1, 6, 'Meat\Turkey_2.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Turkey_3'         , 1, 6, 'Meat\Turkey_3.jpg'                      );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Turkey_4'         , 1, 6, 'Meat\Turkey_4.jpg'                      );
+
+-- 7. Vegetables
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beetroot_1'       , 1, 7, 'Vegetables\Beetroot_1.jpg'                 );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beetroot_2'       , 1, 7, 'Vegetables\Beetroot_2.jpg'                 );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beetroot_3'       , 1, 7, 'Vegetables\Beetroot_3.jpg'                 );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Beetroot_4'       , 1, 7, 'Vegetables\Beetroot_4.jpg'                 );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cabbage_1'        , 1, 7, 'Vegetables\Cabbage_1.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cabbage_2'        , 1, 7, 'Vegetables\Cabbage_2.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cabbage_3'        , 1, 7, 'Vegetables\Cabbage_3.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cabbage_4'        , 1, 7, 'Vegetables\Cabbage_4.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carrot_1'         , 1, 7, 'Vegetables\Carrot_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carrot_2'         , 1, 7, 'Vegetables\Carrot_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carrot_3'         , 1, 7, 'Vegetables\Carrot_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Carrot_4'         , 1, 7, 'Vegetables\Carrot_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cucumbers_1'      , 1, 7, 'Vegetables\Cucumbers_1.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cucumbers_2'      , 1, 7, 'Vegetables\Cucumbers_2.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cucumbers_3'      , 1, 7, 'Vegetables\Cucumbers_3.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cucumbers_4'      , 1, 7, 'Vegetables\Cucumbers_4.jpg'                );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Garlic_1'         , 1, 7, 'Vegetables\Garlic_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Garlic_2'         , 1, 7, 'Vegetables\Garlic_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Garlic_3'         , 1, 7, 'Vegetables\Garlic_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Garlic_4'         , 1, 7, 'Vegetables\Garlic_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lettuce_1'        , 1, 7, 'Vegetables\Lettuce_1.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lettuce_2'        , 1, 7, 'Vegetables\Lettuce_2.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lettuce_3'        , 1, 7, 'Vegetables\Lettuce_3.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lettuce_4'        , 1, 7, 'Vegetables\Lettuce_4.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Lettuce_5'        , 1, 7, 'Vegetables\Lettuce_5.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Onion_1'          , 1, 7, 'Vegetables\Onion_1.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Onion_2'          , 1, 7, 'Vegetables\Onion_2.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Onion_3'          , 1, 7, 'Vegetables\Onion_3.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Onion_4'          , 1, 7, 'Vegetables\Onion_4.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pepper_1'         , 1, 7, 'Vegetables\Pepper_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pepper_2'         , 1, 7, 'Vegetables\Pepper_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pepper_3'         , 1, 7, 'Vegetables\Pepper_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pepper_4'         , 1, 7, 'Vegetables\Pepper_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Potato_1'         , 1, 7, 'Vegetables\Potato_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Potato_2'         , 1, 7, 'Vegetables\Potato_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Potato_3'         , 1, 7, 'Vegetables\Potato_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Potato_4'         , 1, 7, 'Vegetables\Potato_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Radish_1'         , 1, 7, 'Vegetables\Radish_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Radish_2'         , 1, 7, 'Vegetables\Radish_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Radish_3'         , 1, 7, 'Vegetables\Radish_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Radish_4'         , 1, 7, 'Vegetables\Radish_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Tomatos_1'        , 1, 7, 'Vegetables\Tomatos_1.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Tomatos_2'        , 1, 7, 'Vegetables\Tomatos_2.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Tomatos_3'        , 1, 7, 'Vegetables\Tomatos_3.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Tomatos_4'        , 1, 7, 'Vegetables\Tomatos_4.jpg'                  );
+
+-- 8. Bakery
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Baget_1'                    ,1, 8, 'Bakery\Baget_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Baget_2'                    ,1, 8, 'Bakery\Baget_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Baget_3'                    ,1, 8, 'Bakery\Baget_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Baget_4'                    ,1, 8, 'Bakery\Baget_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bread_1'                    ,1, 8, 'Bakery\Bread_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bread_2'                    ,1, 8, 'Bakery\Bread_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bread_3'                    ,1, 8, 'Bakery\Bread_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Bread_4'                    ,1, 8, 'Bakery\Bread_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cereal_1'                   ,1, 8, 'Bakery\Cereal_1.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cereal_2'                   ,1, 8, 'Bakery\Cereal_2.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cereal_3'                   ,1, 8, 'Bakery\Cereal_3.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Cereal_4'                   ,1, 8, 'Bakery\Cereal_4.jpg'                  );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Dried crust_1'              ,1, 8, 'Bakery\Dried crust_1.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Dried crust_2'              ,1, 8, 'Bakery\Dried crust_2.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Dried crust_3'              ,1, 8, 'Bakery\Dried crust_3.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Dried crust_4'              ,1, 8, 'Bakery\Dried crust_4.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flatbread_1'                ,1, 8, 'Bakery\Flatbread_1.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flatbread_2'                ,1, 8, 'Bakery\Flatbread_2.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flatbread_3'                ,1, 8, 'Bakery\Flatbread_3.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flatbread_4'                ,1, 8, 'Bakery\Flatbread_4.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flour_1'                    ,1, 8, 'Bakery\Flour_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flour_2'                    ,1, 8, 'Bakery\Flour_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flour_3'                    ,1, 8, 'Bakery\Flour_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Flour_4'                    ,1, 8, 'Bakery\Flour_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen fish_1'              ,1, 8, 'Bakery\Frozen fish_1.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen fish_2'              ,1, 8, 'Bakery\Frozen fish_2.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen fish_3'              ,1, 8, 'Bakery\Frozen fish_3.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen fish_4'              ,1, 8, 'Bakery\Frozen fish_4.jpg'             );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen fruits_1'            ,1, 8, 'Bakery\Frozen fruits_1.jpg'           );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen fruits_2'            ,1, 8, 'Bakery\Frozen fruits_2.jpg'           );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen fruits_3'            ,1, 8, 'Bakery\Frozen fruits_3.jpg'           );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen fruits_4'            ,1, 8, 'Bakery\Frozen fruits_4.jpg'           );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen meat and poultry_1'  ,1, 8, 'Bakery\Frozen meat and poultry_1.jpg' );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen meat and poultry_2'  ,1, 8, 'Bakery\Frozen meat and poultry_2.jpg' );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen meat and poultry_3'  ,1, 8, 'Bakery\Frozen meat and poultry_3.jpg' );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen meat and poultry_4'  ,1, 8, 'Bakery\Frozen meat and poultry_4.jpg' );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen vegitables_1'        ,1, 8, 'Bakery\Frozen vegitables_1.jpg'       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen vegitables_2'        ,1, 8, 'Bakery\Frozen vegitables_2.jpg'       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen vegitables_3'        ,1, 8, 'Bakery\Frozen vegitables_3.jpg'       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Frozen vegitables_4'        ,1, 8, 'Bakery\Frozen vegitables_4.jpg'       );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Ice cream_1'                ,1, 8, 'Bakery\Ice cream_1.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Ice cream_2'                ,1, 8, 'Bakery\Ice cream_2.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Ice cream_3'                ,1, 8, 'Bakery\Ice cream_3.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Ice cream_4'                ,1, 8, 'Bakery\Ice cream_4.jpg'               );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pasta_1'                    ,1, 8, 'Bakery\Pasta_1.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pasta_2'                    ,1, 8, 'Bakery\Pasta_2.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pasta_3'                    ,1, 8, 'Bakery\Pasta_3.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pasta_4'                    ,1, 8, 'Bakery\Pasta_4.jpg'                   );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pita_1'                     ,1, 8, 'Bakery\Pita_1.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pita_2'                     ,1, 8, 'Bakery\Pita_2.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pita_3'                     ,1, 8, 'Bakery\Pita_3.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Pita_4'                     ,1, 8, 'Bakery\Pita_4.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Roll_1'                     ,1, 8, 'Bakery\Roll_1.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Roll_2'                     ,1, 8, 'Bakery\Roll_2.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Roll_3'                     ,1, 8, 'Bakery\Roll_3.jpg'                    );
+INSERT INTO products (id, name, weight, price, image) VALUES(DEFAULT, 'Roll_4'                     ,1, 8, 'Bakery\Roll_4.jpg'                    );
 
 -- --------------------------------------------------------------------------------------------
 -- Cities
@@ -286,85 +469,268 @@ INSERT INTO cities (id, name) VALUES(DEFAULT, 'Almaty');
 -- -------------------------------------------------------
 -- Product_categories
 -- -------------------------------------------------------
--- 1. Eggs
-WITH categoryId AS (SELECT id FROM categories WHERE name = 'Eggs')
+-- 1. Berries
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Berries')
 INSERT INTO product_categories (product_id, category_id) VALUES
- ((SELECT id FROM products WHERE name = 'Chicken eggs'),          (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Quail eggs'  ),          (SELECT id FROM categoryId));
--- 2. Milk and dairy products
-WITH categoryId AS (SELECT id FROM categories WHERE name = 'Milk and dairy products')
-INSERT INTO product_categories (product_id, category_id) VALUES 
- ((SELECT id FROM products WHERE name = 'Cow milk'),              (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Goat milk'),             (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Fermented baked milk'),  (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Curd'),                  (SELECT id FROM categoryId));
--- 3. Cheese
-WITH categoryId AS (SELECT id FROM categories WHERE name = 'Cheese')
-INSERT INTO product_categories (product_id, category_id) VALUES 
- ((SELECT id FROM products WHERE name = 'Circassian cheese'),     (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Brynza cheese'),         (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Suluguni cheese'),       (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Mozzarella cheese'),     (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Hard-pressed cheese'),   (SELECT id FROM categoryId));
--- 4. Butter
-WITH categoryId AS (SELECT id FROM categories WHERE name = 'Butter')
-INSERT INTO product_categories (product_id, category_id) VALUES 
- ((SELECT id FROM products WHERE name = 'Butter'),                (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Melted butter'),         (SELECT id FROM categoryId));
--- 5. Meat and meat products
-WITH categoryId AS (SELECT id FROM categories WHERE name = 'Meat and meat products')
-INSERT INTO product_categories (product_id, category_id) VALUES 
- ((SELECT id FROM products WHERE name = 'Chicken meat'),          (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Quail meat'),            (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Turkey meat'),           (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Duck meet'),             (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Rabbit meat'),           (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Pork'),                  (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Beef'),                  (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Home-made sausage'),     (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Bacon'),                 (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Lard'),                  (SELECT id FROM categoryId));
--- 6. Vegetables
-WITH categoryId AS (SELECT id FROM categories WHERE name = 'Vegetables')
-INSERT INTO product_categories (product_id, category_id) VALUES 
- ((SELECT id FROM products WHERE name = 'Grapes'),                 (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Cucumber'),              (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Tomato'),                (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Potato'),                (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Carrot'),                (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Onion'),                 (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Broccoli'),              (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Garlic'),                (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Cabbage'),               (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Beetroot'),              (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Lettuce'),               (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Pepper'),                (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Radish'),                (SELECT id FROM categoryId));
--- 7. Fruits and berries
-WITH categoryId AS (SELECT id FROM categories WHERE name = 'Fruits and berries')
-INSERT INTO product_categories (product_id, category_id) VALUES 
- ((SELECT id FROM products WHERE name = 'Apple'),                 (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Apricot'),               (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Pear'),                  (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Plum'),                  (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Grape'),                 (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Raspberry'),             (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Strawberry'),            (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Blackberry'),            (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Cherry'),                (SELECT id FROM categoryId));
--- 8. Honey
+  ((SELECT id FROM products WHERE name = 'Blackberry_1'), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Blackberry_2'), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Blackberry_3'), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Blackberry_4'), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cherry_1'    ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cherry_2'    ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cherry_3'    ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cherry_4'    ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Grape_1'     ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Grape_2'     ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Grape_3'     ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Grape_4'     ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Raspberry_1' ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Raspberry_2' ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Raspberry_3' ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Raspberry_4' ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Strawberry_1'), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Strawberry_2'), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Strawberry_3'), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Strawberry_4'), (SELECT id FROM categoryId));
+
+-- 2. Dairy_Eggs
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Dairy_Eggs')
+INSERT INTO product_categories (product_id, category_id) VALUES
+  ((SELECT id FROM products WHERE name = 'Butter_1'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Butter_2'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Butter_3'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Butter_4'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cheese_1'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cheese_2'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cheese_3'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cheese_4'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cottage_cheese_1' ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cottage_cheese_2' ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cottage_cheese_3' ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Cottage_cheese_4' ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Eggs_1'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Eggs_2'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Eggs_3'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Eggs_4'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Milk_1'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Milk_2'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Milk_3'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Milk_4'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Sour_cream_1'     ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Sour_cream_2'     ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Sour_cream_3'     ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Sour_cream_4'     ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Yogurt_1'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Yogurt_2'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Yogurt_3'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Yogurt_4'         ), (SELECT id FROM categoryId));
+
+-- 3. Fish
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Fish')
+INSERT INTO product_categories (product_id, category_id) VALUES
+  ((SELECT id FROM products WHERE name = 'Bream_1'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Bream_2'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Bream_3'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Bream_4'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Carp_1'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Carp_2'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Carp_3'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Carp_4'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Catfish_1'        ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Catfish_2'        ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Catfish_3'        ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Catfish_4'        ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Crusian_1'        ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Crusian_2'        ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Crusian_3'        ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Crusian_4'        ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Salmon_1'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Salmon_2'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Salmon_3'         ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Salmon_4'         ), (SELECT id FROM categoryId));
+
+-- 4. Fruits
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Fruits')
+INSERT INTO product_categories (product_id, category_id) VALUES
+  ((SELECT id FROM products WHERE name = 'Apple_1'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Apple_2'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Apple_3'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Apple_4'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Peach_1'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Peach_2'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Peach_3'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Peach_4'          ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Pear_1'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Pear_2'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Pear_3'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Pear_4'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Plum_1'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Plum_2'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Plum_3'           ), (SELECT id FROM categoryId)),
+  ((SELECT id FROM products WHERE name = 'Plum_4'           ), (SELECT id FROM categoryId));
+
+-- 5. Honey
 WITH categoryId AS (SELECT id FROM categories WHERE name = 'Honey')
-INSERT INTO product_categories (product_id, category_id) VALUES 
- ((SELECT id FROM products WHERE name = 'Honey in combs'),        (SELECT id FROM categoryId)),
- ((SELECT id FROM products WHERE name = 'Flower honey'),          (SELECT id FROM categoryId));
--- 9. Mushrooms
-WITH categoryId AS (SELECT id FROM categories WHERE name = 'Mushrooms')
-INSERT INTO product_categories (product_id, category_id) VALUES 
- ((SELECT id FROM products WHERE name = 'Champignon'),            (SELECT id FROM categoryId));
--- 10. Bakery
+INSERT INTO product_categories (product_id, category_id) VALUES
+ ((SELECT id FROM products WHERE name = 'Honey_in_combs_1' ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Honey_in_combs_2' ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Honey_in_combs_3' ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Honey_in_combs_4' ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Honey_in_jars_1'  ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Honey_in_jars_2'  ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Honey_in_jars_3'  ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Honey_in_jars_4'  ), (SELECT id FROM categoryId));
+
+-- 6. Meat
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Meat')
+INSERT INTO product_categories (product_id, category_id) VALUES
+ ((SELECT id FROM products WHERE name = 'Backon_1'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Backon_2'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Backon_3'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Backon_4'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beef_1'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beef_2'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beef_3'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beef_4'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Chicken_1'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Chicken_2'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Chicken_3'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Duck_1'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Duck_2'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Duck_3'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Duck_4'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lard_1'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lard_2'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lard_3'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lard_4'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pork_1'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pork_2'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pork_3'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pork_4'           ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Quail_1'          ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Quail_2'          ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Quail_3'          ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Quail_4'          ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Rabbit_1'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Rabbit_3'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Rabbit_4'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Sousages_1'       ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Sousages_2'       ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Sousages_3'       ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Sousages_4'       ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Turkey_1'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Turkey_2'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Turkey_3'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Turkey_4'         ), (SELECT id FROM categoryId));
+
+-- 7. Vegetables
+WITH categoryId AS (SELECT id FROM categories WHERE name = 'Vegetables')
+INSERT INTO product_categories (product_id, category_id) VALUES
+ ((SELECT id FROM products WHERE name = 'Beetroot_1'       ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beetroot_2'       ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beetroot_3'       ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Beetroot_4'       ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cabbage_1'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cabbage_2'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cabbage_3'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cabbage_4'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Carrot_1'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Carrot_2'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Carrot_3'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Carrot_4'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cucumbers_1'      ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cucumbers_2'      ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cucumbers_3'      ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cucumbers_4'      ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Garlic_1'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Garlic_2'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Garlic_3'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Garlic_4'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lettuce_1'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lettuce_2'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lettuce_3'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lettuce_4'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Lettuce_5'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Onion_1'          ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Onion_2'          ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Onion_3'          ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Onion_4'          ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pepper_1'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pepper_2'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pepper_3'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pepper_4'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Potato_1'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Potato_2'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Potato_3'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Potato_4'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Radish_1'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Radish_2'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Radish_3'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Radish_4'         ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Tomatos_1'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Tomatos_2'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Tomatos_3'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Tomatos_4'        ), (SELECT id FROM categoryId));
+
+-- 8. Bakery
 WITH categoryId AS (SELECT id FROM categories WHERE name = 'Bakery')
 INSERT INTO product_categories (product_id, category_id) VALUES
- ((SELECT id FROM products WHERE name = 'Baguette'),              (SELECT id FROM categoryId));
+ ((SELECT id FROM products WHERE name = 'Baget_1'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Baget_2'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Baget_3'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Baget_4'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Bread_1'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Bread_2'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Bread_3'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Bread_4'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cereal_1'                   ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cereal_2'                   ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cereal_3'                   ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Cereal_4'                   ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Dried crust_1'              ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Dried crust_2'              ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Dried crust_3'              ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Dried crust_4'              ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flatbread_1'                ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flatbread_2'                ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flatbread_3'                ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flatbread_4'                ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flour_1'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flour_2'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flour_3'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Flour_4'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen fish_1'              ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen fish_2'              ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen fish_3'              ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen fish_4'              ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen fruits_1'            ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen fruits_2'            ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen fruits_3'            ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen fruits_4'            ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen meat and poultry_1'  ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen meat and poultry_2'  ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen meat and poultry_3'  ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen meat and poultry_4'  ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen vegitables_1'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen vegitables_2'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen vegitables_3'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Frozen vegitables_4'        ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Ice cream_1'                ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Ice cream_2'                ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Ice cream_3'                ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Ice cream_4'                ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pasta_1'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pasta_2'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pasta_3'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pasta_4'                    ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pita_1'                     ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pita_2'                     ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pita_3'                     ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Pita_4'                     ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Roll_1'                     ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Roll_2'                     ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Roll_3'                     ), (SELECT id FROM categoryId)),
+ ((SELECT id FROM products WHERE name = 'Roll_4'                     ), (SELECT id FROM categoryId));
 
 -- -------------------------------------------------------
 -- Contacts
@@ -452,66 +818,101 @@ INSERT INTO seller_contacts (seller_id, contact_id) VALUES
 -- -------------------------------------------------------
 -- Seller categories
 -- -------------------------------------------------------
+
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
 INSERT INTO seller_categories (seller_id, category_id) VALUES
--- 1. Eggs
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Eggs')),
--- 2. Milk and dairy products
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Milk and dairy products')),
--- 3. Cheese
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Cheese'));
+-- 1. Berries
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Berries')),
+-- 2. Dairy_Eggs
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Dairy_Eggs')),
+-- 3. Fish
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Fish'));
 
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Name Surname')
 INSERT INTO seller_categories (seller_id, category_id) VALUES
--- 4. Butter
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Butter')),
--- 5. Meat and meat products
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Meat and meat products')),
--- 6. Vegetables
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Vegetables'));
+-- 4. Fruits
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Fruits')),
+-- 5. Honey
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Honey')),
+-- 6. Meat
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Meat'));
  
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Viktar Astapkovich')
 INSERT INTO seller_categories (seller_id, category_id) VALUES
--- 7. Fruits and berries
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Fruits and berries')),
--- 8. Honey
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Honey')),
--- 9. Mushrooms
- ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Mushrooms')),
--- 10. Bakery
+-- 7. Vegetables
+ ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Vegetables')),
+-- 8. Bakery
  ((SELECT id FROM sellerId), (SELECT id FROM categories WHERE name = 'Bakery'));
+
  
 -- -------------------------------------------------------
 -- Seller products
 -- -------------------------------------------------------
+ 
+-- 1. Berries
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
 INSERT INTO seller_products (seller_id, product_id) VALUES
 -- 1. Eggs
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Chicken eggs')),
--- 2. Milk and dairy products
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Cow milk')),
--- 3. Cheese
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Circassian cheese'));
- 
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Blackberry_1')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Blackberry_2')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Blackberry_3')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Blackberry_4'));
+
+-- 2. Dairy_Eggs
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
+INSERT INTO seller_products (seller_id, product_id) VALUES
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Butter_1')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Butter_2')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Butter_3')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Butter_4'));
+
+-- 3. Fish
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'ECO FOOD')
+INSERT INTO seller_products (seller_id, product_id) VALUES
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Bream_1')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Bream_2')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Bream_3')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Bream_4'));
+
+-- 4. Fruits
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Name Surname')
 INSERT INTO seller_products (seller_id, product_id) VALUES
--- 4. Butter
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Butter')),
--- 5. Meat and meat products
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Chicken meat')),
--- 6. Vegetables
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Grapes'));
- 
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Apple_1')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Apple_2')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Apple_3')),
+  ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Apple_4'));
+
+-- 5. Honey
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Name Surname')
+INSERT INTO seller_products (seller_id, product_id) VALUES
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Honey_in_combs_1')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Honey_in_combs_2')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Honey_in_combs_3')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Honey_in_combs_4'));
+
+-- 6. Meat
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Name Surname')
+INSERT INTO seller_products (seller_id, product_id) VALUES
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Backon_1')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Backon_2')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Backon_3')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Backon_4'));
+
+-- 7. Vegetables
 WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Viktar Astapkovich')
 INSERT INTO seller_products (seller_id, product_id) VALUES
--- 7. Fruits and berries
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Apple')),
--- 8. Honey
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Honey in combs')),
--- 9. Mushrooms
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Champignon')),
--- 10. Bakery
- ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baguette'));
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Beetroot_1')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Beetroot_2')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Beetroot_3')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Beetroot_4'));
+
+-- 8. Bakery
+WITH sellerId AS (SELECT id FROM sellers WHERE name = 'Viktar Astapkovich')
+INSERT INTO seller_products (seller_id, product_id) VALUES
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baget_1')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baget_2')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baget_3')),
+ ((SELECT id FROM sellerId), (SELECT id FROM products WHERE name = 'Baget_4'));
  
 -- -------------------------------------------------------
 -- Seller cities
