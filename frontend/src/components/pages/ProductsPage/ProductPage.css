@@ -1,0 +1,31 @@
+.product-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  margin: 40px 0;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.product-dropdown-item,
+.product-dropdown-button {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #64797b;
+}
+
+.products-number {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #0e122b;
+}
+
+.product-search .search__container {
+  margin-right: 0;
+}
+.product-search .search__input {
+  border: 1px solid #64797b;
+}
