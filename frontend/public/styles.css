@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Caveat';
+  src: url('./fonts/Caveat-Regular.eot');
+  src: url('./fonts/Caveat-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Caveat-Regular.woff') format('woff'),
+    url('./fonts/Caveat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('./fonts/TTNorms-Regular.eot');
+  src: url('./fonts/TTNorms-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/TTNorms-Regular.woff') format('woff'),
+    url('./fonts/TTNorms-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('./fonts/TTNorms-Medium.eot');
+  src: url('./fonts/TTNorms-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/TTNorms-Medium.woff') format('woff'),
+    url('./fonts/TTNorms-Medium.ttf') format('truetype');
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('./fonts/TTNorms-Bold.eot');
+  src: url('./fonts/TTNorms-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/TTNorms-Bold.woff') format('woff'),
+    url('./fonts/TTNorms-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

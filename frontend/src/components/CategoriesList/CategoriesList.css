@@ -1,0 +1,189 @@
+.categories__list {
+  position: sticky;
+  z-index: 1;
+  top: 1rem;
+
+  width: 19rem;
+  background-color: white;
+  padding: 1rem 2rem;
+  padding-right: 1rem;
+  border-radius: 0.8rem;
+}
+
+.categories__item {
+  position: relative;
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+  padding-left: 2.4rem;
+  border: 0;
+  /* outline: 1px red solid; */
+
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+.categories__item:hover,
+.categories__item:focus {
+  background: none;
+  /* font-weight: bold; */
+}
+
+.categories__item::before {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  /* outline: 1px green solid; */
+  left: 0;
+  top: 0.6rem;
+}
+
+.categories__item--collapsed:focus {
+  font-weight: bold;
+}
+
+.categories__item--collapsed::after {
+  content: '';
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  /* outline: 1px green solid; */
+  background-image: url('./icons/arrow_right.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  right: 0;
+  top: 1rem;
+}
+
+.categories__item--deals::before {
+  background-image: url('./icons/deal_icon.svg');
+}
+.categories__item--fruits::before {
+  background-image: url('./icons/fruits_icon.svg');
+}
+.categories__item--berries::before {
+  background-image: url('./icons/berries_icon.svg');
+}
+.categories__item--vegetables::before {
+  background-image: url('./icons/vegs_icon.svg');
+}
+.categories__item--meat::before {
+  background-image: url('./icons/meat_icon.svg');
+}
+.categories__item--fish::before {
+  background-image: url('./icons/fish_icon.svg');
+}
+.categories__item--dairy::before {
+  background-image: url('./icons/dairy_icon.svg');
+}
+.categories__item--bakery::before {
+  background-image: url('./icons/bakery_icon.svg');
+}
+.categories__item--grocery::before {
+  background-image: url('./icons/grocery_icon.svg');
+}
+.categories__item--frozen::before {
+  background-image: url('./icons/frozen_icon.svg');
+}
+.categories__item--honey::before {
+  background-image: url('./icons/honey_icon.svg');
+}
+
+.categories__sublist {
+  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 13rem;
+  z-index: 10;
+  left: 94%;
+  top: 0;
+  cursor: default;
+  transition: all 0.3s;
+
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.8rem;
+  /* outline: 1px blue solid; */
+}
+
+.categories__sublist--visible {
+  opacity: 1;
+  left: 103%;
+  pointer-events: all;
+  /* width: 13rem; */
+
+  display: block;
+}
+
+.categories__subheader {
+  position: relative;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.categories__subheader::after {
+  content: '';
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8rem;
+  /* outline: 1px green solid; */
+  /* background-image: url('./icons/fruits_icon.svg'); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  right: 0rem;
+  top: 0;
+}
+
+.categories__subheader--deals::after {
+  background-image: url('./icons/deal_icon.svg');
+}
+.categories__subheader--fruits::after {
+  background-image: url('./icons/fruits_icon.svg');
+}
+.categories__subheader--berries::after {
+  background-image: url('./icons/berries_icon.svg');
+}
+.categories__subheader--vegetables::after {
+  background-image: url('./icons/vegs_icon.svg');
+}
+.categories__subheader--meat::after {
+  background-image: url('./icons/meat_icon.svg');
+}
+.categories__subheader--fish::after {
+  background-image: url('./icons/fish_icon.svg');
+}
+.categories__subheader--dairy::after {
+  background-image: url('./icons/dairy_icon.svg');
+}
+.categories__subheader--bakery::after {
+  background-image: url('./icons/bakery_icon.svg');
+}
+.categories__subheader--grocery::after {
+  background-image: url('./icons/grocery_icon.svg');
+}
+.categories__subheader--frozen::after {
+  background-image: url('./icons/frozen_icon.svg');
+}
+.categories__subheader--honey::after {
+  background-image: url('./icons/honey_icon.svg');
+}
+
+.categories__subitem {
+  padding: 0.8rem 0;
+  cursor: pointer;
+
+  list-style: none;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}

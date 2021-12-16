@@ -1,0 +1,33 @@
+.home__container {
+  padding-top: 1.5rem;
+  position: relative;
+}
+
+.home__left {
+}
+
+.home__right {
+}
+
+.home__gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  /* justify-content: space-between; */
+}
+
+.home__subheader {
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+
+  background-color: #043b40;
+  color: white;
+  text-align: center;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+}

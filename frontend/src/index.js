@@ -6,7 +6,7 @@ import { App } from './components/App/App';
 import { store } from './store/store';
 import { fetchSellers } from './store/sellersSlice';
 
-store.dispatch(fetchSellers());
+// store.dispatch(fetchSellers());
 
 ReactDOM.render(
   <React.StrictMode>
