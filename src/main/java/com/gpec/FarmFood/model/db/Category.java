@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -24,4 +25,6 @@ public class Category {
     String description;
 
     Long parent_id;
+
+    //List<Products> products;
 }

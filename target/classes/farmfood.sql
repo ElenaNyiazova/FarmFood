@@ -6,20 +6,20 @@
  CREATE DATABASE farmfood WITH OWNER = postgres ENCODING = 'UTF8' TABLESPACE = pg_default CONNECTION LIMIT = -1;
 /c farmfood;
 
--- DROP TABLE IF EXISTS categories CASCADE;
--- DROP TABLE IF EXISTS products CASCADE;
--- DROP TABLE IF EXISTS product_categories CASCADE;
--- DROP TABLE IF EXISTS cities CASCADE;
--- DROP TABLE IF EXISTS contacts CASCADE;
--- DROP TABLE IF EXISTS sellers CASCADE;
--- DROP TABLE IF EXISTS seller_categories CASCADE;
--- DROP TABLE IF EXISTS seller_products CASCADE;
--- DROP TABLE IF EXISTS seller_contacts CASCADE;
--- DROP TABLE IF EXISTS seller_cities CASCADE;
--- DROP TABLE IF EXISTS users CASCADE;
--- DROP TABLE IF EXISTS roles CASCADE;
--- DROP TABLE IF EXISTS users_roles CASCADE;
--- DROP TABLE IF EXISTS reviews CASCADE;
+ DROP TABLE IF EXISTS categories CASCADE;
+ DROP TABLE IF EXISTS products CASCADE;
+ DROP TABLE IF EXISTS product_categories CASCADE;
+ DROP TABLE IF EXISTS cities CASCADE;
+ DROP TABLE IF EXISTS contacts CASCADE;
+ DROP TABLE IF EXISTS sellers CASCADE;
+ DROP TABLE IF EXISTS seller_categories CASCADE;
+ DROP TABLE IF EXISTS seller_products CASCADE;
+ DROP TABLE IF EXISTS seller_contacts CASCADE;
+ DROP TABLE IF EXISTS seller_cities CASCADE;
+ DROP TABLE IF EXISTS users CASCADE;
+ DROP TABLE IF EXISTS roles CASCADE;
+ DROP TABLE IF EXISTS users_roles CASCADE;
+ DROP TABLE IF EXISTS reviews CASCADE;
 
 -- -------------------------------------------------------
 -- Table `farmfood`.`categories`

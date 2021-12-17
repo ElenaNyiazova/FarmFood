@@ -21,7 +21,7 @@ public class Seller {
 //    @Column(nullable = false)
     private String name;
     private String description;
-    int grade;
+    int grade;//may be double
     Long user_id;
 
     @ManyToOne
