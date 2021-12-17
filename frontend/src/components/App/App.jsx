@@ -20,6 +20,7 @@ import { SearchFailPage } from '../pages/SearchFailPage/SearchFailPage';
 
 import './App.css';
 import productsSlice from '../../store/productsSlice';
+import { Footer } from '../commonComponents/Footer/Footer';
 
 export const App = () => {
   const showLocationModal = useSelector(
@@ -93,6 +94,7 @@ export const App = () => {
             />
           </Routes>
         </Container>
+        <Footer />
       </Container>
     </BrowserRouter>
   );
