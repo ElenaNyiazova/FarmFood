@@ -34,7 +34,9 @@ export const ProductsPage = () => {
   return (
     <>
       <div className="product-search">
-        <span className="products-number">15 products</span>
+        <span className="products-number">
+          {availableProducts.length} products
+        </span>
         {/* <Search /> */}
         <Dropdown className="product-dropdown">
           <Dropdown.Toggle

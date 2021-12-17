@@ -2,11 +2,17 @@
   padding: 0.8rem;
 }
 
+.seller-info-container {
+  background-color: white;
+  border-radius: 0.8rem;
+}
+
 .seller-info {
   font-family: 'TTNorms';
   font-style: normal;
   font-weight: bold;
   color: #0e122b;
+  letter-spacing: 0.01rem;
 }
 
 .seller-name {
@@ -24,12 +30,14 @@
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.4rem;
+  letter-spacing: 0.01rem;
 }
 
 .seller-about {
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.6rem;
+  letter-spacing: 0.01rem;
 }
 
 .seller-reviews-link {
@@ -38,6 +46,7 @@
   line-height: 1.4rem;
   text-decoration: underline;
   cursor: pointer;
+  letter-spacing: 0.01rem;
 }
 
 .seller-time {
@@ -45,6 +54,7 @@
   font-size: 1.2rem;
   line-height: 1.4rem;
   color: #64797b;
+  letter-spacing: 0.01rem;
 }
 
 .seller-about-text {
@@ -54,6 +64,7 @@
   line-height: 1.5rem;
   max-width: 416px;
   color: #64797b;
+  letter-spacing: 0.01rem;
 }
 
 .seller-foolow {
@@ -70,6 +81,7 @@
   color: #0e122b;
   transition: all 0.3s linear;
   cursor: pointer;
+  letter-spacing: 0.01rem;
 }
 
 .seller-foolow:hover {
@@ -80,7 +92,7 @@
 .seller-contacts,
 .seller-social-media {
   color: #0e122b;
-  padding-left: 6rem;
+  padding-left: 5rem;
 }
 
 .seller-contacts-text {
@@ -135,4 +147,10 @@
   font-size: 1.2rem;
   line-height: 1.4rem;
   color: #0e122b;
+}
+
+.seller-image {
+  width: 17.5rem;
+  height: 13rem;
+  /* outline: 1px red solid; */
 }

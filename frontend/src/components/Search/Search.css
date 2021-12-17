@@ -1,13 +1,20 @@
 .search__container {
-  width: 20rem;
-  position: relative;
+  width: 10rem;
+  position: absolute;
+  left: 4rem;
+  /* left: 50%; */
+  /* margin-left: -10rem; */
+  top: -0.3rem;
+  /* align-self: center; */
+  /* justify-self: start; */
   padding: 0;
-  margin-right: 20em;
+  /* margin-right: 20em; */
   /* outline: 1px green solid; */
 }
 
 .search__form {
   position: relative;
+  width: 20rem;
   /* outline: 1px yellow solid; */
 }
 

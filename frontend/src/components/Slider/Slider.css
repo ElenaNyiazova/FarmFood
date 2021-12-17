@@ -52,7 +52,7 @@
 
 .slider__btn {
   background-color: #3bb54a;
-  padding: 12px 24px;
+  padding: 0.8rem 1.5rem;
 
   border-radius: 2rem;
   border: 0;
@@ -84,3 +84,9 @@
 .carousel-control-prev {
   display: none;
 } */
+
+@media only screen and (max-width: 1400px) {
+  .slider__txt {
+    width: 80%;
+  }
+}

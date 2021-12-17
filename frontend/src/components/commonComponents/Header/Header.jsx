@@ -19,13 +19,13 @@ export const Header = ({
   userName,
 }) => {
   const productIds = useSelector((state) => selectProductsIds(state));
-  console.log(productIds);
+  // console.log(productIds);
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate(generatePath(ROUTES.HOME));
   };
   const handleUsernameClick = () => {
-    navigate(generatePath(ROUTES.PROFILE));
+    // navigate(generatePath(ROUTES.PROFILE));
   };
   const handleSearch = (productFromSearch) => {
     // console.log(productFromSearch);

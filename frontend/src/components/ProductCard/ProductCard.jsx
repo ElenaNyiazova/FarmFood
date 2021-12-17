@@ -37,7 +37,7 @@ export const ProductCard = ({
           variant="top"
           src={`../images/products/${image}`}
           width="282"
-          height="208"
+          height="auto"
         />
         <div className="d-flex justify-content-between mt-3 align-items-center">
           <Card.Text className="mb-0 product-name">{name}</Card.Text>

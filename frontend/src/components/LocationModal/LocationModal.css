@@ -38,3 +38,24 @@
 .location__link:hover {
   color: #64797b;
 }
+
+.location__btn {
+  width: auto;
+  padding: 1rem 3rem;
+  background: #0e122b;
+  border-radius: 0.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+
+  color: white;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1rem;
+}
+
+.location__btn:hover,
+.location__btn:focus {
+  background: #64797b;
+}

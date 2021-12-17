@@ -9,6 +9,7 @@
 
 .header__navbar-collapse {
   /* outline: 1px yellow solid; */
+  position: relative;
 }
 
 .header__logo {
@@ -49,7 +50,7 @@
   height: 1.5rem;
   background-image: url('./login_icon.svg');
   left: 0;
-  top: 0;
+  top: -0.1rem;
 }
 
 .nav-link:focus,

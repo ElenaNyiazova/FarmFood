@@ -66,9 +66,13 @@ export const SellerPage = () => {
 
   return (
     <Container className="mt-5">
-      <div className="d-flex seller-block">
-        <div>
-          <Image src={`../images/sellers/seller${id}.png`} />
+      <div className="d-flex seller-block  seller-info-container">
+        <div className="seller-image">
+          <Image
+            src={`../images/sellers/seller${id}.png`}
+            width="100%"
+            height="auto"
+          />
         </div>
         <div className="ps-4 seller-info">
           <div className="d-flex align-items-center ">
@@ -91,12 +95,8 @@ export const SellerPage = () => {
           </span>
 
           <div>
-            <span className="seller-about mt-4 d-block">About farmer</span>
-            <p className="seller-about-text">
-              I grow delicious vegetables and fruits in my own beds. Always
-              fresh goods. I have been farming for more than 20 years. Product
-              weekly updates.
-            </p>
+            {/* <span className="seller-about mt-4 d-block">About farmer</span> */}
+            <p className="seller-about-text">{seller_description}</p>
           </div>
         </div>
         <div className="d-flex flex-column flex-fill ">
@@ -135,7 +135,9 @@ export const SellerPage = () => {
         </div>
       </div>
       <div className="seller-search">
-        <span className="seller-products-number">15 products</span>
+        <span className="seller-products-number">
+          {sellersProducts.length} products
+        </span>
         {/* <Search handleSearch={handleSearch} setSearchResult={setSearchResult} /> */}
         <Dropdown className="seller-dropdown">
           <Dropdown.Toggle

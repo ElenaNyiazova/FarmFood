@@ -1,7 +1,9 @@
 import React from 'react';
 import { generatePath, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { ListGroup } from 'react-bootstrap';
 
+import { selectAllProducts } from '../../store/productsSlice';
 import { ROUTES } from '../../consts/consts';
 import { CATEGORIES } from '../../consts/consts';
 
@@ -9,6 +11,16 @@ import './CategoriesList.css';
 
 export const CategoriesList = () => {
   const navigate = useNavigate();
+  const allProducts = useSelector((state) => selectAllProducts(state));
+  const productsCategoriesMap = {};
+  for (const value of Object.values(allProducts)) {
+    productsCategoriesMap[value.items['01'].product_name] =
+      value.product_category;
+  }
+  // console.log(productsCategoriesMap);
+  // console.log(
+  //   Object.values(productsCategoriesMap).includes(CATEGORIES.DAIRY_EGGS)
+  // );
 
   const categories = Object.values(CATEGORIES);
 
@@ -54,10 +66,12 @@ export const CategoriesList = () => {
       {categories.map((category) => {
         let classSuffix = category.split(' ')[0].toLowerCase();
         classSuffix = classSuffix === "today's" ? 'deals' : classSuffix;
-        const collapsed =
-          category === CATEGORIES.DAIRY_EGGS
-            ? 'categories__item--collapsed'
-            : '';
+        category === CATEGORIES.DAIRY_EGGS;
+        const collapsed = Object.values(productsCategoriesMap).includes(
+          category
+        )
+          ? 'categories__item--collapsed'
+          : '';
         const classes = `categories__item  categories__item--${classSuffix}  ${collapsed}`;
 
         return (
@@ -82,20 +96,17 @@ export const CategoriesList = () => {
                 >
                   {category}
                 </h4>
-                <li
-                  className="categories__subitem"
-                  key={'01'}
-                  onMouseDown={() => handleProductClick('Chicken eggs')}
-                >
-                  Chicken eggs
-                </li>
-                <li
-                  className="categories__subitem"
-                  key={'02'}
-                  onMouseDown={() => handleProductClick('Quail eggs')}
-                >
-                  Quail eggs
-                </li>
+                {Object.entries(productsCategoriesMap).map(([key, value]) => {
+                  return value === category ? (
+                    <li
+                      className="categories__subitem"
+                      key={key}
+                      onMouseDown={() => handleProductClick(key)}
+                    >
+                      {key}
+                    </li>
+                  ) : null;
+                })}
               </ul>
             )}
           </div>
