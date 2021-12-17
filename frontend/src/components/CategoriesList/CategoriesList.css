@@ -187,6 +187,7 @@
   font-size: 1rem;
   line-height: 1.2rem;
   text-transform: capitalize;
+  letter-spacing: 0.01rem;
 }
 
 @media only screen and (max-width: 1400px) {

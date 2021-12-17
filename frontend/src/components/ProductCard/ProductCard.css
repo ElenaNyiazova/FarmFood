@@ -21,6 +21,7 @@
   border: none;
   font-family: 'TTNorms';
   color: #0e122b;
+  letter-spacing: 0.01rem;
 }
 
 .product-seller-name {
