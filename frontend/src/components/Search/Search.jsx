@@ -2,12 +2,12 @@ import React, { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form } from 'react-bootstrap';
-import { selectAllAvailableProducts } from '../../store/sellersSlice';
+import { selectProductsIds } from '../../store/productsSlice';
 import './Search.css';
 
 export const Search = ({ handleSearch }) => {
   const [searchInput, setSearchInput] = useState('');
-  const allProducts = useSelector((state) => selectAllAvailableProducts(state));
+  const allProducts = useSelector((state) => selectProductsIds(state));
   const [suggestions, setSuggestions] = useState(allProducts);
 
   const suggestionsBlock = useRef(null);

@@ -97,7 +97,7 @@
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  width: 13rem;
+  width: 16rem;
   z-index: 10;
   left: 94%;
   top: 0;
@@ -186,4 +186,10 @@
   font-weight: medium;
   font-size: 1rem;
   line-height: 1.2rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  .categories__list {
+    width: 16.5rem;
+  }
 }

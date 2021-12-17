@@ -1,0 +1,138 @@
+.seller-block {
+  padding: 0.8rem;
+}
+
+.seller-info {
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: bold;
+  color: #0e122b;
+}
+
+.seller-name {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  letter-spacing: 0.01rem;
+}
+
+.seller-rating {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.seller-reviews {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.seller-about {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+}
+
+.seller-reviews-link {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.seller-time {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #64797b;
+}
+
+.seller-about-text {
+  margin: 8px 0 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  max-width: 416px;
+  color: #64797b;
+}
+
+.seller-foolow {
+  padding: 12px 2rem 12px 1.6rem;
+  border: 2px solid #0e122b;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: TT Norms;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #0e122b;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.seller-foolow:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.seller-contacts,
+.seller-social-media {
+  color: #0e122b;
+  padding-left: 6rem;
+}
+
+.seller-contacts-text {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #64797b;
+}
+
+.seller-contacts-number {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+}
+
+.seller-social-media {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #64797b;
+}
+
+.seller-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 1.5rem;
+  margin: 3rem 0;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+/* .seller-search .search__container {
+  margin-right: 0;
+} */
+
+.seller-search .search__input {
+  border: 1px solid #64797b;
+}
+
+.seller-dropdown-item,
+.seller-dropdown-button {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #64797b;
+}
+
+.seller-products-number {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #0e122b;
+}

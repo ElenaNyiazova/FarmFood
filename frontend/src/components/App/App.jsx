@@ -11,10 +11,12 @@ import { Header } from '../commonComponents/Header/Header';
 
 import { ROUTES } from '../../consts/consts';
 import { HomePage } from '../pages/HomePage/HomePage';
-import { SellerPage } from '../pages/SellerPage';
+import { SellerPage } from '../pages/SellerPage/SellerPage';
+
 import { UserProfilePage } from '../pages/UserProfilePage';
 import { ProfileUpdatePage } from '../pages/ProfileUpdatePage';
 import { ProductsPage } from '../pages/ProductsPage/ProductsPage';
+import { SearchFailPage } from '../pages/SearchFailPage/SearchFailPage';
 
 import './App.css';
 import productsSlice from '../../store/productsSlice';
@@ -54,11 +56,12 @@ export const App = () => {
         <LocationModal
           show={showLocationModal}
           handleClose={handleCloseLocationModal}
+          handleLogin={handleLoginClick}
         />
         <LoginModal
           show={showLoginForm}
           handleClose={handleCloseLoginForm}
-          handleSubmit={handleLoginSubmit}
+          handleLoginSubmit={handleLoginSubmit}
         />
         <Header
           handleLoginClick={handleLoginClick}
@@ -71,6 +74,11 @@ export const App = () => {
             <Route exact path={ROUTES.HOME} element={<HomePage />} />
             <Route exact path={ROUTES.SELLER} element={<SellerPage />} />
             <Route exact path={ROUTES.PRODUCTS} element={<ProductsPage />} />
+            <Route
+              exact
+              path={ROUTES.SEARCH_FAIL}
+              element={<SearchFailPage />}
+            />
             <Route
               exact
               path={ROUTES.PROFILE}

@@ -13,7 +13,7 @@ export const HomePage = () => {
   const sellersIds = useSelector((state) => selectSellersIds(state));
 
   return (
-    <Row xs={2} md={4} lg={12} className="home__container">
+    <Row xs={2} lg={12} className="home__container">
       <Col lg={3} className="home__left">
         <CategoriesList />
       </Col>

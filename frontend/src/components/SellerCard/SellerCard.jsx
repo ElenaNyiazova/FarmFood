@@ -7,7 +7,6 @@ import { selectSellerById } from '../../store/sellersSlice';
 import { CATEGORIES, ROUTES } from '../../consts/consts';
 
 import './SellerCard.css';
-import seller01 from './seller01.png';
 
 export const SellerCard = ({ id, filter }) => {
   const sellerInfo = useSelector((state) => selectSellerById(state, id));
@@ -34,7 +33,10 @@ export const SellerCard = ({ id, filter }) => {
     isVisible && (
       <Card bg="light" className="sellerCard" onClick={handleCardClick}>
         <Card.Body className="sellerCard__body">
-          <img src={seller01} className="sellerCard__img" />
+          <img
+            src={`./images/sellers/seller${id}.png`}
+            className="sellerCard__img"
+          />
           <Card.Title className="sellerCard__name">{seller_name}</Card.Title>
           <ul className="sellerCard__categories">
             {seller_categories.map((category) => {

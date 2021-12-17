@@ -1,0 +1,40 @@
+.location__container {
+}
+
+.location__container .modal-content {
+  background: none;
+}
+
+.location__modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0.8rem;
+  padding: 2.5rem;
+  background: none;
+  background-color: white;
+}
+
+.location__txt {
+  color: #64797b;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01rem;
+}
+
+.location__link {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.location__link:hover {
+  color: #64797b;
+}
