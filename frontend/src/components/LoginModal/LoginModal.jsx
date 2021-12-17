@@ -33,7 +33,13 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose} className="login__container">
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className="login__container"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
         <Modal.Header className="login__header" closeButton></Modal.Header>
         <div className="login__header-links">
           <a
