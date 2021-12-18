@@ -6,7 +6,7 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { Container, Navbar } from 'react-bootstrap';
 import { ROUTES } from '../../../consts/consts';
 import { CitiesDropdown } from '../CitiesDropdown/CitiesDropdown';
-import { Search } from '../../Search/Search';
+import { Search } from '../../commonComponents/Search/Search';
 import { selectProductsIds } from '../../../store/productsSlice';
 
 import './Header.css';

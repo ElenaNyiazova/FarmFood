@@ -145,6 +145,28 @@
   border: 1px solid #64797b;
 }
 
+.seller-search-results {
+  margin: 0;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-weight: medium;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  padding: 0;
+  padding-left: 1.5rem;
+  /* text-align: center; */
+  /* outline: 1px red solid; */
+}
+
+.seller-back-to-all {
+  cursor: pointer;
+  color: #64797b;
+  font-weight: bold;
+}
+.seller-back-to-all:hover {
+  color: #06717a;
+}
+
 .seller-products-number {
   font-weight: 500;
   font-size: 1.2rem;

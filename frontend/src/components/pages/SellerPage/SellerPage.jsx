@@ -8,7 +8,7 @@ import { Row, Container, Col, Image, Dropdown } from 'react-bootstrap';
 
 import { ProductCard } from '../../ProductCard/ProductCard';
 
-import { Search } from '../../Search/Search';
+import { Search } from '../../commonComponents/Search/Search';
 import { SortingDropdown } from '../../commonComponents/SortingDropdown/SortingDropdown';
 import './SellerPage.css';
 
@@ -25,12 +25,15 @@ export const SellerPage = () => {
   const sellersProducts = useSelector((state) =>
     selectProductsBySellerId(state, id)
   );
+  const [productsToRender, setProductsToRender] = useState(sellersProducts);
+  const [searchQuery, setSearchQuery] = useState(null);
+  const [filtered, setFiltered] = useState(null);
 
   const sellersProductsNames = sellersProducts.map(
     (product) => product.product_name
   );
 
-  const renderedProducts = sellersProducts.map((product) => {
+  const renderedProducts = productsToRender.map((product) => {
     return (
       <Col xl="3" key={`${product.product_name}-${product.seller_id}`}>
         <ProductCard
@@ -61,8 +64,22 @@ export const SellerPage = () => {
   // const [filter, setFilter] = useState(CATEGORIES.ALL);
 
   const handleSearch = (productFromSearch) => {
-    console.log('aaaa');
-    // setFilter(productFromSearch);
+    const isInProducts = sellersProductsNames.filter((item) =>
+      item.includes(productFromSearch)
+    );
+    setProductsToRender(
+      sellersProducts.filter((product) =>
+        isInProducts.includes(product.product_name)
+      )
+    );
+    setSearchQuery(productFromSearch);
+    setFiltered(true);
+  };
+
+  const handleBackToAll = () => {
+    setProductsToRender(sellersProducts);
+    setSearchQuery(null);
+    setFiltered(false);
   };
 
   return (
@@ -137,14 +154,22 @@ export const SellerPage = () => {
       </div>
       <div className="seller-search-container">
         <span className="seller-products-number">
-          {sellersProducts.length} products
+          {productsToRender.length} products
         </span>
         <Search
           handleSearch={handleSearch}
           suggestionsArray={sellersProductsNames}
         />
-        <SortingDropdown productsArray={sellersProducts} />
+        <SortingDropdown productsArray={productsToRender} />
       </div>
+      {filtered && (
+        <p className="seller-search-results">
+          Search results for {searchQuery}.{' '}
+          <span onClick={handleBackToAll} className="seller-back-to-all">
+            Back to all sellers's products.
+          </span>
+        </p>
+      )}
       <Row>{renderedProducts}</Row>
     </Container>
   );
