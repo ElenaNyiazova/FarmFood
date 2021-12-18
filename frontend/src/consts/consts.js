@@ -36,3 +36,9 @@ export const SORTING = {
   MAX_PRICE_FIRST: 'The expensive first',
   MIN_PRICE_FIRST: 'The cheap first',
 };
+
+export const PROFILE = {
+  PROFILE: 'Profile',
+  WIHSLIST: 'Wishlist',
+  FOLLOW: 'Follow',
+};

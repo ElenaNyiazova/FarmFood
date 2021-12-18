@@ -11,7 +11,7 @@
 .search__form {
   position: relative;
 
-  margin-left: 21em;
+  margin-left: 18em;
   width: 20em;
   /* outline: 1px yellow solid; */
 }
@@ -88,10 +88,10 @@
 
 @media only screen and (max-width: 1400px) {
   .search__container {
-    margin-right: 8em;
+    margin-right: 5em;
   }
 
   .search__form {
-    margin-left: 15em;
+    margin-left: 10em;
   }
 }

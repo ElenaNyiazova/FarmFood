@@ -24,7 +24,7 @@ export const Header = ({
     navigate(generatePath(ROUTES.HOME));
   };
   const handleUsernameClick = () => {
-    // navigate(generatePath(ROUTES.PROFILE));
+    navigate(generatePath(ROUTES.PROFILE));
   };
   const handleSearch = (productFromSearch) => {
     // console.log(productFromSearch);
