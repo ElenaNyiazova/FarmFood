@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   loggedInUser: {
     user_id: '1234',
-    user_name: 'customer01',
+    user_name: 'customer01 name',
     user_favourite_sellers_ids: ['01', '02'],
   },
 };

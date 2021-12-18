@@ -90,4 +90,8 @@
   .search__container {
     margin-right: 8em;
   }
+
+  .search__form {
+    margin-left: 15em;
+  }
 }
