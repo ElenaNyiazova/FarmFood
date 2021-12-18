@@ -8,21 +8,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ProguctController {
 
-
-    @GetMapping(value = "/product/{product_id}")
-    public String getProductById(@PathVariable(name = "product_id") Long productId) {
-        return null;
-    }
-
-    @GetMapping(value = "/product/{sellerId}")
-    public String getLocalSellers(@PathVariable(name = "sellerId") Long sellerId) {
-        return null;
-    }
-
-    @GetMapping(value = "/product/{city}")
-    public String getLocalSellers(@PathVariable(name = "city") String city) {
-        return null;
-    }
+//
+//    @GetMapping(value = "/product/{product_id}")
+//    public String getProductById(@PathVariable(name = "product_id") Long productId) {
+//        return "вызов продукт бай";
+//    }
+//
+//    @GetMapping(value = "/product/{sellerId}")
+//    public String getLocalSeller(@PathVariable(name = "sellerId") Long sellerId) {
+//        return "Эвызов локал селлер";
+//    }
+//
+//    @GetMapping(value = "/product/{city}")
+//    public String getLocalSellersByCity(@PathVariable(name = "city") String city) {
+//        return "вызов локал веллерс";
+//    }
 
 
 }

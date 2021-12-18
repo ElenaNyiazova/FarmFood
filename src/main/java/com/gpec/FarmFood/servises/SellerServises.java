@@ -15,11 +15,11 @@ public class SellerServises {
     @Autowired
     private static SellerRepository sellerRepository;
 
-    public static List<Seller> getLocalSellers(City city){
-
-        List<Seller> list = new ArrayList<Seller>();
-        list.add(new Seller());
-        //return list;
+    public static List<Seller> getLocalSellers(String city){
+//
+//        List<Seller> list = new ArrayList<Seller>();
+//        list.add(new Seller());
+//        //return list;
         return sellerRepository.findAllByCity(city);
     }
 }

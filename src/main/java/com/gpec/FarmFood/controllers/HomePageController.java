@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.gpec.FarmFood.model.db.City;
 import com.gpec.FarmFood.model.db.Role;
 import com.gpec.FarmFood.model.db.Seller;
+import com.gpec.FarmFood.repositories.RoleRepository;
 import com.gpec.FarmFood.repositories.SellerRepository;
 import com.gpec.FarmFood.servises.SellerServises;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,11 @@ import java.util.List;
 @Controller
 public class HomePageController {
 
-    @Autowired
-    SellerServises sellerServises;
-
-    @Autowired
-    com.gpec.FarmFood.repositories.RoleRepository RoleRepository;
+//    @Autowired
+//    SellerServises sellerServises;
+//
+//    @Autowired
+//    RoleRepository roleRepository;
 
 //    @Autowired
 //    public HomePageController(SellerServises sellerServises) {
@@ -35,10 +36,11 @@ public class HomePageController {
 
     @ResponseBody
     @GetMapping(value = "/{city}")
-    public String getLocalSellersByCity(@PathVariable(name = "city") City city) {
+    public String getLocalSellersByCity(@PathVariable(name = "city") String city) {
 
         List<Seller> sellers = SellerServises.getLocalSellers(city);
-        String json = new Gson().toJson(sellers);
+        String test = "test string";
+        String json = new Gson().toJson(test);
 
         return json;
 //        Role role = new Role();

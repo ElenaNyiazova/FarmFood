@@ -16,11 +16,11 @@ import java.sql.SQLException;
 
 @RestController
 public class LoggerController {
+//
+//    @Autowired
+//    UserService userService;
 
-    @Autowired
-    UserService userService;
-
-    UserDetails user;
+//    UserDetails user;
 
     //@PostAuthorize()
 

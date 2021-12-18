@@ -19,14 +19,14 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String city;
+    String name;
 
     String description;
 
     //@OneToMany(mappedBy = "report", cascade = CascadeType.ALL)
-    List<Seller> localSellersByCity(String city){
-       return null; //SellerServises.getLocalSellers(city);
-    }
+//    List<Seller> localSellersByCity(String city){
+//       return null; //SellerServises.getLocalSellers(city);
+//    }
 
 //    @JoinColumn(name = "city", nullable = false)
 }

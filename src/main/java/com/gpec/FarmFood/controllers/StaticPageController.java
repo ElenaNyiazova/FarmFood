@@ -13,6 +13,6 @@ public class StaticPageController {
           "/"
             })
     public String staticPage() {
-        return "index.html";
+        return "index";
     }
 }

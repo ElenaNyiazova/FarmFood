@@ -24,14 +24,14 @@ public class Seller {
     int grade;//may be double
     Long user_id;
 
-    @ManyToOne
-    @JoinColumn(name = "city.id")
-    private City city;
+//    @ManyToOne
+//    @JoinColumn(name = "name")
+    private String city;
 
 //    @Column(nullable = false)
     private RoleEnum roleEnum;
 
-    @Transient
-    @OneToMany(mappedBy = "user_reviews")
-    private List<Long> userReviews;
+//    @Transient
+//    @OneToMany(mappedBy = "user_reviews")
+//    private List<Long> userReviews;
 }
