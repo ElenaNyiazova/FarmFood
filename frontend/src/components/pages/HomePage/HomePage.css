@@ -1,20 +1,20 @@
 .home__container {
   padding-top: 1.5rem;
   position: relative;
+  margin-bottom: 1.5rem;
+  /* outline: 1px red solid; */
 }
 
 .home__left {
+  padding: 0;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
 }
 
 .home__right {
 }
 
 .home__gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: stretch;
-  /* justify-content: space-between; */
 }
 
 .home__subheader {
@@ -30,4 +30,17 @@
   font-weight: bold;
   font-size: 2rem;
   line-height: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .home__left {
+    padding: 0;
+    padding-right: 0.8rem;
+  }
+  .home__right {
+    padding: 0;
+  }
+  .home__gallery {
+    margin: 0;
+  }
 }

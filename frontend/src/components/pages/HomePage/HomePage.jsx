@@ -13,18 +13,18 @@ export const HomePage = () => {
   const sellersIds = useSelector((state) => selectSellersIds(state));
 
   return (
-    <Row xs={2} lg={12} className="home__container">
+    <Row className="home__container">
       <Col lg={3} className="home__left">
         <CategoriesList />
       </Col>
       <Col lg={9} className="home__right">
         <Slider />
         <h2 className="home__subheader">Local farmers</h2>
-        <div className="home__gallery">
+        <Row className="home__gallery">
           {sellersIds.map((id) => (
             <SellerCard id={id} key={id} />
           ))}
-        </div>
+        </Row>
       </Col>
     </Row>
   );

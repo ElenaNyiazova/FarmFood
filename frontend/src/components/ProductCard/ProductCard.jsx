@@ -31,7 +31,7 @@ export const ProductCard = ({
   };
 
   return (
-    <Card className="rounded-3 product-card">
+    <Card className="product-card">
       <Card.Body>
         <Card.Img
           variant="top"

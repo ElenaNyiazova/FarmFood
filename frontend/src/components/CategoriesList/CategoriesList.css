@@ -2,12 +2,13 @@
   position: sticky;
   z-index: 1;
   top: 1rem;
-
-  width: 19rem;
+  /* width: 19rem; */
   background-color: white;
   padding: 1rem 2rem;
   padding-right: 1rem;
   border-radius: 0.8rem;
+
+  /* outline: 1px red solid; */
 }
 
 .categories__item {
@@ -191,7 +192,7 @@
 }
 
 @media only screen and (max-width: 1400px) {
-  .categories__list {
+  /* .categories__list {
     width: 16.5rem;
-  }
+  } */
 }

@@ -1,8 +1,19 @@
 body {
   background: #f8ecde;
+  background-image: url('./bg_tile.png');
+  background-repeat: repeat;
+  background-size: 16rem 16rem;
 }
 .main_container {
   padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.nain__middle {
+  flex-grow: 1;
 }
 
 @media only screen and (max-width: 1400px) {

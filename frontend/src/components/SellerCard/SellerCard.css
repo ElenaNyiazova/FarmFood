@@ -1,17 +1,26 @@
-.sellerCard {
-  flex-grow: 0; /* do not grow   - initial value: 0 */
-  flex-shrink: 0; /* do not shrink - initial value: 1 */
-  flex-basis: 19em; /* width/height  - initial value: auto */
+/* .sellerCard__wrapper {
+  padding-right: 0.5rem;
+  padding-left: 0;
+}
+.sellerCard__wrapper:nth-child(2n) {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.sellerCard__wrapper:nth-child(3n) {
+  padding-left: 0.5rem;
+  padding-right: 0;
+} */
 
-  width: 19em;
-  height: 28em;
+.sellerCard {
+  /* width: 19em; */
+  min-height: 28em;
   cursor: 'pointer';
   border: 0;
   background: none;
   border-radius: 0.8em;
 
   margin-bottom: 1.5em;
-  margin-right: 1.6em;
+  /* margin-right: 1.6em; */
 }
 
 .sellerCard:nth-child(3n) {
@@ -61,9 +70,10 @@
 
 .sellerCard__bottom {
   position: absolute;
-  width: 17.3em;
-  bottom: 0.8em;
+  width: 100%;
+  bottom: 1.6em;
   left: 0.8em;
+  /* padding-bottom: 1rem; */
 
   display: flex;
   align-items: center;
@@ -87,6 +97,7 @@
   width: 1.5em;
   height: 1.5em;
   background-image: url('./rating_icon.svg');
+  background-size: contain;
   left: 0;
   top: -0.2em;
 }
@@ -97,7 +108,10 @@
 }
 
 .sellerCard__follow {
-  position: relative;
+  position: absolute;
+  /* left: initial; */
+  right: 1.6rem;
+  top: -0.8rem;
   background: none;
   border: 2px solid #000000;
   border-radius: 0.5em;
@@ -121,4 +135,18 @@
   background-size: contain;
   left: 0.6em;
   top: 0.5em;
+}
+
+@media only screen and (max-width: 1200px) {
+  .sellerCard__wrapper.sellerCard__wrapper {
+    padding-right: 0.5rem;
+    padding-left: 0;
+  }
+  .sellerCard__wrapper:nth-child(2n) {
+    padding-right: 0;
+    padding-left: 0.5rem;
+  }
+  .sellerCard {
+    min-height: 30rem;
+  }
 }

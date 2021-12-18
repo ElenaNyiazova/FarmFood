@@ -32,7 +32,7 @@ export const ProductsPage = () => {
   });
 
   return (
-    <>
+    <Container className="products__container">
       <div className="product-search">
         <span className="products-number">
           {availableProducts.length} products
@@ -57,6 +57,6 @@ export const ProductsPage = () => {
         </Dropdown>
       </div>
       <Row>{renderedProducts}</Row>
-    </>
+    </Container>
   );
 };

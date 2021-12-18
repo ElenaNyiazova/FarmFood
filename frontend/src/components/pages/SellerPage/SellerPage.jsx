@@ -28,11 +28,7 @@ export const SellerPage = () => {
 
   const renderedProducts = sellersProducts.map((product) => {
     return (
-      <Col
-        xl="3"
-        className="mt-3"
-        key={`${product.product_name}-${product.seller_id}`}
-      >
+      <Col xl="3" key={`${product.product_name}-${product.seller_id}`}>
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}
