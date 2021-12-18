@@ -30,8 +30,8 @@ public class User implements UserDetails {
     @NotNull
     private String password;
     private String userName;
-    private File image;
-    private File image_blob;
+//    private File image;
+//    private File image_blob;
 
 //    @Transient
 //    private String favoriteSity;

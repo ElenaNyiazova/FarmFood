@@ -30,15 +30,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <distributionManagement>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>corp1</id>
-            <name>decvgj4hiok1gh</name>
-            <url>jdbc:postgresql://ec2-52-30-133-191.eu-west-1.compute.amazonaws.com:5432/decvgj4hiok1gh?sslmode=require</url>
-            <layout>default</layout>
-        </repository>
-    </distributionManagement>
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <uniqueVersion>false</uniqueVersion>-->
+<!--            <id>corp1</id>-->
+<!--            <name>decvgj4hiok1gh</name>-->
+<!--            <url>jdbc:postgresql://localhost:5432/postgres</url>-->
+<!--            <layout>default</layout>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
@@ -129,6 +129,19 @@
             <artifactId>exec-maven-plugin</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.wagon/wagon-webdav -->
+        <dependency>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-webdav</artifactId>
+            <version>1.0-beta-2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.wagon/wagon -->
+        <dependency>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon</artifactId>
+            <version>3.4.3</version>
+            <type>pom</type>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
@@ -187,5 +200,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>2.10</version>
+            </extension>
+
+        </extensions>
     </build>
 </project>

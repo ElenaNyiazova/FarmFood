@@ -10,7 +10,8 @@ import static com.gpec.FarmFood.constants.Endpoints.HOME;
 public class StaticPageController {
 
     @GetMapping(value = {
-          "/"
+          "/",
+            "/remplates/static/"
             })
     public String staticPage() {
         return "index";
