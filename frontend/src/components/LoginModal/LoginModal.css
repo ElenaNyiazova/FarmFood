@@ -138,6 +138,7 @@
   top: 1rem;
   width: 1.5em;
   height: 1.5em;
+  background-size: cover;
   /* background: tomato; */
   /* outline: 1px green solid; */
 }
