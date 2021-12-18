@@ -4,8 +4,10 @@ import com.google.gson.Gson;
 import com.gpec.FarmFood.model.db.City;
 import com.gpec.FarmFood.model.db.Role;
 import com.gpec.FarmFood.model.db.Seller;
+import com.gpec.FarmFood.model.db.User;
 import com.gpec.FarmFood.repositories.RoleRepository;
 import com.gpec.FarmFood.repositories.SellerRepository;
+import com.gpec.FarmFood.repositories.UserRepository;
 import com.gpec.FarmFood.servises.SellerServises;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,8 +20,8 @@ import java.util.List;
 @Controller
 public class HomePageController {
 
-//    @Autowired
-//    SellerServises sellerServises;
+    @Autowired
+    UserRepository userRepository;
 //
 //    @Autowired
 //    RoleRepository roleRepository;
@@ -38,7 +40,7 @@ public class HomePageController {
     @GetMapping(value = "/{city}")
     public String getLocalSellersByCity(@PathVariable(name = "city") String city) {
 
-        //List<Seller> sellers = SellerServises.getLocalSellers(city);
+//        List<User> sellers = userRepository.findAll();//.getLocalSellers(city);
         String test = "test string";
         String json = new Gson().toJson(test);
 
