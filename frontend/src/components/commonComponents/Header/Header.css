@@ -8,8 +8,11 @@
 }
 
 .header__navbar-collapse {
-  /* outline: 1px yellow solid; */
-  position: relative;
+  /* outline: 1px white solid; */
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .header__logo {
@@ -20,6 +23,7 @@
 }
 
 .header__txt {
+  /* justify-self: flex-end; */
   cursor: pointer;
   margin-right: 2rem;
 
@@ -49,8 +53,9 @@
   width: 1.5rem;
   height: 1.5rem;
   background-image: url('./login_icon.svg');
+  background-size: contain;
   left: 0;
-  top: -0.1rem;
+  top: -0.15rem;
 }
 
 .nav-link:focus,

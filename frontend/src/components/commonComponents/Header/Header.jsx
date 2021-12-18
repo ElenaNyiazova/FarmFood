@@ -19,7 +19,6 @@ export const Header = ({
   userName,
 }) => {
   const productIds = useSelector((state) => selectProductsIds(state));
-  // console.log(productIds);
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate(generatePath(ROUTES.HOME));
@@ -48,8 +47,8 @@ export const Header = ({
             <img src={logo} alt="Logo" className="header__logo" />;
           </Navbar.Brand>
           <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end  header__navbar-collapse">
-            <Search handleSearch={handleSearch} />
+          <Navbar.Collapse className="header__navbar-collapse">
+            <Search handleSearch={handleSearch} suggestionsArray={productIds} />
             <Navbar.Text>
               {!isLoggedIn && (
                 <span

@@ -1,0 +1,17 @@
+.sorting-dropdown {
+}
+
+.sorting-dropdown__item,
+.sorting-dropdown__button {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #64797b;
+}
+
+.sorting-dropdown__button:focus,
+.sorting-dropdown__button:active,
+.sorting-dropdown__button:hover {
+  outline: none;
+  box-shadow: none;
+}

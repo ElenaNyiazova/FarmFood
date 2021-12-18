@@ -18,7 +18,7 @@ export const ProductsPage = () => {
 
   const renderedProducts = availableProducts.map((product) => {
     return (
-      <Col xl="3" className="mt-3" key={`${query}-${product.seller_id}`}>
+      <Col xl="3" key={`${query}-${product.seller_id}`}>
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}
@@ -33,7 +33,7 @@ export const ProductsPage = () => {
 
   return (
     <Container className="products__container">
-      <div className="product-search">
+      <div className="product-search-container">
         <span className="products-number">
           {availableProducts.length} products
         </span>
@@ -56,7 +56,7 @@ export const ProductsPage = () => {
           </Dropdown.Menu>
         </Dropdown>
       </div>
-      <Row>{renderedProducts}</Row>
+      <Row className="products-cards">{renderedProducts}</Row>
     </Container>
   );
 };

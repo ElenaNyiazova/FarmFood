@@ -67,19 +67,21 @@ export const ProductCard = ({
           </div>
         ) : null}
         {isSeller ? (
-          <div className="d-flex align-items-center mt-4">
-            <a className="d-block seller-link" onClick={handleSellerClick}>
+          // <div className="d-flex align-items-center mt-4">
+          <div className="product-seller-bottom">
+            <a className="product-seller-link" onClick={handleSellerClick}>
               All seller's products
             </a>
-            <div className="d-flex align-items-center">
+            {/* <div className="d-flex align-items-center"> */}
+            <div className="product-seller-rating-container">
               <div>
                 <Image className="d-block" src={star} />
               </div>
               <div>
-                <span className="seller-rating fw-bold ms-2">
+                <span className="product-seller-rating fw-bold ms-2">
                   {seller_grade}
                 </span>
-                <span className="seller-reviews ms-2">(36)</span>
+                <span className="product-seller-reviews ms-2">(36)</span>
               </div>
             </div>
           </div>

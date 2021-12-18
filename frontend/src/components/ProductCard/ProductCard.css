@@ -1,7 +1,7 @@
 .product-weight {
   color: #64797b;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   line-height: 1.2rem;
 }
 
@@ -23,15 +23,15 @@
   border-radius: 0.8rem;
   font-family: 'TTNorms';
   color: #0e122b;
-  letter-spacing: 0.01rem;
+  letter-spacing: 0.01em;
 }
 
 .product-seller-name {
   font-style: normal;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   line-height: 1.2rem;
-  letter-spacing: 0.01rem;
+  letter-spacing: 0.01em;
 }
 
 .product-seller-image {
@@ -41,30 +41,62 @@
   overflow: hidden;
 }
 .product-seller-image > img {
-  margin-left: -1rem;
+  margin-left: -1em;
 }
 
 .product-seller-time {
-  margin-top: 8px;
-  max-width: 105px;
+  margin-top: 0.5rem;
+  max-width: 10em;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #64797b;
-  letter-spacing: 0.01rem;
+  /* outline: 1px blue solid; */
+  /* letter-spacing: 0.01em; */
 }
 
-.seller-link {
+.product-seller-bottom {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  /* outline: 1px green solid; */
+}
+
+.product-seller-link {
+  width: 63%;
   color: #0e122b;
   font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1em;
+  line-height: 1.2em;
   text-decoration: underline;
   cursor: pointer;
-  margin-right: 20px;
-  letter-spacing: 0.01rem;
+  /* margin-right: 1em; */
+  letter-spacing: 0.01em;
+  /* outline: 1px red solid; */
 }
 
-.seller-link:hover {
+.product-seller-link:hover {
   color: #64797b;
+}
+
+.product-seller-rating-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 37%;
+  /* outline: 1px blue solid; */
+}
+
+.product-seller-rating {
+  color: #12201a;
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 1.2rem;
+}
+.product-seller-reviews {
+  color: #12201a;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.2rem;
 }
