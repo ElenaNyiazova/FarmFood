@@ -24,7 +24,7 @@ export const Header = ({
     navigate(generatePath(ROUTES.HOME));
   };
   const handleUsernameClick = () => {
-    // navigate(generatePath(ROUTES.PROFILE));
+    navigate(generatePath(ROUTES.PROFILE));
   };
   const handleSearch = (productFromSearch) => {
     // console.log(productFromSearch);
@@ -59,10 +59,10 @@ export const Header = ({
                 </span>
               )}
               {isLoggedIn && (
-                <>
-                  <span className="header__txt" style={{ marginRight: '1rem' }}>
+                <div className="header__signedin">
+                  {/* <span className="header__txt" style={{ marginRight: '1rem' }}>
                     Signed in as
-                  </span>
+                  </span> */}
                   <span
                     className="header__txt  header__txt--profile"
                     onClick={handleUsernameClick}
@@ -72,7 +72,7 @@ export const Header = ({
                   <span className="header__txt" onClick={handleLogOutClick}>
                     Sign Out
                   </span>
-                </>
+                </div>
               )}
             </Navbar.Text>
             <CitiesDropdown theme={null} />

@@ -51,13 +51,13 @@ export const ProductCard = ({
         </div>
         {isSeller ? (
           <div className="d-flex justify-content-between align-items-center mt-4">
-            <div className="product-seller">
+            <div className="product-seller" onClick={handleSellerClick}>
               <span className="d-block product-seller-name">{seller_name}</span>
               <span className="d-block product-seller-time">
                 on FarmFood from June 2020
               </span>
             </div>
-            <div className="product-seller-image">
+            <div className="product-seller-image" onClick={handleSellerClick}>
               <Image
                 src={`../images/sellers/seller${sellerId}.png`}
                 width="auto"
@@ -67,12 +67,10 @@ export const ProductCard = ({
           </div>
         ) : null}
         {isSeller ? (
-          // <div className="d-flex align-items-center mt-4">
           <div className="product-seller-bottom">
             <a className="product-seller-link" onClick={handleSellerClick}>
               All seller's products
             </a>
-            {/* <div className="d-flex align-items-center"> */}
             <div className="product-seller-rating-container">
               <div>
                 <Image className="d-block" src={star} />

@@ -196,7 +196,7 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                 className="login__formgroup"
               >
                 <Form.Label
-                  ref={emailLabel}
+                  ref={emailRegLabel}
                   className="login__label login__label--hidden"
                 >
                   Email
@@ -225,7 +225,7 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                 className="login__formgroup"
               >
                 <Form.Label
-                  ref={passwordLabel}
+                  ref={emailRegLabel}
                   className="login__label login__label--hidden"
                 >
                   Password

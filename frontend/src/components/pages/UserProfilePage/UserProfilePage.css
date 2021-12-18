@@ -1,0 +1,208 @@
+.profile__container {
+  padding-top: 1.5rem;
+  position: relative;
+  margin-bottom: 1.5rem;
+  /* outline: 1px green solid; */
+}
+
+.profile__left {
+  padding: 0;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+  /* outline: 1px red solid; */
+}
+
+.profile__right {
+  /* outline: 1px red solid; */
+}
+
+.profile__menu {
+  background-color: white;
+  padding: 1rem 2rem;
+  padding-right: 1rem;
+  border-radius: 0.8rem;
+}
+
+.profile__item {
+  list-style: none;
+  position: relative;
+  padding-bottom: 1.2rem;
+  padding-top: 1.2rem;
+  padding-left: 1rem;
+  border: 0;
+  /* outline: 1px red solid; */
+
+  color: #64797b;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.01rem;
+
+  cursor: pointer;
+}
+
+.profile__item:hover {
+  color: #0e122b;
+}
+
+.profile__item--selected {
+  color: #0e122b;
+  text-decoration: underline;
+  cursor: default;
+}
+
+.profile__item--exit {
+  margin-top: 9rem;
+}
+
+.profile__update {
+  padding: 1rem;
+  min-height: 30rem;
+  background-color: white;
+  border-radius: 0.8rem;
+  margin-bottom: 2.5rem;
+
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: bold;
+  color: #0e122b;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  letter-spacing: 0.01rem;
+}
+
+.profile-form__formgroup {
+  width: 25rem;
+  position: relative;
+  /* outline: 1px blue solid; */
+}
+
+.profile-form__label {
+  position: absolute;
+  z-index: 2;
+  top: -0.7rem;
+  left: 1rem;
+  padding: 0 0.4rem;
+  margin: 0;
+  /* margin-bottom: -2rem; */
+  /* margin-left: 1rem; */
+  /* outline: 1px green solid; */
+  background-color: white;
+
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.01rem;
+}
+
+.profile-form__label--hidden {
+  display: none;
+}
+
+.profile-form__input {
+  width: 25rem;
+  position: relative;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid #64797b;
+
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01rem;
+}
+
+.profile-form__input:focus,
+.profile-form__input:valid,
+.profile-form__input:required,
+.profile-form__formgroup .form-control,
+.profile-form__formgroup .form-control:focus,
+.profile-form__formgroup .form-control:required,
+.profile-form__formgroup .form-control:valid {
+  outline: none;
+  box-shadow: none;
+  background: white;
+}
+
+.profile-form__icon {
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
+  width: 1em;
+  height: 1em;
+  background-size: cover;
+  /* background: tomato; */
+  /* outline: 1px green solid; */
+}
+
+.profile-form__icon--email {
+  background-image: url('./icons/email_icon.svg');
+}
+
+.profile-form__icon--name {
+  background-image: url('./icons/name_icon.svg');
+}
+
+.profile-form__icon--passHidden {
+  cursor: pointer;
+  background-image: url('./icons/pass_hidden_icon.svg');
+}
+.profile-form__icon--passVisible {
+  cursor: pointer;
+  background-image: url('./icons/pass_visible_icon.svg');
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* .profile-form__input::after {
+  position: absolute;
+  content: 'sdfsf';
+  z-index: 10;
+  width: 15rem;
+  height: 10rem;
+  background-color: tomato;
+  left: 0;
+  top: 0.4rem;
+} */
+
+.profile-form__btn {
+  width: 25rem;
+  padding: 1rem;
+  background: #0e122b;
+  border-radius: 0.8rem;
+
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+.profile-form__btn:hover,
+.profile-form__btn:focus {
+  background: #06717a;
+  outline: none;
+}
+
+.profile-form__error {
+  margin-top: -1rem;
+  margin-left: 1rem;
+  color: #f15c24;
+  font-family: 'TTNorms';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.01rem;
+}

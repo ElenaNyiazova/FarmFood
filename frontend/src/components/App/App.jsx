@@ -13,7 +13,7 @@ import { ROUTES } from '../../consts/consts';
 import { HomePage } from '../pages/HomePage/HomePage';
 import { SellerPage } from '../pages/SellerPage/SellerPage';
 
-import { UserProfilePage } from '../pages/UserProfilePage';
+import { UserProfilePage } from '../pages/UserProfilePage/UserProfilePage';
 import { ProfileUpdatePage } from '../pages/ProfileUpdatePage';
 import { ProductsPage } from '../pages/ProductsPage/ProductsPage';
 import { SearchFailPage } from '../pages/SearchFailPage/SearchFailPage';
@@ -70,7 +70,7 @@ export const App = () => {
           handleLogOutClick={handleLogOutClick}
           userName={loggedInUser.user_name}
         />
-        <Container className="nain__middle">
+        <Container className="main__middle">
           <Routes>
             <Route exact path={ROUTES.HOME} element={<HomePage />} />
             <Route exact path={ROUTES.SELLER} element={<SellerPage />} />
@@ -84,7 +84,11 @@ export const App = () => {
               exact
               path={ROUTES.PROFILE}
               element={
-                isLoggedIn ? <UserProfilePage /> : <Navigate to={ROUTES.HOME} />
+                isLoggedIn ? (
+                  <UserProfilePage handleLogOutClick={handleLogOutClick} />
+                ) : (
+                  <Navigate to={ROUTES.HOME} />
+                )
               }
             />
             <Route
