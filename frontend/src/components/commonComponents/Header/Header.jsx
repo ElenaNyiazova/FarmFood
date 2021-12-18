@@ -6,7 +6,7 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { Container, Navbar } from 'react-bootstrap';
 import { ROUTES } from '../../../consts/consts';
 import { CitiesDropdown } from '../CitiesDropdown/CitiesDropdown';
-import { Search } from '../../Search/Search';
+import { Search } from '../../commonComponents/Search/Search';
 import { selectProductsIds } from '../../../store/productsSlice';
 
 import './Header.css';
@@ -19,7 +19,6 @@ export const Header = ({
   userName,
 }) => {
   const productIds = useSelector((state) => selectProductsIds(state));
-  // console.log(productIds);
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate(generatePath(ROUTES.HOME));
@@ -48,8 +47,8 @@ export const Header = ({
             <img src={logo} alt="Logo" className="header__logo" />;
           </Navbar.Brand>
           <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end  header__navbar-collapse">
-            <Search handleSearch={handleSearch} />
+          <Navbar.Collapse className="header__navbar-collapse">
+            <Search handleSearch={handleSearch} suggestionsArray={productIds} />
             <Navbar.Text>
               {!isLoggedIn && (
                 <span

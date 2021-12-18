@@ -1,11 +1,16 @@
-.product-search {
+.products__container {
+  padding-top: 2.5rem;
+}
+
+.product-search-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
-  margin: 40px 0;
+  padding: 0.6rem 1.5rem;
+  /* margin: 40px 0; */
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 0.8rem;
+  margin-bottom: 2.5rem;
 }
 
 .product-dropdown-item,
@@ -28,4 +33,13 @@
 }
 .product-search .search__input {
   border: 1px solid #64797b;
+}
+
+.products-cards {
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+
+  /* outline: 1px blue solid; */
+  /* align-content: stretch; */
 }

@@ -7,8 +7,9 @@ import { selectProductsBySellerId } from '../../../store/productsSlice';
 import { Row, Container, Col, Image, Dropdown } from 'react-bootstrap';
 
 import { ProductCard } from '../../ProductCard/ProductCard';
-import { CATEGORIES } from '../../../consts/consts';
-import { Search } from '../../Search/Search';
+
+import { Search } from '../../commonComponents/Search/Search';
+import { SortingDropdown } from '../../commonComponents/SortingDropdown/SortingDropdown';
 import './SellerPage.css';
 
 import star from './star.svg';
@@ -24,15 +25,17 @@ export const SellerPage = () => {
   const sellersProducts = useSelector((state) =>
     selectProductsBySellerId(state, id)
   );
-  // console.log(sellersProducts);
+  const [productsToRender, setProductsToRender] = useState(sellersProducts);
+  const [searchQuery, setSearchQuery] = useState(null);
+  const [filtered, setFiltered] = useState(null);
 
-  const renderedProducts = sellersProducts.map((product) => {
+  const sellersProductsNames = sellersProducts.map(
+    (product) => product.product_name
+  );
+
+  const renderedProducts = productsToRender.map((product) => {
     return (
-      <Col
-        xl="3"
-        className="mt-3"
-        key={`${product.product_name}-${product.seller_id}`}
-      >
+      <Col xl="3" key={`${product.product_name}-${product.seller_id}`}>
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}
@@ -60,13 +63,28 @@ export const SellerPage = () => {
   // const [searchResult, setSearchResult] = useState('');
   // const [filter, setFilter] = useState(CATEGORIES.ALL);
 
-  // const handleSearch = (productFromSearch) => {
-  //   setFilter(productFromSearch);
-  // };
+  const handleSearch = (productFromSearch) => {
+    const isInProducts = sellersProductsNames.filter((item) =>
+      item.includes(productFromSearch)
+    );
+    setProductsToRender(
+      sellersProducts.filter((product) =>
+        isInProducts.includes(product.product_name)
+      )
+    );
+    setSearchQuery(productFromSearch);
+    setFiltered(true);
+  };
+
+  const handleBackToAll = () => {
+    setProductsToRender(sellersProducts);
+    setSearchQuery(null);
+    setFiltered(false);
+  };
 
   return (
-    <Container className="mt-5">
-      <div className="d-flex seller-block  seller-info-container">
+    <Container className="seller-container">
+      <div className="d-flex seller-block">
         <div className="seller-image">
           <Image
             src={`../images/sellers/seller${id}.png`}
@@ -134,47 +152,25 @@ export const SellerPage = () => {
           </div>
         </div>
       </div>
-      <div className="seller-search">
+      <div className="seller-search-container">
         <span className="seller-products-number">
-          {sellersProducts.length} products
+          {productsToRender.length} products
         </span>
-        {/* <Search handleSearch={handleSearch} setSearchResult={setSearchResult} /> */}
-        <Dropdown className="seller-dropdown">
-          <Dropdown.Toggle
-            className="seller-dropdown-button"
-            variant="white"
-            id="dropdown-basic"
-          >
-            The cheap first
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item className="seller-dropdown-item" href="#/action-1">
-              The cheap first
-            </Dropdown.Item>
-            <Dropdown.Item className="seller-dropdown-item" href="#/action-2">
-              The expensive first
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <Search
+          handleSearch={handleSearch}
+          suggestionsArray={sellersProductsNames}
+        />
+        <SortingDropdown productsArray={productsToRender} />
       </div>
-      <Row>
-        {renderedProducts}
-        {/* <Col xl="3" className="mt-3">
-          <ProductCard name="Apple Gala" weight="1kg" price="2.5" />
-        </Col>
-        <Col xl="3" className="mt-3">
-          <ProductCard name="Apple Gala" weight="1kg" price="2.5" />
-        </Col>
-        <Col xl="3" className="mt-3">
-          <ProductCard name="Apple Gala" weight="1kg" price="2.5" />
-        </Col>
-        <Col xl="3" className="mt-3">
-          <ProductCard name="Apple Gala" weight="1kg" price="2.5" />
-        </Col>
-        <Col xl="3" className="mt-3">
-          <ProductCard name="Apple Gala" weight="1kg" price="2.5" />
-        </Col> */}
-      </Row>
+      {filtered && (
+        <p className="seller-search-results">
+          Search results for {searchQuery}.{' '}
+          <span onClick={handleBackToAll} className="seller-back-to-all">
+            Back to all sellers's products.
+          </span>
+        </p>
+      )}
+      <Row>{renderedProducts}</Row>
     </Container>
   );
 };

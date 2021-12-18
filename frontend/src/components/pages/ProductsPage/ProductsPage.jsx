@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { Row, Container, Col, Image, Dropdown } from 'react-bootstrap';
 
 import { ProductCard } from '../../ProductCard/ProductCard';
+import { SortingDropdown } from '../../commonComponents/SortingDropdown/SortingDropdown';
 
-import { Search } from '../../Search/Search';
 import './ProductPage.css';
 
 import { selectProductById } from '../../../store/productsSlice';
@@ -15,10 +15,12 @@ export const ProductsPage = () => {
   let { query } = useParams();
   const { items } = useSelector((state) => selectProductById(state, query));
   const availableProducts = Object.values(items);
+  // const productsToRender = availableProducts;
+  const [productsToRender, setProductsToRender] = useState(availableProducts);
 
-  const renderedProducts = availableProducts.map((product) => {
+  const renderedProducts = productsToRender.map((product) => {
     return (
-      <Col xl="3" className="mt-3" key={`${query}-${product.seller_id}`}>
+      <Col xl="3" key={`${query}-${product.seller_id}`}>
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}
@@ -32,31 +34,14 @@ export const ProductsPage = () => {
   });
 
   return (
-    <>
-      <div className="product-search">
+    <Container className="products__container">
+      <div className="product-search-container">
         <span className="products-number">
-          {availableProducts.length} products
+          {productsToRender.length} products
         </span>
-        {/* <Search /> */}
-        <Dropdown className="product-dropdown">
-          <Dropdown.Toggle
-            className="product-dropdown-button"
-            variant="white"
-            id="dropdown-basic"
-          >
-            The cheap first
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item className="product-dropdown-item" href="#/action-1">
-              The cheap first
-            </Dropdown.Item>
-            <Dropdown.Item className="product-dropdown-item" href="#/action-2">
-              The expensive first
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <SortingDropdown productsArray={productsToRender} />
       </div>
-      <Row>{renderedProducts}</Row>
-    </>
+      <Row className="products-cards">{renderedProducts}</Row>
+    </Container>
   );
 };

@@ -70,7 +70,7 @@ export const App = () => {
           handleLogOutClick={handleLogOutClick}
           userName={loggedInUser.user_name}
         />
-        <Container>
+        <Container className="nain__middle">
           <Routes>
             <Route exact path={ROUTES.HOME} element={<HomePage />} />
             <Route exact path={ROUTES.SELLER} element={<SellerPage />} />

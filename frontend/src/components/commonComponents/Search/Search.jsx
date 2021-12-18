@@ -1,14 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { useSelector } from 'react-redux';
 
 import { Form } from 'react-bootstrap';
-import { selectProductsIds } from '../../store/productsSlice';
 import './Search.css';
 
-export const Search = ({ handleSearch }) => {
+export const Search = ({ handleSearch, suggestionsArray }) => {
   const [searchInput, setSearchInput] = useState('');
-  const allProducts = useSelector((state) => selectProductsIds(state));
-  const [suggestions, setSuggestions] = useState(allProducts);
+
+  const [suggestions, setSuggestions] = useState(suggestionsArray);
 
   const suggestionsBlock = useRef(null);
 
@@ -17,9 +15,9 @@ export const Search = ({ handleSearch }) => {
     suggestionsBlock.current.className = 'suggestions';
     setSearchInput(newVal);
     newVal === ''
-      ? setSuggestions(allProducts)
+      ? setSuggestions(suggestionsArray)
       : setSuggestions(
-          allProducts.filter((item) =>
+          suggestionsArray.filter((item) =>
             item.toLowerCase().includes(newVal.toLowerCase())
           )
         );
@@ -31,7 +29,9 @@ export const Search = ({ handleSearch }) => {
     handleSearch(product);
   };
 
-  const handleBlur = (e) => {};
+  const handleBlur = (e) => {
+    setSuggestions([]);
+  };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -57,21 +57,20 @@ export const Search = ({ handleSearch }) => {
         <button type="submit" className="search__button">
           Submit
         </button>
+        <ul ref={suggestionsBlock} className="suggestions  suggestions--hidden">
+          {suggestions.map((product) => {
+            return (
+              <li
+                key={product}
+                onMouseDown={(e) => handleItemClick(e, product)}
+                className="suggestion"
+              >
+                {product.toLowerCase()}
+              </li>
+            );
+          })}
+        </ul>
       </Form>
-
-      <ul ref={suggestionsBlock} className="suggestions  suggestions--hidden">
-        {suggestions.map((product) => {
-          return (
-            <li
-              key={product}
-              onMouseDown={(e) => handleItemClick(e, product)}
-              className="suggestion"
-            >
-              {product.toLowerCase()}
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 };

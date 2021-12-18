@@ -32,6 +32,7 @@ export const CITIES = {
   YEREVAN: 'Yerevan',
 };
 
-// DAIRY_EGGS = {
-
-// }
+export const SORTING = {
+  MAX_PRICE_FIRST: 'The expensive first',
+  MIN_PRICE_FIRST: 'The cheap first',
+};

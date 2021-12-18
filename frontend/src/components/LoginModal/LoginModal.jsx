@@ -1,16 +1,19 @@
 import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { Modal, Form, Button } from 'react-bootstrap';
+import { Modal, Form, Button, InputGroup } from 'react-bootstrap';
 import './LoginModal.css';
 
 export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
+  const loginHeaderLink = useRef(null);
+  const regHeaderLink = useRef(null);
   const emailLabel = useRef(null);
   const passwordLabel = useRef(null);
   const emailRegLabel = useRef(null);
   const passwordRegLabel = useRef(null);
   const nameRegLabel = useRef(null);
   const [showForm, setShowForm] = useState('login');
+  const [showPass, setShowPass] = useState(false);
 
   const {
     register,
@@ -24,18 +27,42 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
     handleLoginSubmit();
   };
 
-  const handleEmailFocus = (ref) => {
+  const handleInputFocus = (ref) => {
     ref.current.className = 'login__label';
   };
-  const handleEmailBlur = (ref) => {
+  const handleInputBlur = (ref) => {
     ref.current.className = 'login__label login__label--hidden';
+  };
+
+  const headerActiveLinkClasses =
+    'login__header-link  login__header-link--active';
+  const headerPassiveLinkClasses = 'login__header-link';
+
+  const handleHeaderLinkClick = (whatForm) => {
+    if (whatForm === 'login') {
+      loginHeaderLink.current.className = headerActiveLinkClasses;
+      regHeaderLink.current.className = headerPassiveLinkClasses;
+    } else {
+      regHeaderLink.current.className = headerActiveLinkClasses;
+      loginHeaderLink.current.className = headerPassiveLinkClasses;
+    }
+    setShowForm(whatForm);
+  };
+
+  const handleWindowClose = () => {
+    setShowForm('login');
+    handleClose();
+  };
+
+  const togglePassword = () => {
+    setShowPass(!showPass);
   };
 
   return (
     <>
       <Modal
         show={show}
-        onHide={handleClose}
+        onHide={handleWindowClose}
         className="login__container"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -43,14 +70,17 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
         <Modal.Header className="login__header" closeButton></Modal.Header>
         <div className="login__header-links">
           <a
-            className="login__header-link"
-            onClick={() => setShowForm('login')}
+            ref={loginHeaderLink}
+            className={headerActiveLinkClasses}
+            // onClick={() => setShowForm('login')}
+            onClick={() => handleHeaderLinkClick('login')}
           >
             Log in
           </a>
           <a
+            ref={regHeaderLink}
             className="login__header-link"
-            onClick={() => setShowForm('register')}
+            onClick={() => handleHeaderLinkClick('register')}
           >
             Sign up
           </a>
@@ -77,9 +107,10 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                   type="email"
                   placeholder="Email"
                   className="login__input"
-                  onFocus={() => handleEmailFocus(emailLabel)}
-                  onBlur={() => handleEmailBlur(emailLabel)}
+                  onFocus={() => handleInputFocus(emailLabel)}
+                  onBlur={() => handleInputBlur(emailLabel)}
                 />
+                <div className="login__icon  login__icon--email"></div>
                 {errors.email && (
                   <p className="login__error">{errors.email.message}</p>
                 )}
@@ -101,16 +132,29 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                     required: 'This is required',
                     minLength: { value: 3, message: 'Min length is 3' },
                   })}
-                  type="password"
+                  type={showPass ? 'text' : 'password'}
                   placeholder="Password"
                   className="login__input"
-                  onFocus={() => handleEmailFocus(passwordLabel)}
-                  onBlur={() => handleEmailBlur(passwordLabel)}
+                  onFocus={() => handleInputFocus(passwordLabel)}
+                  onBlur={() => handleInputBlur(passwordLabel)}
                 />
+                {!showPass && (
+                  <div
+                    className="login__icon  login__icon--passHidden"
+                    onClick={togglePassword}
+                  ></div>
+                )}
+                {showPass && (
+                  <div
+                    className="login__icon  login__icon--passVisible"
+                    onClick={togglePassword}
+                  ></div>
+                )}
+
+                {errors.password && (
+                  <p className="login__error">{errors.password.message}</p>
+                )}
               </Form.Group>
-              {errors.password && (
-                <p className="login__error">{errors.password.message}</p>
-              )}
               <Button variant="primary" type="submit" className="login__btn">
                 Log In
               </Button>
@@ -138,9 +182,10 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                   type="name"
                   placeholder="Name"
                   className="login__input"
-                  onFocus={() => handleEmailFocus(nameRegLabel)}
-                  onBlur={() => handleEmailBlur(nameRegLabel)}
+                  onFocus={() => handleInputFocus(nameRegLabel)}
+                  onBlur={() => handleInputBlur(nameRegLabel)}
                 />
+                <div className="login__icon  login__icon--name"></div>
                 {errors.name && (
                   <p className="login__error">{errors.name.message}</p>
                 )}
@@ -164,9 +209,11 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                   type="email"
                   placeholder="Email"
                   className="login__input"
-                  onFocus={() => handleEmailFocus(emailLabel)}
-                  onBlur={() => handleEmailBlur(emailLabel)}
+                  onFocus={() => handleInputFocus(emailLabel)}
+                  onBlur={() => handleInputBlur(emailLabel)}
                 />
+                <div className="login__icon  login__icon--email"></div>
+
                 {errors.email && (
                   <p className="login__error">{errors.email.message}</p>
                 )}
@@ -188,16 +235,28 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                     required: 'This is required',
                     minLength: { value: 3, message: 'Min length is 3' },
                   })}
-                  type="password"
+                  type={showPass ? 'text' : 'password'}
                   placeholder="Password"
                   className="login__input"
-                  onFocus={() => handleEmailFocus(passwordLabel)}
-                  onBlur={() => handleEmailBlur(passwordLabel)}
+                  onFocus={() => handleInputFocus(passwordLabel)}
+                  onBlur={() => handleInputBlur(passwordLabel)}
                 />
+                {!showPass && (
+                  <div
+                    className="login__icon  login__icon--passHidden"
+                    onClick={togglePassword}
+                  ></div>
+                )}
+                {showPass && (
+                  <div
+                    className="login__icon  login__icon--passVisible"
+                    onClick={togglePassword}
+                  ></div>
+                )}
+                {errors.password && (
+                  <p className="login__error">{errors.password.message}</p>
+                )}
               </Form.Group>
-              {errors.password && (
-                <p className="login__error">{errors.password.message}</p>
-              )}
               <Button variant="primary" type="submit" className="login__btn">
                 Sign up
               </Button>

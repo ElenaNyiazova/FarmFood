@@ -1,16 +1,17 @@
 footer {
+  width: 100%;
+
   text-align: center;
   background: #043b40;
-  margin-top: 120px;
-  padding: 10px;
+  padding: 0.6rem;
 }
 
 .footer-copyright {
-  font-family: 'Montserrat';
+  font-family: 'TTNorms';
   font-style: normal;
   font-weight: 300;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;

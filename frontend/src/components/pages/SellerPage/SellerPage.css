@@ -1,10 +1,12 @@
-.seller-block {
-  padding: 0.8rem;
+.seller-container {
+  padding-top: 2.5rem;
 }
 
-.seller-info-container {
+.seller-block {
+  padding: 1rem;
   background-color: white;
   border-radius: 0.8rem;
+  margin-bottom: 2.5rem;
 }
 
 .seller-info {
@@ -31,6 +33,7 @@
   font-size: 1.2rem;
   line-height: 1.4rem;
   letter-spacing: 0.01rem;
+  /* outline: 1px blue solid; */
 }
 
 .seller-about {
@@ -38,6 +41,7 @@
   font-size: 1.5rem;
   line-height: 1.6rem;
   letter-spacing: 0.01rem;
+  /* outline: 1px blue solid; */
 }
 
 .seller-reviews-link {
@@ -47,9 +51,11 @@
   text-decoration: underline;
   cursor: pointer;
   letter-spacing: 0.01rem;
+  /* outline: 1px blue solid; */
 }
 
 .seller-time {
+  margin-bottom: 1rem;
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.4rem;
@@ -58,13 +64,13 @@
 }
 
 .seller-about-text {
-  margin: 8px 0 0;
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.5rem;
-  max-width: 416px;
+  max-width: 42rem;
   color: #64797b;
-  letter-spacing: 0.01rem;
+  /* outline: 1px blue solid; */
+  /* letter-spacing: 0.01rem; */
 }
 
 .seller-foolow {
@@ -73,7 +79,7 @@
   box-sizing: border-box;
   border-radius: 8px;
   background-color: #fff;
-  font-family: TT Norms;
+  font-family: 'TTNorms';
   font-style: normal;
   font-weight: 500;
   font-size: 1.2rem;
@@ -91,8 +97,11 @@
 
 .seller-contacts,
 .seller-social-media {
+  width: 14rem;
   color: #0e122b;
-  padding-left: 5rem;
+  margin-left: 3rem;
+  /* padding-left: 5rem; */
+  /* outline: 1px blue solid; */
 }
 
 .seller-contacts-text {
@@ -116,12 +125,14 @@
   color: #64797b;
 }
 
-.seller-search {
+.seller-search-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 1.5rem;
-  margin: 3rem 0;
+  /* margin: 3rem 0; */
+  margin-bottom: 2.5rem;
+
   background-color: #fff;
   border-radius: 12px;
 }
@@ -134,12 +145,26 @@
   border: 1px solid #64797b;
 }
 
-.seller-dropdown-item,
-.seller-dropdown-button {
-  font-weight: 500;
+.seller-search-results {
+  margin: 0;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-weight: medium;
   font-size: 1.2rem;
   line-height: 1.4rem;
+  padding: 0;
+  padding-left: 1.5rem;
+  /* text-align: center; */
+  /* outline: 1px red solid; */
+}
+
+.seller-back-to-all {
+  cursor: pointer;
   color: #64797b;
+  font-weight: bold;
+}
+.seller-back-to-all:hover {
+  color: #06717a;
 }
 
 .seller-products-number {
@@ -152,5 +177,6 @@
 .seller-image {
   width: 17.5rem;
   height: 13rem;
+  margin-right: 0.5rem;
   /* outline: 1px red solid; */
 }

@@ -1,20 +1,18 @@
 .search__container {
-  width: 10rem;
-  position: absolute;
-  left: 4rem;
-  /* left: 50%; */
-  /* margin-left: -10rem; */
+  flex-grow: 1;
+
+  /* position: relative; */
+  /* display: flex; */
   top: -0.1rem;
-  /* align-self: center; */
-  /* justify-self: start; */
   padding: 0;
-  /* margin-right: 20em; */
-  /* outline: 1px green solid; */
+  /* outline: 1px lightblue solid; */
 }
 
 .search__form {
   position: relative;
-  width: 20rem;
+
+  margin-left: 21em;
+  width: 20em;
   /* outline: 1px yellow solid; */
 }
 
@@ -34,6 +32,11 @@
   letter-spacing: 0.01rem;
 }
 
+.seller-search-container .search__input {
+  border: 1px solid #64797b;
+  font-size: 1.2rem;
+}
+
 .search__button {
   position: absolute;
   right: 1rem;
@@ -44,7 +47,13 @@
 
   background-color: white;
   background-image: url(./search_icon.svg);
+  background-size: contain;
   font-size: 0;
+}
+
+.seller-search-container .search__button {
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
 .suggestions {
