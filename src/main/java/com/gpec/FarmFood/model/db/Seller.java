@@ -14,22 +14,23 @@ import java.util.List;
 public class Seller {
 
     @Id
-//    @Column(name="id", insertable = false, updatable = false)
+    @Column(insertable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(nullable = false)
+    @Column(nullable = false)
     private String name;
     private String description;
     int grade;//may be double
-    Long user_id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "name")
-    private String city;
+    @OneToOne
+    @JoinColumn(name = "users_id")
+    User user;
 
-//    @Column(nullable = false)
-    private RoleEnum roleEnum;
+    @ManyToOne
+    @JoinColumn(name = "city_id")
+    private City city;
+
 
 //    @Transient
 //    @OneToMany(mappedBy = "user_reviews")

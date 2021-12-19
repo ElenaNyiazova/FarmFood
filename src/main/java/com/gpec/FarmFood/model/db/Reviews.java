@@ -15,23 +15,16 @@ public class Reviews {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @OneToOne
-//    @JoinTable(name = "users", //the table that connects them
-//            joinColumns = @JoinColumn(name = "id"),//todo rename id ?
-//            inverseJoinColumns = @JoinColumn(name = "id"))//todo rename id ?
-    private Long user_id;
+    @OneToOne
+    @JoinColumn(name="user_id")
+    private User user;
 
-//    @OneToOne
-//    @JoinTable(name = "sellers", //the table that connects them
-//            joinColumns = @JoinColumn(name = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "id"))
-    private Long seller_id;
+    @OneToOne
+    @JoinColumn(name="seller_id")
+    private Seller seller;
 
-//    @OneToOne
-//    @JoinTable(name = "sellers", //the table that connects them
-//            joinColumns = @JoinColumn(name = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "grade"))
-    private int grade; // can be double from 0 to 5
+
+    private int grade;
 
     private String comment;
 

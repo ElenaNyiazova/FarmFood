@@ -13,7 +13,9 @@ import java.io.File;
 public class Products {
 
     @Id
-    @Column(name="Id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+
 //    @ManyToOne
 //    @JoinTable(
 //            name = "product_categories",
@@ -22,14 +24,16 @@ public class Products {
 //            inverseJoinColumns = @JoinColumn(
 //                    name = "privilege_id", referencedColumnName = "id"))
 
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
+
 
     String name;
     String description;
-    int weight;
+    String weight;
     String unit;
     double price;
     File image;
-    File image_blob;
+
+    @ManyToOne
+    @JoinColumn(name = "seller.id", nullable = false)
+    Seller seller;
 }

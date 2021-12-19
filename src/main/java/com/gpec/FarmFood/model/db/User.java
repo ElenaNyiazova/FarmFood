@@ -29,7 +29,14 @@ public class User implements UserDetails {
 
     @NotNull
     private String password;
-    private String userName;
+    private boolean isSeller;
+
+    @ManyToOne
+    @JoinColumn(name = "city.id")
+    private City city;
+
+    private String name;
+
 //    private File image;
 //    private File image_blob;
 
@@ -38,7 +45,7 @@ public class User implements UserDetails {
 
 //    @ManyToOne
 //    @JoinColumn(name = "role", nullable = false)
-    private Role role;
+   // private Role role;
 
 //    @Transient
 //
