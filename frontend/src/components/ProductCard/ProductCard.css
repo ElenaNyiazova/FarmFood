@@ -104,3 +104,108 @@
   font-size: 1em;
   line-height: 1.2rem;
 }
+
+@media only screen and (max-width: 640px) {
+  .product-card {
+    /* min-height: 22rem; */
+  }
+
+  .product-favourite-btn {
+    width: 2.5rem;
+  }
+  .product-name {
+    font-size: 1.2rem;
+    line-height: 1rem;
+  }
+
+  .product-price-weight-container {
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  .product-weight {
+    font-size: 1.1em;
+    line-height: 1.4rem;
+    margin: 0 !important;
+  }
+
+  .product-price {
+    font-size: 1.3rem;
+    line-height: 1rem;
+  }
+
+  .seller-name-img-container {
+    /* outline: 1px red solid; */
+    margin-top: 1rem !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  .product-seller-name {
+    display: block;
+    width: 100%;
+    font-size: 1.1em;
+    line-height: 1.2rem;
+    letter-spacing: 0.01em;
+    text-align: left;
+    /* outline: 1px green solid; */
+  }
+
+  .product-seller-image {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    order: -1;
+    /* outline: 1px green solid; */
+    margin-bottom: 0.5rem;
+  }
+
+  #product-seller-time {
+    display: none !important;
+  }
+  .product-seller-bottom {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    /* outline: 1px green solid; */
+  }
+
+  .product-seller-link {
+    width: 100%;
+    margin-bottom: 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .product-seller-link:hover {
+    color: #64797b;
+  }
+
+  .product-seller-rating-container {
+    display: flex;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100%;
+
+    /* outline: 1px blue solid; */
+  }
+
+  .product-seller-rating {
+    margin: 0;
+    width: 100%;
+
+    color: #12201a;
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.2rem;
+    /* outline: 1px blue solid; */
+  }
+  .product-seller-reviews {
+    color: #12201a;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.2rem;
+  }
+}

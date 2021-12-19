@@ -209,8 +209,8 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                   type="email"
                   placeholder="Email"
                   className="login__input"
-                  onFocus={() => handleInputFocus(emailLabel)}
-                  onBlur={() => handleInputBlur(emailLabel)}
+                  onFocus={() => handleInputFocus(emailRegLabel)}
+                  onBlur={() => handleInputBlur(emailRegLabel)}
                 />
                 <div className="login__icon  login__icon--email"></div>
 
@@ -225,7 +225,7 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                 className="login__formgroup"
               >
                 <Form.Label
-                  ref={emailRegLabel}
+                  ref={passwordRegLabel}
                   className="login__label login__label--hidden"
                 >
                   Password
@@ -238,8 +238,8 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                   type={showPass ? 'text' : 'password'}
                   placeholder="Password"
                   className="login__input"
-                  onFocus={() => handleInputFocus(passwordLabel)}
-                  onBlur={() => handleInputBlur(passwordLabel)}
+                  onFocus={() => handleInputFocus(passwordRegLabel)}
+                  onBlur={() => handleInputBlur(passwordRegLabel)}
                 />
                 {!showPass && (
                   <div

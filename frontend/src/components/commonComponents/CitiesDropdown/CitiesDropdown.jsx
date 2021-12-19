@@ -11,6 +11,8 @@ export const CitiesDropdown = ({ theme }) => {
   const dispatch = useDispatch();
 
   const handleCityChange = (newCity) => {
+    const citiesCont = document.querySelector('.header__cities-container');
+    citiesCont.classList.remove('header__cities-container--visible');
     dispatch(selectedCityChanged(newCity));
   };
 

@@ -43,3 +43,9 @@
   /* outline: 1px blue solid; */
   /* align-content: stretch; */
 }
+
+@media only screen and (max-width: 640px) {
+  .product-search-container {
+    flex-direction: column;
+  }
+}

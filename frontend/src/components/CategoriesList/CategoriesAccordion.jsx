@@ -1,15 +1,15 @@
 import React from 'react';
-import { generatePath, useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, Accordion } from 'react-bootstrap';
 
 import { selectAllProducts } from '../../store/productsSlice';
 import { ROUTES } from '../../consts/consts';
 import { CATEGORIES } from '../../consts/consts';
 
-import './CategoriesList.css';
+import './CategoriesAccordion.css';
 
-export const CategoriesList = () => {
+export const CategoriesAccordion = () => {
   const navigate = useNavigate();
   const allProducts = useSelector((state) => selectAllProducts(state));
   const productsCategoriesMap = {};
@@ -17,52 +17,38 @@ export const CategoriesList = () => {
     productsCategoriesMap[value.items['01'].product_name] =
       value.product_category;
   }
-  // console.log(productsCategoriesMap);
-  // console.log(
-  //   Object.values(productsCategoriesMap).includes(CATEGORIES.DAIRY_EGGS)
-  // );
 
   const categories = Object.values(CATEGORIES);
 
   const collapseAll = () => {
-    const sublists = document.querySelectorAll('.categories__sublist');
+    const sublists = document.querySelectorAll('.categoriesAccordion__sublist');
     sublists.forEach((sublist) => {
-      sublist.classList.remove('categories__sublist--visible');
+      sublist.classList.remove('categoriesAccordion__sublist--visible');
     });
-    const sliderDisabledBtn = document.querySelector(
-      '.carousel-control-prev--disabled'
-    );
-    if (sliderDisabledBtn) {
-      sliderDisabledBtn.classList.remove('carousel-control-prev--disabled');
-    }
   };
 
   const handleCategoryClick = (category, classSuffix, collapsed) => {
     collapseAll();
-
-    if (collapsed) {
-      const sublistClassName = `.categories__sublist--${classSuffix}`;
-      const sublist = document.querySelector(sublistClassName);
-      sublist.classList.add('categories__sublist--visible');
-
-      const sliderPrevBtn = document.querySelector('.carousel-control-prev');
-      if (sliderPrevBtn) {
-        sliderPrevBtn.classList.add('carousel-control-prev--disabled');
-      }
-    }
-  };
-
-  const handleCategoriesBlur = (e) => {
-    // collapseAll();
+    const sublist = document.querySelector(
+      `.categoriesAccordion__sublist--${classSuffix}`
+    );
+    sublist.classList.toggle('categoriesAccordion__sublist--visible');
   };
 
   const handleProductClick = (product) => {
-    // console.log(product);
-    navigate(generatePath(ROUTES.PRODUCTS, { query: product.toLowerCase() }));
+    navigate(
+      generatePath(ROUTES.PRODUCTS, {
+        query: product.toLowerCase(),
+        replace: true,
+      })
+    );
+    const catalogue = document.querySelector('.header__catalogue-container');
+    catalogue.classList.remove('header__catalogue-container--visible');
+    // window.location.reload();
   };
 
   return (
-    <ListGroup className="categories__list" onBlur={handleCategoriesBlur}>
+    <ListGroup className="categoriesAccordion__list">
       {categories.map((category) => {
         let classSuffix = category.split(' ')[0].toLowerCase();
         classSuffix = classSuffix === "today's" ? 'deals' : classSuffix;
@@ -70,9 +56,9 @@ export const CategoriesList = () => {
         const collapsed = Object.values(productsCategoriesMap).includes(
           category
         )
-          ? 'categories__item--collapsed'
+          ? 'categoriesAccordion__item--collapsed'
           : '';
-        const classes = `categories__item  categories__item--${classSuffix}  ${collapsed}`;
+        const classes = `categoriesAccordion__item  categoriesAccordion__item--${classSuffix}  ${collapsed}`;
 
         return (
           <div key={category}>
@@ -88,10 +74,10 @@ export const CategoriesList = () => {
             </ListGroup.Item>
             {collapsed && (
               <ul
-                className={`categories__sublist  categories__sublist--${classSuffix}`}
+                className={`categoriesAccordion__sublist  categoriesAccordion__sublist--${classSuffix}`}
               >
                 <h4
-                  className={`categories__subheader  categories__subheader--${classSuffix}`}
+                  className={`categoriesAccordion__subheader  categoriesAccordion__subheader--${classSuffix}`}
                   key={'subheader'}
                 >
                   {category}
@@ -99,7 +85,7 @@ export const CategoriesList = () => {
                 {Object.entries(productsCategoriesMap).map(([key, value]) => {
                   return value === category ? (
                     <li
-                      className="categories__subitem"
+                      className="categoriesAccordion__subitem"
                       key={key}
                       onMouseDown={() => handleProductClick(key)}
                     >

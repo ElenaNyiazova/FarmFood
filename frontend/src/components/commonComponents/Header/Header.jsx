@@ -11,6 +11,8 @@ import { selectProductsIds } from '../../../store/productsSlice';
 
 import './Header.css';
 import logo from './farm-food_logo.svg';
+import { CategoriesList } from '../../CategoriesList/CategoriesList';
+import { CategoriesAccordion } from '../../CategoriesList/CategoriesAccordion';
 
 export const Header = ({
   handleLoginClick,
@@ -24,14 +26,13 @@ export const Header = ({
     navigate(generatePath(ROUTES.HOME));
   };
   const handleUsernameClick = () => {
+    // console.log('click');
     navigate(generatePath(ROUTES.PROFILE));
   };
   const handleSearch = (productFromSearch) => {
-    // console.log(productFromSearch);
     const isInProducts = productIds.filter(
       (item) => item === productFromSearch
     );
-    // console.log(isInProducts);
     if (isInProducts.length > 0) {
       navigate(generatePath(ROUTES.PRODUCTS, { query: productFromSearch }));
     } else {
@@ -39,44 +40,90 @@ export const Header = ({
     }
   };
 
+  const handleMobSearch = () => {
+    const searchCont = document.querySelector('.header__search-container');
+    searchCont.classList.add('header__search-container--visible');
+  };
+  const handleCityMobClick = () => {
+    const citiesCont = document.querySelector('.header__cities-container');
+    citiesCont.classList.add('header__cities-container--visible');
+  };
+
+  const handleCatalogueIconClick = () => {
+    const catalogue = document.querySelector('.header__catalogue-container');
+    catalogue.classList.add('header__catalogue-container--visible');
+  };
+
   return (
     <Container fluid className="header">
       <Container>
         <Navbar className="header__navbar">
+          <div
+            className="header__catalogue-icon"
+            onClick={handleCatalogueIconClick}
+          ></div>
+          <div className="header__catalogue-container">
+            <CategoriesAccordion />
+          </div>
+
           <Navbar.Brand onClick={handleLogoClick}>
-            <img src={logo} alt="Logo" className="header__logo" />;
+            <img src={logo} alt="Logo" className="header__logo" />
           </Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse className="header__navbar-collapse">
+          <div className="header__navbar-collapse">
+            <div
+              className="header__search-icon"
+              onClick={handleMobSearch}
+            ></div>
             <Search handleSearch={handleSearch} suggestionsArray={productIds} />
+            <div className="header__search-container  ">
+              <Search
+                handleSearch={handleSearch}
+                suggestionsArray={productIds}
+              />
+            </div>
             <Navbar.Text>
               {!isLoggedIn && (
-                <span
-                  className="header__txt  header__txt--profile"
-                  onClick={handleLoginClick}
-                >
-                  Sign In
-                </span>
-              )}
-              {isLoggedIn && (
-                <div className="header__signedin">
-                  {/* <span className="header__txt" style={{ marginRight: '1rem' }}>
-                    Signed in as
-                  </span> */}
+                <>
+                  <div
+                    className="header__login-icon"
+                    onClick={handleLoginClick}
+                  ></div>
                   <span
                     className="header__txt  header__txt--profile"
-                    onClick={handleUsernameClick}
+                    onClick={handleLoginClick}
                   >
-                    {userName}
+                    Sign In
                   </span>
-                  <span className="header__txt" onClick={handleLogOutClick}>
-                    Sign Out
-                  </span>
-                </div>
+                </>
+              )}
+              {isLoggedIn && (
+                <>
+                  <div
+                    className="header__login-icon  header__login-icon--in"
+                    onClick={handleUsernameClick}
+                  ></div>
+                  <div className="header__signedin">
+                    <span
+                      className="header__txt  header__txt--profile"
+                      onClick={handleUsernameClick}
+                    >
+                      {userName}
+                    </span>
+                    <span className="header__txt" onClick={handleLogOutClick}>
+                      Sign Out
+                    </span>
+                  </div>
+                </>
               )}
             </Navbar.Text>
-            <CitiesDropdown theme={null} />
-          </Navbar.Collapse>
+            <div
+              className="header__cities-icon"
+              onClick={handleCityMobClick}
+            ></div>
+            <div className="header__cities-container">
+              <CitiesDropdown theme={null} />
+            </div>
+          </div>
         </Navbar>
       </Container>
     </Container>

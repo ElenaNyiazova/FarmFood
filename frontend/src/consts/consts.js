@@ -26,7 +26,7 @@ export const ROUTES = {
 
 export const CITIES = {
   MINSK: 'Minsk',
-  KIEV: 'Kiev',
+  KIEV: 'Kyiv',
   ALA: 'Almaty',
   SPB: 'Saint Petersburg',
   YEREVAN: 'Yerevan',

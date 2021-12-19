@@ -16,7 +16,7 @@ import star from './star.svg';
 import hurt from './seller-follow.svg';
 import facebook from './facebook.svg';
 import instagram from './instagram.svg';
-import viber from './viber.svg';
+import tgm from './tgm.svg';
 import whatsup from './whatsup.svg';
 
 export const SellerPage = () => {
@@ -35,7 +35,12 @@ export const SellerPage = () => {
 
   const renderedProducts = productsToRender.map((product) => {
     return (
-      <Col xl="3" key={`${product.product_name}-${product.seller_id}`}>
+      <Col
+        xl="3"
+        md="4"
+        xs="6"
+        key={`${product.product_name}-${product.seller_id}`}
+      >
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}
@@ -117,7 +122,7 @@ export const SellerPage = () => {
             <p className="seller-about-text">{seller_description}</p>
           </div>
         </div>
-        <div className="d-flex flex-column flex-fill ">
+        <div className="d-flex flex-column flex-fill seller-all-contacts">
           <button className=" ms-auto justify-self-end d-flex seller-foolow justify-content-center align-items-center">
             <svg
               className="follow-svg"
@@ -144,10 +149,34 @@ export const SellerPage = () => {
           <div className="seller-social-media mt-4">
             <span className="d-block">Social media</span>
             <div className="social-media-icon mt-3 d-flex align-items-center">
-              <Image className="d-block " src={facebook} />
-              <Image className="d-block ms-3" src={viber} />
-              <Image className="d-block ms-3" src={instagram} />
-              <Image className="d-block ms-3" src={whatsup} />
+              <a
+                className="seller-soc-link  d-block"
+                href="https://www.facebook.com/foodfarmcsa/"
+                target="_blank"
+              >
+                <Image src={facebook} />
+              </a>
+              <a
+                className="seller-soc-link  d-block"
+                href="https://t.me/UserName"
+                target="_blank"
+              >
+                <Image src={tgm} />
+              </a>
+              <a
+                className="seller-soc-link  d-block"
+                href="https://www.instagram.com/foodfarmcsa/"
+                target="_blank"
+              >
+                <Image src={instagram} />
+              </a>
+              <a
+                className="seller-soc-link  d-block"
+                href="https://api.whatsapp.com/send?phone=0000000"
+                target="_blank"
+              >
+                <Image src={whatsup} />
+              </a>
             </div>
           </div>
         </div>

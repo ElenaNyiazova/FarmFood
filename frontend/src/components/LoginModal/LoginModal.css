@@ -167,17 +167,6 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-/* .login__input::after {
-  position: absolute;
-  content: 'sdfsf';
-  z-index: 10;
-  width: 15rem;
-  height: 10rem;
-  background-color: tomato;
-  left: 0;
-  top: 0.4rem;
-} */
-
 .login__btn {
   width: 25rem;
   padding: 1rem;
@@ -206,4 +195,20 @@ input:-webkit-autofill:active {
   font-size: 1rem;
   line-height: 1.2rem;
   letter-spacing: 0.01rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .login__modal-body {
+  }
+  .login__formgroup {
+    width: 20rem;
+  }
+
+  .login__input {
+    width: 20rem;
+  }
+
+  .login__btn {
+    width: 20rem;
+  }
 }

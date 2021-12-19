@@ -95,3 +95,35 @@
     margin-left: 10em;
   }
 }
+
+@media only screen and (max-width: 990px) {
+  .search__container {
+    margin-right: 2em;
+  }
+  .search__form {
+    margin-left: 3em;
+  }
+
+  .search__input {
+    padding: 0.8rem 1rem;
+    padding-right: 2.5rem;
+
+    font-size: 0.6rem;
+    line-height: 1rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .search__input {
+    font-size: 1.2rem;
+  }
+
+  .search__button {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0;
+  }
+}

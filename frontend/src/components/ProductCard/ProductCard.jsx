@@ -42,18 +42,21 @@ export const ProductCard = ({
         <div className="d-flex justify-content-between mt-3 align-items-center">
           <Card.Text className="mb-0 product-name">{name}</Card.Text>
           <div>
-            <Card.Img src={like}></Card.Img>
+            <Card.Img src={like} className="product-favourite-btn"></Card.Img>
           </div>
         </div>
-        <div className="d-flex align-items-center mt-4">
+        <div className="d-flex align-items-center mt-4  product-price-weight-container">
           <Card.Text className="m-0 product-price"> {price} $ </Card.Text>
           <Card.Text className="ms-3 product-weight"> per {weight} </Card.Text>
         </div>
         {isSeller ? (
-          <div className="d-flex justify-content-between align-items-center mt-4">
+          <div className="d-flex justify-content-between align-items-center mt-4 seller-name-img-container">
             <div className="product-seller" onClick={handleSellerClick}>
               <span className="d-block product-seller-name">{seller_name}</span>
-              <span className="d-block product-seller-time">
+              <span
+                className="d-block product-seller-time"
+                id="product-seller-time"
+              >
                 on FarmFood from June 2020
               </span>
             </div>

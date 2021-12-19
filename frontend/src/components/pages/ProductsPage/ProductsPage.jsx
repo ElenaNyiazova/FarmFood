@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { Row, Container, Col, Image, Dropdown } from 'react-bootstrap';
 
 import { ProductCard } from '../../ProductCard/ProductCard';
 import { SortingDropdown } from '../../commonComponents/SortingDropdown/SortingDropdown';
+import { setSearchQuery } from '../../../store/userSlice';
+import { ROUTES } from '../../../consts/consts';
 
 import './ProductPage.css';
 
@@ -15,12 +17,15 @@ export const ProductsPage = () => {
   let { query } = useParams();
   const { items } = useSelector((state) => selectProductById(state, query));
   const availableProducts = Object.values(items);
-  // const productsToRender = availableProducts;
   const [productsToRender, setProductsToRender] = useState(availableProducts);
+
+  useEffect(() => {
+    setProductsToRender(availableProducts);
+  }, [query]);
 
   const renderedProducts = productsToRender.map((product) => {
     return (
-      <Col xl="3" key={`${query}-${product.seller_id}`}>
+      <Col xl="3" md="4" xs="6" key={`${query}-${product.seller_id}`}>
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}

@@ -44,3 +44,25 @@
     margin: 0;
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .home__container {
+    width: 99%;
+    margin: 0 auto;
+  }
+  .home__left {
+    overflow: hidden;
+  }
+  .home__right {
+    overflow: hidden;
+  }
+
+  .home__subheader {
+    padding: 0.6rem;
+    /* border-radius: 0.8rem; */
+    margin-bottom: 1.5rem;
+
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+}
