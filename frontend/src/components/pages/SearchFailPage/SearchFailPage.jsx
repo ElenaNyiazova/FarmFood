@@ -24,7 +24,12 @@ export const SearchFailPage = () => {
 
   const renderedProducts = availableProducts.map((product) => {
     return (
-      <Col xl="3" className="mt-3" key={`${selectedId}-${product.seller_id}`}>
+      <Col
+        xl="3"
+        xs="6"
+        className="mt-3"
+        key={`${selectedId}-${product.seller_id}`}
+      >
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}
@@ -39,7 +44,10 @@ export const SearchFailPage = () => {
 
   return (
     <Row>
-      <p className="searcFail__txt">
+      <p
+        className="searcFail__txt"
+        style={{ margin: '0 auto', marginTop: '1.5rem', width: '90%' }}
+      >
         Unfortunately, we don't have such a product. But you can choose a{' '}
         {selectedId}!
       </p>

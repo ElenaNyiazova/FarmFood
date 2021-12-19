@@ -15,7 +15,7 @@ export const HomePage = () => {
   return (
     <Container className="home__container">
       <Col lg={3} md="3" xs="12" className="home__left">
-        <CategoriesList />
+        {/* <CategoriesList /> */}
       </Col>
       <Col lg={9} md="9" xs="12" className="home__right">
         <Slider />

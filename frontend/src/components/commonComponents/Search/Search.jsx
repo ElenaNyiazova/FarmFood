@@ -27,6 +27,8 @@ export const Search = ({ handleSearch, suggestionsArray }) => {
     setSearchInput('');
     setSuggestions([]);
     handleSearch(product);
+    const searchCont = document.querySelector('.header__search-container');
+    searchCont.classList.remove('header__search-container--visible');
   };
 
   const handleBlur = (e) => {
@@ -38,6 +40,8 @@ export const Search = ({ handleSearch, suggestionsArray }) => {
     handleSearch(searchInput.toLowerCase());
     setSearchInput('');
     setSuggestions([]);
+    const searchCont = document.querySelector('.header__search-container');
+    searchCont.classList.remove('header__search-container--visible');
   };
 
   return (

@@ -51,10 +51,17 @@ export const App = () => {
     dispatch(showLocationModalToggled());
   };
 
+  const handleMobCityBlur = () => {
+    const citiesCont = document.querySelector('.header__cities-container');
+    citiesCont.classList.remove('header__cities-container--visible');
+    const searchCont = document.querySelector('.header__search-container');
+    searchCont.classList.remove('header__search-container--visible');
+  };
+
   return (
     <BrowserRouter>
       <Container fluid className="main_container">
-        {/* <LocationModal
+        <LocationModal
           show={showLocationModal}
           handleClose={handleCloseLocationModal}
           handleLogin={handleLoginClick}
@@ -63,14 +70,14 @@ export const App = () => {
           show={showLoginForm}
           handleClose={handleCloseLoginForm}
           handleLoginSubmit={handleLoginSubmit}
-        /> */}
+        />
         <Header
           handleLoginClick={handleLoginClick}
           isLoggedIn={isLoggedIn}
           handleLogOutClick={handleLogOutClick}
           userName={loggedInUser.user_name}
         />
-        <Container className="main__middle">
+        <Container className="main__middle" onClick={handleMobCityBlur}>
           <Routes>
             <Route exact path={ROUTES.HOME} element={<HomePage />} />
             <Route exact path={ROUTES.SELLER} element={<SellerPage />} />

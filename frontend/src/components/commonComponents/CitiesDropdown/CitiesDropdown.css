@@ -30,6 +30,7 @@
   width: 1.5rem;
   height: 1.5rem;
   background-image: url('./location_icon.svg');
+  background-size: cover;
   left: 0;
   top: 0.4rem;
 }
