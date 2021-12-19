@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { SellerCard } from '../../SellerCard/SellerCard';
 import { CategoriesList } from '../../CategoriesList/CategoriesList';
 import { Slider } from '../../Slider/Slider';
@@ -13,11 +13,11 @@ export const HomePage = () => {
   const sellersIds = useSelector((state) => selectSellersIds(state));
 
   return (
-    <Row className="home__container">
-      <Col lg={3} className="home__left">
+    <Container className="home__container">
+      <Col lg={3} md="3" xs="12" className="home__left">
         <CategoriesList />
       </Col>
-      <Col lg={9} className="home__right">
+      <Col lg={9} md="9" xs="12" className="home__right">
         <Slider />
         <h2 className="home__subheader">Local farmers</h2>
         <Row className="home__gallery">
@@ -26,6 +26,6 @@ export const HomePage = () => {
           ))}
         </Row>
       </Col>
-    </Row>
+    </Container>
   );
 };

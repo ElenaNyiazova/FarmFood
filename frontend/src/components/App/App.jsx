@@ -54,7 +54,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Container fluid className="main_container">
-        <LocationModal
+        {/* <LocationModal
           show={showLocationModal}
           handleClose={handleCloseLocationModal}
           handleLogin={handleLoginClick}
@@ -63,7 +63,7 @@ export const App = () => {
           show={showLoginForm}
           handleClose={handleCloseLoginForm}
           handleLoginSubmit={handleLoginSubmit}
-        />
+        /> */}
         <Header
           handleLoginClick={handleLoginClick}
           isLoggedIn={isLoggedIn}

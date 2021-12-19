@@ -20,7 +20,7 @@ export const ProductsPage = () => {
 
   const renderedProducts = productsToRender.map((product) => {
     return (
-      <Col xl="3" key={`${query}-${product.seller_id}`}>
+      <Col xl="3" md="4" xs="6" key={`${query}-${product.seller_id}`}>
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}

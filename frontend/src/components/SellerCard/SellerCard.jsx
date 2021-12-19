@@ -34,6 +34,7 @@ export const SellerCard = ({ id, filter }) => {
       <Col
         xl="4"
         md="6"
+        xs="6"
         className="sellerCard__wrapper"
         // style={{ outline: '1px green solid' }}
       >

@@ -35,7 +35,12 @@ export const SellerPage = () => {
 
   const renderedProducts = productsToRender.map((product) => {
     return (
-      <Col xl="3" key={`${product.product_name}-${product.seller_id}`}>
+      <Col
+        xl="3"
+        md="4"
+        xs="6"
+        key={`${product.product_name}-${product.seller_id}`}
+      >
         <ProductCard
           name={product.product_name}
           weight={product.product_weight}
@@ -117,7 +122,7 @@ export const SellerPage = () => {
             <p className="seller-about-text">{seller_description}</p>
           </div>
         </div>
-        <div className="d-flex flex-column flex-fill ">
+        <div className="d-flex flex-column flex-fill seller-all-contacts">
           <button className=" ms-auto justify-self-end d-flex seller-foolow justify-content-center align-items-center">
             <svg
               className="follow-svg"

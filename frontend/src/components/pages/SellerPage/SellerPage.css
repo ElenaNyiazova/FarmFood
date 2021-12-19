@@ -180,3 +180,149 @@
   margin-right: 0.5rem;
   /* outline: 1px red solid; */
 }
+
+@media only screen and (max-width: 990px) {
+  .seller-image {
+    display: none;
+  }
+  .seller-block {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .seller-name {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.01rem;
+  }
+
+  .seller-about-text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    max-width: 25rem;
+  }
+
+  .seller-contacts,
+  .seller-social-media {
+    width: 13rem;
+    margin-left: 1rem;
+    /* padding-left: 5rem; */
+    /* outline: 1px blue solid; */
+  }
+
+  .seller-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 1.5rem;
+    /* margin: 3rem 0; */
+    margin-bottom: 2.5rem;
+
+    background-color: #fff;
+    border-radius: 12px;
+    /* outline: 1px red solid; */
+  }
+
+  .seller-search .search__input {
+    border: 1px solid #64797b;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .seller-container {
+  }
+
+  .seller-image {
+    display: block;
+  }
+  .seller-block {
+    flex-direction: column;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .seller-image {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  div.ps-4.seller-info {
+    /* padding-left: 0; */
+    padding-left: 0 !important;
+  }
+
+  .seller-info > div {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    flex-direction: column;
+    /* outline: 1px blue solid; */
+  }
+
+  .seller-name {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.01rem;
+  }
+
+  .seller-time {
+    text-align: center;
+  }
+
+  .seller-about-text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    max-width: 25rem;
+    text-align: center;
+  }
+
+  .seller-all-contacts {
+    align-items: center;
+  }
+
+  .seller-foolow {
+    width: 100%;
+  }
+
+  .seller-contacts,
+  .seller-social-media {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    /* padding-left: 5rem; */
+    /* outline: 1px blue solid; */
+  }
+  .social-media-icon {
+    width: 100%;
+    justify-content: space-around;
+    /* outline: 1px blue solid; */
+    margin-bottom: 1rem;
+  }
+
+  .seller-search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 1.5rem;
+    /* margin: 3rem 0; */
+    margin-bottom: 1.5rem;
+
+    background-color: #fff;
+    border-radius: 12px;
+    /* outline: 1px red solid; */
+  }
+
+  .seller-products-number {
+    margin-bottom: 1rem;
+  }
+
+  .seller-search .search__input {
+    border: 1px solid #64797b;
+  }
+}

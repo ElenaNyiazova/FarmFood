@@ -196,3 +196,38 @@
     width: 16.5rem;
   } */
 }
+
+@media only screen and (max-width: 990px) {
+  .categories__list {
+    position: sticky;
+    z-index: 1;
+    top: 1rem;
+    /* width: 19rem; */
+    background-color: white;
+    padding: 0.5rem 1rem;
+    padding-right: 1rem;
+  }
+
+  .categories__item {
+    position: relative;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+    padding-left: 2rem;
+    border: 0;
+
+    font-family: 'TTNorms';
+    font-style: normal;
+    font-weight: medium;
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .categories__list {
+    position: initial;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+    /* outline: 1px red solid; */
+  }
+}
