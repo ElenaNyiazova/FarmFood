@@ -181,6 +181,24 @@
   /* outline: 1px red solid; */
 }
 
+.seller-soc-link {
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  /* outline: 1px #06717a solid; */
+}
+
+.seller-soc-link:hover {
+  box-shadow: 0px 0px 6px 0px rgba(4, 59, 64, 0.8);
+}
+
+.seller-soc-link > img {
+  width: 2rem;
+  height: 2rem;
+}
+
 @media only screen and (max-width: 990px) {
   .seller-image {
     display: none;

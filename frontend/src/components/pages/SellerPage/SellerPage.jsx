@@ -16,7 +16,7 @@ import star from './star.svg';
 import hurt from './seller-follow.svg';
 import facebook from './facebook.svg';
 import instagram from './instagram.svg';
-import viber from './viber.svg';
+import tgm from './tgm.svg';
 import whatsup from './whatsup.svg';
 
 export const SellerPage = () => {
@@ -149,10 +149,34 @@ export const SellerPage = () => {
           <div className="seller-social-media mt-4">
             <span className="d-block">Social media</span>
             <div className="social-media-icon mt-3 d-flex align-items-center">
-              <Image className="d-block " src={facebook} />
-              <Image className="d-block ms-3" src={viber} />
-              <Image className="d-block ms-3" src={instagram} />
-              <Image className="d-block ms-3" src={whatsup} />
+              <a
+                className="seller-soc-link  d-block"
+                href="https://www.facebook.com/foodfarmcsa/"
+                target="_blank"
+              >
+                <Image src={facebook} />
+              </a>
+              <a
+                className="seller-soc-link  d-block"
+                href="https://t.me/UserName"
+                target="_blank"
+              >
+                <Image src={tgm} />
+              </a>
+              <a
+                className="seller-soc-link  d-block"
+                href="https://www.instagram.com/foodfarmcsa/"
+                target="_blank"
+              >
+                <Image src={instagram} />
+              </a>
+              <a
+                className="seller-soc-link  d-block"
+                href="https://api.whatsapp.com/send?phone=0000000"
+                target="_blank"
+              >
+                <Image src={whatsup} />
+              </a>
             </div>
           </div>
         </div>
