@@ -56,6 +56,8 @@ export const App = () => {
     citiesCont.classList.remove('header__cities-container--visible');
     const searchCont = document.querySelector('.header__search-container');
     searchCont.classList.remove('header__search-container--visible');
+    const catalogue = document.querySelector('.header__catalogue-container');
+    catalogue.classList.remove('header__catalogue-container--visible');
   };
 
   return (

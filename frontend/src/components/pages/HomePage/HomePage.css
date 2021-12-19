@@ -46,6 +46,10 @@
 }
 
 @media only screen and (max-width: 640px) {
+  .home__container {
+    width: 99%;
+    margin: 0 auto;
+  }
   .home__left {
     overflow: hidden;
   }

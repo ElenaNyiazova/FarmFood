@@ -1,4 +1,4 @@
-.categories__list {
+.categoriesAccordion__list {
   position: sticky;
   z-index: 1;
   top: 1rem;
@@ -11,7 +11,7 @@
   /* outline: 1px red solid; */
 }
 
-.categories__item {
+.categoriesAccordion__item {
   position: relative;
   padding-bottom: 0.8rem;
   padding-top: 0.8rem;
@@ -26,13 +26,13 @@
   line-height: 1.2rem;
 }
 
-.categories__item:hover,
-.categories__item:focus {
+.categoriesAccordion__item:hover,
+.categoriesAccordion__item:focus {
   background: none;
   /* font-weight: bold; */
 }
 
-.categories__item::before {
+.categoriesAccordion__item::before {
   content: '';
   position: absolute;
   width: 1.5rem;
@@ -42,11 +42,11 @@
   top: 0.6rem;
 }
 
-.categories__item--collapsed:focus {
+.categoriesAccordion__item--collapsed:focus {
   font-weight: bold;
 }
 
-.categories__item--collapsed::after {
+.categoriesAccordion__item--collapsed::after {
   content: '';
   position: absolute;
   width: 0.8rem;
@@ -59,41 +59,41 @@
   top: 1rem;
 }
 
-.categories__item--deals::before {
+.categoriesAccordion__item--deals::before {
   background-image: url('./icons/deal_icon.svg');
 }
-.categories__item--fruits::before {
+.categoriesAccordion__item--fruits::before {
   background-image: url('./icons/fruits_icon.svg');
 }
-.categories__item--berries::before {
+.categoriesAccordion__item--berries::before {
   background-image: url('./icons/berries_icon.svg');
 }
-.categories__item--vegetables::before {
+.categoriesAccordion__item--vegetables::before {
   background-image: url('./icons/vegs_icon.svg');
 }
-.categories__item--meat::before {
+.categoriesAccordion__item--meat::before {
   background-image: url('./icons/meat_icon.svg');
 }
-.categories__item--fish::before {
+.categoriesAccordion__item--fish::before {
   background-image: url('./icons/fish_icon.svg');
 }
-.categories__item--dairy::before {
+.categoriesAccordion__item--dairy::before {
   background-image: url('./icons/dairy_icon.svg');
 }
-.categories__item--bakery::before {
+.categoriesAccordion__item--bakery::before {
   background-image: url('./icons/bakery_icon.svg');
 }
-.categories__item--grocery::before {
+.categoriesAccordion__item--grocery::before {
   background-image: url('./icons/grocery_icon.svg');
 }
-.categories__item--frozen::before {
+.categoriesAccordion__item--frozen::before {
   background-image: url('./icons/frozen_icon.svg');
 }
-.categories__item--honey::before {
+.categoriesAccordion__item--honey::before {
   background-image: url('./icons/honey_icon.svg');
 }
 
-.categories__sublist {
+.categoriesAccordion__sublist {
   /* display: none; */
   opacity: 0;
   pointer-events: none;
@@ -111,7 +111,7 @@
   /* outline: 1px blue solid; */
 }
 
-.categories__sublist--visible {
+.categoriesAccordion__sublist--visible {
   opacity: 1;
   left: 103%;
   pointer-events: all;
@@ -120,7 +120,7 @@
   display: block;
 }
 
-.categories__subheader {
+.categoriesAccordion__subheader {
   position: relative;
   font-family: 'TTNorms';
   font-style: normal;
@@ -129,7 +129,7 @@
   line-height: 1.8rem;
 }
 
-.categories__subheader::after {
+.categoriesAccordion__subheader::after {
   content: '';
   position: absolute;
   width: 1.8rem;
@@ -143,41 +143,41 @@
   top: 0;
 }
 
-.categories__subheader--deals::after {
+.categoriesAccordion__subheader--deals::after {
   background-image: url('./icons/deal_icon.svg');
 }
-.categories__subheader--fruits::after {
+.categoriesAccordion__subheader--fruits::after {
   background-image: url('./icons/fruits_icon.svg');
 }
-.categories__subheader--berries::after {
+.categoriesAccordion__subheader--berries::after {
   background-image: url('./icons/berries_icon.svg');
 }
-.categories__subheader--vegetables::after {
+.categoriesAccordion__subheader--vegetables::after {
   background-image: url('./icons/vegs_icon.svg');
 }
-.categories__subheader--meat::after {
+.categoriesAccordion__subheader--meat::after {
   background-image: url('./icons/meat_icon.svg');
 }
-.categories__subheader--fish::after {
+.categoriesAccordion__subheader--fish::after {
   background-image: url('./icons/fish_icon.svg');
 }
-.categories__subheader--dairy::after {
+.categoriesAccordion__subheader--dairy::after {
   background-image: url('./icons/dairy_icon.svg');
 }
-.categories__subheader--bakery::after {
+.categoriesAccordion__subheader--bakery::after {
   background-image: url('./icons/bakery_icon.svg');
 }
-.categories__subheader--grocery::after {
+.categoriesAccordion__subheader--grocery::after {
   background-image: url('./icons/grocery_icon.svg');
 }
-.categories__subheader--frozen::after {
+.categoriesAccordion__subheader--frozen::after {
   background-image: url('./icons/frozen_icon.svg');
 }
-.categories__subheader--honey::after {
+.categoriesAccordion__subheader--honey::after {
   background-image: url('./icons/honey_icon.svg');
 }
 
-.categories__subitem {
+.categoriesAccordion__subitem {
   padding: 0.8rem 0;
   cursor: pointer;
 
@@ -192,13 +192,13 @@
 }
 
 @media only screen and (max-width: 1400px) {
-  /* .categories__list {
+  /* .categoriesAccordion__list {
     width: 16.5rem;
   } */
 }
 
 @media only screen and (max-width: 990px) {
-  .categories__list {
+  .categoriesAccordion__list {
     position: sticky;
     z-index: 1;
     top: 1rem;
@@ -208,7 +208,7 @@
     padding-right: 1rem;
   }
 
-  .categories__item {
+  .categoriesAccordion__item {
     position: relative;
     padding-bottom: 0.8rem;
     padding-top: 0.8rem;
@@ -224,20 +224,20 @@
 }
 
 @media only screen and (max-width: 640px) {
-  .categories__list {
+  .categoriesAccordion__list {
     display: none;
   }
-  /* .categories__list {
+  /* .categoriesAccordion__list {
     position: initial;
     margin-bottom: 3rem;
     margin-left: 1rem;
   } */
 
-  .categories__subheader {
+  .categoriesAccordion__subheader {
     display: none;
   }
 
-  .header__catalogue-container .categories__sublist {
+  .header__catalogue-container .categoriesAccordion__sublist {
     display: none;
     opacity: 1;
     pointer-events: none;
@@ -255,16 +255,16 @@
     /* outline: 1px blue solid; */
   }
 
-  .header__catalogue-container .categories__sublist--visible {
+  .header__catalogue-container .categoriesAccordion__sublist--visible {
     pointer-events: initial;
     display: block;
     /* outline: 1px red solid; */
   }
 
-  .header__catalogue-container .categories__sublist {
+  .header__catalogue-container .categoriesAccordion__sublist {
   }
 
-  .categories__subitem {
+  .categoriesAccordion__subitem {
     padding: 0.4rem 0;
   }
 }

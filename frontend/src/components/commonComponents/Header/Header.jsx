@@ -11,6 +11,8 @@ import { selectProductsIds } from '../../../store/productsSlice';
 
 import './Header.css';
 import logo from './farm-food_logo.svg';
+import { CategoriesList } from '../../CategoriesList/CategoriesList';
+import { CategoriesAccordion } from '../../CategoriesList/CategoriesAccordion';
 
 export const Header = ({
   handleLoginClick,
@@ -47,11 +49,22 @@ export const Header = ({
     citiesCont.classList.add('header__cities-container--visible');
   };
 
+  const handleCatalogueIconClick = () => {
+    const catalogue = document.querySelector('.header__catalogue-container');
+    catalogue.classList.add('header__catalogue-container--visible');
+  };
+
   return (
     <Container fluid className="header">
       <Container>
         <Navbar className="header__navbar">
-          <div className="header__catalogue-icon" onClick={() => {}}></div>
+          <div
+            className="header__catalogue-icon"
+            onClick={handleCatalogueIconClick}
+          ></div>
+          <div className="header__catalogue-container">
+            <CategoriesAccordion />
+          </div>
 
           <Navbar.Brand onClick={handleLogoClick}>
             <img src={logo} alt="Logo" className="header__logo" />

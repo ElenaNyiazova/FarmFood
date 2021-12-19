@@ -68,6 +68,7 @@
 }
 
 .header__login-icon,
+.header__catalogue-container,
 .header__search-container,
 .header__search-icon,
 .header__catalogue-icon {
@@ -231,5 +232,28 @@
 
   .header__signedin {
     display: none;
+  }
+
+  .header__catalogue-container {
+    display: none;
+    width: 100%;
+    min-height: 35rem;
+    padding-bottom: 1rem;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding-top: 1rem;
+    background-color: #043b40;
+    position: absolute;
+  }
+
+  .header__catalogue-container--visible {
+    display: block;
+  }
+
+  .header__catalogue-container > .categoriesAccordion__list {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
   }
 }
