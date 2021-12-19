@@ -40,8 +40,8 @@ public class HomePageController {
     @GetMapping(value = "/{city}")
     public String getLocalSellersByCity(@PathVariable(name = "city") String city) {
 
-//        List<User> sellers = userRepository.findAll();//.getLocalSellers(city);
-        String test = "test string";
+        List<User> users = userRepository.findAll();//.getLocalSellers(city);
+        String test = "test string" +users;
         String json = new Gson().toJson(test);
 
         return json;

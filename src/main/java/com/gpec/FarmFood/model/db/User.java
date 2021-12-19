@@ -37,27 +37,6 @@ public class User implements UserDetails {
 
     private String name;
 
-//    private File image;
-//    private File image_blob;
-
-//    @Transient
-//    private String favoriteSity;
-
-//    @ManyToOne
-//    @JoinColumn(name = "role", nullable = false)
-   // private Role role;
-
-//    @Transient
-//
-//    private List<Long> favoriteSellers;
-
-//    @ManyToMany//(mappedBy = "id")
-//    @JoinTable(name = "users_roles")
-//    @JoinTable(name = "users_roles", //the table that connects them
-//            joinColumns = @JoinColumn(name = "id"),//todo rename id ?
-//            inverseJoinColumns = @JoinColumn(name = "id"))//todo rename id ?
-//    private List<Reviews> userReviews;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

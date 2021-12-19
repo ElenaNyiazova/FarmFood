@@ -30,9 +30,4 @@ public class Seller {
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
-
-
-//    @Transient
-//    @OneToMany(mappedBy = "user_reviews")
-//    private List<Long> userReviews;
 }

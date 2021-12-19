@@ -13,8 +13,10 @@ C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\repositorie
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\configs\MainConfig.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\Reviews.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\controllers\SellerController.java
+C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\rest\CategoryDTO.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\rest\ProductsDTO.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\servises\UserService.java
+C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\repositories\ReviewRepositiry.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\configs\SecurityConfig.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\constants\Endpoints.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\controllers\ProguctController.java
@@ -22,9 +24,11 @@ C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\Ca
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\controllers\LoggerController.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\User.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\configs\WebConfiguration.java
+C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\rest\CityDTO.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\configs\MvcConfig.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\Contact.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\controllers\HomePageController.java
+C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\rest\ContactDTO.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\controllers\StaticPageController.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\repositories\ProductsRepository.java
 C:\Users\Elena\IdeaProjects\FarmFood\src\main\java\com\gpec\FarmFood\model\db\City.java
