@@ -92,6 +92,7 @@
   }
 
   .search__form {
+    width: 22em;
     margin-left: 10em;
   }
 }

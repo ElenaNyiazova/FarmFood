@@ -90,11 +90,7 @@
     width: 80%;
   }
 }
-@media only screen and (max-width: 1400px) {
-  .slider__txt {
-    width: 80%;
-  }
-}
+
 @media only screen and (max-width: 1200px) {
   .slider__header {
     margin-bottom: 1rem;

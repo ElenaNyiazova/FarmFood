@@ -1,12 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { generatePath, useNavigate } from 'react-router-dom';
 
 import { Card, Image } from 'react-bootstrap';
 import { selectSellerById } from '../../store/sellersSlice';
+import { handleFavouriteProducts } from '../../store/userSlice';
 import { ROUTES } from '../../consts/consts';
 
 import like from './like.svg';
+import dislike from './dislike.svg';
 import './ProductCard.css';
 import star from './star.svg';
 
@@ -19,6 +21,16 @@ export const ProductCard = ({
   sellerId,
 }) => {
   const sellerInfo = useSelector((state) => selectSellerById(state, sellerId));
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const dispatch = useDispatch();
+
+  const wishlist = useSelector(
+    (state) => state.user.loggedInUser.user_wishlist
+  );
+  const filteredWishList = wishlist.filter(
+    (item) => item.product_name + item.seller_id === name + sellerId
+  );
+  const isInWishlist = isLoggedIn && filteredWishList.length > 0;
   const { seller_name, seller_grade } = sellerInfo;
   const navigate = useNavigate();
 
@@ -28,6 +40,20 @@ export const ProductCard = ({
         id: sellerId,
       })
     );
+  };
+
+  const handleProductFavClick = () => {
+    if (isLoggedIn) {
+      dispatch(
+        handleFavouriteProducts({
+          product_name: name,
+          seller_id: sellerId,
+          product_weight: weight,
+          product_price: price,
+          product_image: image,
+        })
+      );
+    }
   };
 
   return (
@@ -41,8 +67,15 @@ export const ProductCard = ({
         />
         <div className="d-flex justify-content-between mt-3 align-items-center">
           <Card.Text className="mb-0 product-name">{name}</Card.Text>
-          <div>
-            <Card.Img src={like} className="product-favourite-btn"></Card.Img>
+          <div onMouseDown={handleProductFavClick}>
+            {isInWishlist ? (
+              <Card.Img
+                src={dislike}
+                className="product-favourite-btn"
+              ></Card.Img>
+            ) : (
+              <Card.Img src={like} className="product-favourite-btn"></Card.Img>
+            )}
           </div>
         </div>
         <div className="d-flex align-items-center mt-4  product-price-weight-container">

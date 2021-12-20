@@ -1,17 +1,12 @@
 import React, { useState, useMemo } from 'react';
-import {
-  Card as ProfileCard,
-  Container,
-  Image,
-  Col,
-  Row,
-} from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { Card as ProfileCard, Col, Row } from 'react-bootstrap';
 import { ProfileMenu } from './ProfileMenu';
 import { ProfileUpdate } from './ProfileUpdate';
 import { ProfileFollow } from './ProfileFollow';
 import { ProfileWishlist } from './ProfileWishlist';
-import { Link } from 'react-router-dom';
-import { ROUTES, PROFILE } from '../../../consts/consts';
+import { PROFILE } from '../../../consts/consts';
 import './UserProfilePage.css';
 
 export const UserProfilePage = ({ handleLogOutClick }) => {
@@ -20,45 +15,13 @@ export const UserProfilePage = ({ handleLogOutClick }) => {
   const handleMenuClick = (menuLink) => {
     setActiveTab(menuLink);
   };
+  const favorites = useSelector(
+    (state) => state.user.loggedInUser.user_favourite_sellers_ids
+  );
 
-  const favorites = ['01', '02', '03', '04', '05', '06', '07'];
-  const widhlist = [
-    {
-      product_name: 'chicken eggs',
-      seller_id: '01',
-      product_weight: '10 pcs',
-      product_price: '2.5',
-      product_image: 'chicken_eggs.jpg',
-    },
-    {
-      product_name: 'milk',
-      seller_id: '01',
-      product_weight: '1 liter',
-      product_price: '2.5',
-      product_image: 'milk1.jpg',
-    },
-    {
-      product_name: 'curd',
-      seller_id: '01',
-      product_weight: '1 kg',
-      product_price: '4.5',
-      product_image: 'curd1.jpg',
-    },
-    {
-      product_image: 'curd3.jpg',
-      product_name: 'curd',
-      product_price: '4.8',
-      product_weight: '1 kg',
-      seller_id: '03',
-    },
-    {
-      product_image: 'chicken_eggs4.jpg',
-      product_name: 'chicken eggs',
-      product_price: '2.2',
-      product_weight: '10 pcs',
-      seller_id: '04',
-    },
-  ];
+  const wishlist = useSelector(
+    (state) => state.user.loggedInUser.user_wishlist
+  );
 
   // const user = {};
   // const user = auth.currentUser;
@@ -80,7 +43,7 @@ export const UserProfilePage = ({ handleLogOutClick }) => {
           <ProfileFollow favorites={favorites} />
         )}
         {activeTab === PROFILE.WIHSLIST && (
-          <ProfileWishlist productsToRender={widhlist} />
+          <ProfileWishlist productsToRender={wishlist} />
         )}
       </Col>
     </Row>
