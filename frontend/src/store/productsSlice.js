@@ -30,13 +30,6 @@ export const {
   selectById: selectProductById,
 } = productsAdapter.getSelectors((state) => state.products);
 
-// export const selectProductsBySellerId = createSelector(
-//   [selectAllProducts, (state, sellersId) => sellersId],
-//   (products, sellersId) => {
-//     return products.filter((product) => product.seller_id.includes(sellersId));
-//   }
-// );
-
 export const selectProductsBySellerId = createSelector(
   [selectAllProducts, (state, sellersId) => sellersId],
   (products, sellersId) => {

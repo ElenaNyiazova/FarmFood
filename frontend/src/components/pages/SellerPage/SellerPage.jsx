@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectSellerById } from '../../../store/sellersSlice';
+import { handleFavourites } from '../../../store/userSlice';
 import { selectProductsBySellerId } from '../../../store/productsSlice';
 import { Row, Container, Col, Image, Dropdown } from 'react-bootstrap';
 
@@ -21,6 +22,12 @@ import whatsup from './whatsup.svg';
 
 export const SellerPage = () => {
   let { id } = useParams();
+  const dispatch = useDispatch();
+  const favorites = useSelector(
+    (state) => state.user.loggedInUser.user_favourite_sellers_ids
+  );
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
   const sellerInfo = useSelector((state) => selectSellerById(state, id));
   const sellersProducts = useSelector((state) =>
     selectProductsBySellerId(state, id)
@@ -28,6 +35,8 @@ export const SellerPage = () => {
   const [productsToRender, setProductsToRender] = useState(sellersProducts);
   const [searchQuery, setSearchQuery] = useState(null);
   const [filtered, setFiltered] = useState(null);
+
+  const isInFavourites = isLoggedIn && favorites.includes(id);
 
   const sellersProductsNames = sellersProducts.map(
     (product) => product.product_name
@@ -65,9 +74,6 @@ export const SellerPage = () => {
     seller_grade,
   } = sellerInfo;
 
-  // const [searchResult, setSearchResult] = useState('');
-  // const [filter, setFilter] = useState(CATEGORIES.ALL);
-
   const handleSearch = (productFromSearch) => {
     const isInProducts = sellersProductsNames.filter((item) =>
       item.includes(productFromSearch)
@@ -85,6 +91,12 @@ export const SellerPage = () => {
     setProductsToRender(sellersProducts);
     setSearchQuery(null);
     setFiltered(false);
+  };
+
+  const handleFollowClick = (e) => {
+    if (isLoggedIn) {
+      dispatch(handleFavourites(id));
+    }
   };
 
   return (
@@ -123,7 +135,10 @@ export const SellerPage = () => {
           </div>
         </div>
         <div className="d-flex flex-column flex-fill seller-all-contacts">
-          <button className=" ms-auto justify-self-end d-flex seller-foolow justify-content-center align-items-center">
+          <button
+            onMouseDown={(e) => handleFollowClick(e)}
+            className=" ms-auto justify-self-end d-flex seller-foolow justify-content-center align-items-center"
+          >
             <svg
               className="follow-svg"
               width="21"
@@ -137,7 +152,9 @@ export const SellerPage = () => {
                 fill="currentColor"
               />
             </svg>
-            <span className="d-block ms-2">Follow</span>
+            <span className="d-block ms-2">
+              {isInFavourites ? 'Unfollow' : 'Follow'}
+            </span>
           </button>
 
           <div className="seller-contacts mt-4">
