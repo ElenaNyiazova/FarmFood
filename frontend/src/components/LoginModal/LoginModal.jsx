@@ -22,8 +22,6 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
   } = useForm();
 
   const submit = (data) => {
-    // e.preventDefault() ;
-    // console.log(data);
     handleLoginSubmit();
   };
 
@@ -72,7 +70,6 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
           <a
             ref={loginHeaderLink}
             className={headerActiveLinkClasses}
-            // onClick={() => setShowForm('login')}
             onClick={() => handleHeaderLinkClick('login')}
           >
             Log in
@@ -102,11 +99,19 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                 <Form.Control
                   {...register('email', {
                     required: 'This is required',
-                    minLength: { value: 2, message: 'Min length is 2' },
+                    minLength: { value: 3, message: 'Min length is 3' },
+                    maxLength: { value: 20, message: 'Max length is 20' },
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{3,}$/i,
+                      message:
+                        'Invalid email address. Should be username@domain.smth',
+                    },
                   })}
                   type="email"
                   placeholder="Email"
                   className="login__input"
+                  maxLength={20}
+                  minLength={5}
                   onFocus={() => handleInputFocus(emailLabel)}
                   onBlur={() => handleInputBlur(emailLabel)}
                 />
@@ -131,10 +136,19 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                   {...register('password', {
                     required: 'This is required',
                     minLength: { value: 3, message: 'Min length is 3' },
+                    maxLength: { value: 20, message: 'Max length is 20' },
+                    pattern: {
+                      value:
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{3,20}$/i,
+                      message:
+                        'Password should be 3-20 characters long and contain at least one uppercase letter, one lowercase letter and one number',
+                    },
                   })}
                   type={showPass ? 'text' : 'password'}
                   placeholder="Password"
                   className="login__input"
+                  maxLength={20}
+                  minLength={3}
                   onFocus={() => handleInputFocus(passwordLabel)}
                   onBlur={() => handleInputBlur(passwordLabel)}
                 />
@@ -178,10 +192,13 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                   {...register('name', {
                     required: 'This is required',
                     minLength: { value: 2, message: 'Min length is 2' },
+                    maxLength: { value: 20, message: 'Max length is 20' },
                   })}
                   type="name"
                   placeholder="Name"
                   className="login__input"
+                  maxLength={20}
+                  minLength={2}
                   onFocus={() => handleInputFocus(nameRegLabel)}
                   onBlur={() => handleInputBlur(nameRegLabel)}
                 />
@@ -204,11 +221,19 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                 <Form.Control
                   {...register('email', {
                     required: 'This is required',
-                    minLength: { value: 2, message: 'Min length is 2' },
+                    minLength: { value: 3, message: 'Min length is 3' },
+                    maxLength: { value: 20, message: 'Max length is 20' },
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{3,}$/i,
+                      message:
+                        'Invalid email address. Should be username@domain.smth',
+                    },
                   })}
                   type="email"
                   placeholder="Email"
                   className="login__input"
+                  maxLength={20}
+                  minLength={5}
                   onFocus={() => handleInputFocus(emailRegLabel)}
                   onBlur={() => handleInputBlur(emailRegLabel)}
                 />
@@ -234,10 +259,19 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                   {...register('password', {
                     required: 'This is required',
                     minLength: { value: 3, message: 'Min length is 3' },
+                    maxLength: { value: 20, message: 'Max length is 20' },
+                    pattern: {
+                      value:
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{3,20}$/i,
+                      message:
+                        'Password should be 3-20 characters long and contain at least one uppercase letter, one lowercase letter and one number',
+                    },
                   })}
                   type={showPass ? 'text' : 'password'}
                   placeholder="Password"
                   className="login__input"
+                  maxLength={20}
+                  minLength={3}
                   onFocus={() => handleInputFocus(passwordRegLabel)}
                   onBlur={() => handleInputBlur(passwordRegLabel)}
                 />
