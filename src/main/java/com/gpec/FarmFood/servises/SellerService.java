@@ -10,16 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class SellerServises {
+public class SellerService {
 
     @Autowired
     private static SellerRepository sellerRepository;
 
-    public static List<Seller> getLocalSellers(City city){
-
-        List<Seller> list = new ArrayList<Seller>();
-        list.add(new Seller());
-        //return list;
+    public static List<Seller> findAllByCity(String city){
         return sellerRepository.findAllByCity(city);
     }
 }

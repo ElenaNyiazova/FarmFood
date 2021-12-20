@@ -1,11 +1,9 @@
 package com.gpec.FarmFood.controllers;
 
 import com.google.gson.Gson;
-import com.gpec.FarmFood.model.db.City;
-import com.gpec.FarmFood.model.db.Role;
 import com.gpec.FarmFood.model.db.Seller;
-import com.gpec.FarmFood.repositories.SellerRepository;
-import com.gpec.FarmFood.servises.SellerServises;
+import com.gpec.FarmFood.repositories.UserRepository;
+import com.gpec.FarmFood.servises.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,27 +16,29 @@ import java.util.List;
 public class HomePageController {
 
     @Autowired
-    SellerServises sellerServises;
-
-    @Autowired
-    com.gpec.FarmFood.repositories.RoleRepository RoleRepository;
+    UserRepository userRepository;
+//
+//    @Autowired
+//    RoleRepository roleRepository;
 
 //    @Autowired
 //    public HomePageController(SellerServises sellerServises) {
 //        this.sellerServises = sellerServises;
 //    }
 
-//    @GetMapping(value = "/home")
-//    public ModelAndView goHome() {
-//        return new ModelAndView("index.html");
+//    @GetMapping(value = "/"){
+//
+////    public ModelAndView goHome() {
+////        return new ModelAndView("index.html");
 //    }
 
     @ResponseBody
     @GetMapping(value = "/{city}")
-    public String getLocalSellersByCity(@PathVariable(name = "city") City city) {
+    public String getLocalSellersByCity(@PathVariable(name = "city") String city) {
 
-        List<Seller> sellers = SellerServises.getLocalSellers(city);
-        String json = new Gson().toJson(sellers);
+        List<Seller> sellers = SellerService.findAllByCity(city);
+        String test = "test string" ;
+        String json = new Gson().toJson(test);
 
         return json;
 //        Role role = new Role();

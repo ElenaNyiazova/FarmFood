@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -14,24 +15,24 @@ import java.util.List;
 public class Seller {
 
     @Id
-//    @Column(name="id", insertable = false, updatable = false)
+    @Column(insertable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(nullable = false)
+    @Column(nullable = false)
     private String name;
     private String description;
     int grade;//may be double
-    Long user_id;
+
+//    @OneToOne
+//    @JoinColumn(name = "users_id")
+    User user;
 
     @ManyToOne
-    @JoinColumn(name = "city.id")
+    @JoinColumn(name = "city_id")
     private City city;
 
-//    @Column(nullable = false)
-    private RoleEnum roleEnum;
-
-    @Transient
-    @OneToMany(mappedBy = "user_reviews")
-    private List<Long> userReviews;
+    @OneToMany(cascade = {CascadeType.MERGE})
+    @JoinTable(name = "review_id")
+    private Set<Reviews> reports;
 }

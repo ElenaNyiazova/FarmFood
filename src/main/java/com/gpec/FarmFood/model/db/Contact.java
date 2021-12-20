@@ -19,9 +19,15 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String name;
+    @JoinColumn(name = "user_id")
+    @Column(unique=true)
+    User user;
+
     String phone;
+
+    @Column(unique=true)
     String email;
+
     String site;
     String instagram;
     String viber;

@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface SellerRepository extends JpaRepository<Seller, Long> {
-    List<Seller> findAll();
 
-    List<Seller> findAllByCity(City city);
+    List<Seller> findAllByCity(String city);
 }

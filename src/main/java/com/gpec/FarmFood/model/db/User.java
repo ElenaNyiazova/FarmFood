@@ -21,7 +21,7 @@ public class User implements UserDetails {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long id;
 
     @NotNull
     @Column(unique = true)
@@ -29,27 +29,13 @@ public class User implements UserDetails {
 
     @NotNull
     private String password;
-    private String userName;
-    private File image;
-    private File image_blob;
-
-//    @Transient
-//    private String favoriteSity;
+    private boolean isSeller;
 
     @ManyToOne
-    @JoinColumn(name = "role", nullable = false)
-    private Role role;
+    @JoinColumn(name = "city_id")
+    private City city;
 
-    @Transient
-
-    private List<Long> favoriteSellers;
-
-    @ManyToMany//(mappedBy = "id")
-    @JoinTable(name = "users_roles")
-//    @JoinTable(name = "users_roles", //the table that connects them
-//            joinColumns = @JoinColumn(name = "id"),//todo rename id ?
-//            inverseJoinColumns = @JoinColumn(name = "id"))//todo rename id ?
-    private List<Reviews> userReviews;
+    private String name;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -83,5 +69,6 @@ public class User implements UserDetails {
 
 //    @Transient
 //    @OneToMany(mappedBy = "user_reviews")
-//    private List<Long> userReviewsIds;
+//    @JoinColumn(name="seller_id")
+//    private List<Reviews> userReviewsIds;
 }

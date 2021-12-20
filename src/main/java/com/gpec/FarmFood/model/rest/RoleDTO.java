@@ -1,28 +1,25 @@
 package com.gpec.FarmFood.model.rest;
 
-import com.gpec.FarmFood.enums.RoleEnum;
 import com.gpec.FarmFood.model.db.City;
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
-
+public class RoleDTO {
     @Id
-    private Long userId;
-    private String email;
-    private String password;
-    private boolean isSeller;
-    private City city;
+    private Long id;
     private String name;
+
 //    public CityDTO(City city) {
 //        this.id = city.getId();
 //        this.name = city.getName();
