@@ -102,7 +102,7 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                     minLength: { value: 3, message: 'Min length is 3' },
                     maxLength: { value: 20, message: 'Max length is 20' },
                     pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{3,}$/i,
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                       message:
                         'Invalid email address. Should be username@domain.smth',
                     },
@@ -224,7 +224,7 @@ export const LoginModal = ({ show, handleClose, handleLoginSubmit }) => {
                     minLength: { value: 3, message: 'Min length is 3' },
                     maxLength: { value: 20, message: 'Max length is 20' },
                     pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{3,}$/i,
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                       message:
                         'Invalid email address. Should be username@domain.smth',
                     },
