@@ -23,6 +23,7 @@ public class UserDTO {
     private boolean isSeller;
     private City city;
     private String name;
+
 //    public CityDTO(City city) {
 //        this.id = city.getId();
 //        this.name = city.getName();

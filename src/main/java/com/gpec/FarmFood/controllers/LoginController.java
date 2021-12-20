@@ -49,15 +49,3 @@ public class LoginController {
         return null; //userService.deleteUser(userEmail, password);
     }
 }
-
-
-//    @GetMapping(value = "/login")
-//    public UserDetails adminLogin() throws SQLException {
-////        Connection connect = DriverManager.getConnection("jdbc:postgresql://localhost/postgres?" +
-////                "user=" + "postgres" + "&password=" + "password");
-////        Connection connect = DriverManager.getConnection(
-////                "jdbc:postgresql://ec2-52-213-119-221.eu-west-1.compute.amazonaws.com:5432/d8i6sb8l5ki7vb?" +
-////                        "sslmode=require");// + "user=" + "hnjcutqdbpohlm" + "&password=" + "a812af31aa76b9a960ce413a072e39e1fdb5361ccf8d45c851948fa8967ac4e2");
-//      //  System.out.println(connect.getSchema());
-//        return userService.loadUserByUsername("admin");
-//    }

@@ -16,6 +16,7 @@ public class SellerService {
     private static SellerRepository sellerRepository;
 
     public static List<Seller> findAllByCity(String city){
+
         return sellerRepository.findAllByCity(city);
     }
 }

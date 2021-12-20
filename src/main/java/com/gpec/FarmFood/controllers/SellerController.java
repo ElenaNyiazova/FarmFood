@@ -14,10 +14,12 @@ public class SellerController {
     public String getSellerProductBySellerId(@PathVariable(name = "sellerId") Long productId) {
         return null;
     }
+
     @GetMapping(value = "/seller/product/{product_id}")
     public String getProductById(@PathVariable(name = "product_id") Long productId) {
         return null;
     }
+
     @GetMapping(value = "/seller/{sellerId}")
     public String getSeller(@PathVariable(name = "sellerId") Long sellerId) {
         return null;

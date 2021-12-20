@@ -21,6 +21,7 @@ public class SellerDTO {
     double grade;
     User user;
     private City city;
+
 //    public CityDTO(City city) {
 //        this.id = city.getId();
 //        this.name = city.getName();
