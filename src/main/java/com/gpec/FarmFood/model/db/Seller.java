@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -23,11 +24,15 @@ public class Seller {
     private String description;
     int grade;//may be double
 
-    @OneToOne
-    @JoinColumn(name = "users_id")
+//    @OneToOne
+//    @JoinColumn(name = "users_id")
     User user;
 
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
+
+    @OneToMany(cascade = {CascadeType.MERGE})
+    @JoinTable(name = "review_id")
+    private Set<Reviews> reports;
 }

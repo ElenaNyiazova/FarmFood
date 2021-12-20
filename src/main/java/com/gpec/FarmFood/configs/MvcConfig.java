@@ -11,13 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 public class MvcConfig implements WebMvcConfigurer {
-//    @Bean
-//    public ViewResolver getViewResolver() {
-//        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-//        resolver.setPrefix("/remplates/static/");
-//        resolver.setSuffix(".html");
-//        return resolver;
-//    }
+
 
     @Bean
     public InternalResourceViewResolver jspViewResolver() {
@@ -32,4 +26,12 @@ public class MvcConfig implements WebMvcConfigurer {
 //        registry.addResourceHandler("/index.html")
 //                .addResourceLocations("classpath*:/static/");
 //    }
+    //    @Bean
+//    public ViewResolver getViewResolver() {
+//        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+//        resolver.setPrefix("/remplates/static/");
+//        resolver.setSuffix(".html");
+//        return resolver;
+//    }
+
 }

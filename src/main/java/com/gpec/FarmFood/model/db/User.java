@@ -21,7 +21,7 @@ public class User implements UserDetails {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long id;
 
     @NotNull
     @Column(unique = true)
@@ -32,7 +32,7 @@ public class User implements UserDetails {
     private boolean isSeller;
 
     @ManyToOne
-    @JoinColumn(name = "city.id")
+    @JoinColumn(name = "city_id")
     private City city;
 
     private String name;
@@ -69,5 +69,6 @@ public class User implements UserDetails {
 
 //    @Transient
 //    @OneToMany(mappedBy = "user_reviews")
-//    private List<Long> userReviewsIds;
+//    @JoinColumn(name="seller_id")
+//    private List<Reviews> userReviewsIds;
 }

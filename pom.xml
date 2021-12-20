@@ -29,7 +29,7 @@
             <uniqueVersion>false</uniqueVersion>
             <id>test</id>
             <name>test</name>
-            <url>jdbc:postgresql://localhost:5432/postgres</url>
+            <url>jdbc:postgresql://localhost:5432/testdb</url>
 <!--            <layout>default</layout>-->
         </repository>
     </distributionManagement>
@@ -158,6 +158,15 @@
                     </configuration>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <extensions>true</extensions>
+<!--                    <configuration>-->
+<!--                        ...-->
+<!--                    </configuration>-->
+                </plugin>
+
+                <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.0.2</version>
                 </plugin>
@@ -200,7 +209,11 @@
                 <artifactId>wagon-ssh</artifactId>
                 <version>2.10</version>
             </extension>
-
+                <extension>
+                    <groupId>org.apache.maven.wagon</groupId>
+                    <artifactId>wagon-ftp</artifactId>
+                    <version>2.10</version>
+                </extension>
         </extensions>
     </build>
 </project>

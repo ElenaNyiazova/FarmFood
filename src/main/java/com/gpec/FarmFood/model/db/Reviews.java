@@ -14,15 +14,14 @@ public class Reviews {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @OneToOne
-    @JoinColumn(name="user_id")
+//
+//    @ManyToOne
+//    @JoinColumn(name="user_id")
     private User user;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="seller_id")
     private Seller seller;
-
 
     private int grade;
 
