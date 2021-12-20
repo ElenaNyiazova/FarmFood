@@ -27,3 +27,8 @@ hs_err_pid*
 *.iws
 *.iml
 *.ipr
+
+#Compiled files
+out
+target
+desktop.ini

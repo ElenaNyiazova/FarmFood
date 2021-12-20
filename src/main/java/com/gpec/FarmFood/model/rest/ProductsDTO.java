@@ -1,29 +1,43 @@
 package com.gpec.FarmFood.model.rest;
 
-import com.gpec.FarmFood.model.db.ProductsCategory;
+import com.gpec.FarmFood.model.db.Category;
+import com.gpec.FarmFood.model.db.City;
+import com.gpec.FarmFood.model.db.Products;
+import com.gpec.FarmFood.model.db.Seller;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.io.File;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductsDTO {//контретные товары
+public class ProductsDTO {
 
+    @Id
     private Long id;
-    private String name;
-    private String description;
+    String name;
+    String description;
+    String weight;
+    String unit;
+    double price;
+    File image;
+    Seller seller;
 
-    private ProductsCategory productsCategory;
-    private Long sellerId;
-    private Double weight; //пока в кг по умолчанию, потом можно граммовку/унции добавить
-    private Long price;//по умолчанию в долларах
-    private File image;//если нет файла картинка по умолчанию
-
-
-    // добавить картинку к каждому продукту
+    public ProductsDTO(Products products) {
+        this.id = products.getId();
+        this.name = products.getName();
+        this.description = products.getDescription();
+        this.weight = products.getWeight();
+        this.unit = products.getUnit();
+        this.price = products.getPrice();
+        this.image = products.getImage();
+        this.seller = products.getSeller();
+    }
 }

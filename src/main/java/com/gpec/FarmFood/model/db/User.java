@@ -1,12 +1,14 @@
 package com.gpec.FarmFood.model.db;
 
 import com.gpec.FarmFood.enums.RoleEnum;
+import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.io.File;
 import java.util.Collection;
 import java.util.List;
 
@@ -17,37 +19,32 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-
+    @NotNull
+    @Column(unique = true)
     private String email;
 
+    @NotNull
     private String password;
-
-    @Transient
-    private String favoriteSity;
+    private boolean isSeller;
 
     @ManyToOne
-    @JoinColumn(name = "role", nullable = false)
-    private Role role;
+    @JoinColumn(name = "city_id")
+    private City city;
 
-    @Transient
-    @ManyToMany(mappedBy = "sellers")
-    private List<Long> favoriteSellers;
-
-    @Transient
-    private List<Long> userReviewsIds;
+    private String name;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
-    }
+    }//todo return role with Privileges
 
     @Override
     public String getUsername() {
-        return name;
+        return email;
     }
 
     @Override
@@ -62,7 +59,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
@@ -72,5 +69,6 @@ public class User implements UserDetails {
 
 //    @Transient
 //    @OneToMany(mappedBy = "user_reviews")
-//    private List<Long> userReviewsIds;
+//    @JoinColumn(name="seller_id")
+//    private List<Reviews> userReviewsIds;
 }

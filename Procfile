@@ -1,0 +1,1 @@
+web: java -jar com.grec.FarmFood/FarmFoodApplication-1.0-SNAPSHOT.jar

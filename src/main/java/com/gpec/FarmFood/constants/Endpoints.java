@@ -17,7 +17,7 @@ public interface Endpoints {
 
     String PAGE_ERROR = "/error";
 
-    String HOME_PAGE = "/home";
+    String HOME = "/home";
 
     String PAGE_LOGIN = "/login";
 
@@ -35,9 +35,9 @@ public interface Endpoints {
      * Actions
      */
 
-    String SUCCESS = "/success ";//сообщение об удачном действии: регистрации, сохранении и т.д
+    String SUCCESS = "/success ";
 
-    String WARNING = "/warning";//сообщение об ошибке
+    String WARNING = "/warning";
 
     /**
      * API calls:
@@ -47,9 +47,7 @@ public interface Endpoints {
 
     String API_SELLERS = API_PREFIX + "/sellers";
 
-    String API_HOME = API_SELLERS + "/{city}";
+    String API_HOME = API_SELLERS + "/{cityName}";
 
-    /**
-     * User management
-     */
+    String API_SELLER = API_SELLERS + ID;
 }

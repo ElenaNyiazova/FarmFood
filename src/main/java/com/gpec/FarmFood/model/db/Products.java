@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.File;
 
 @Data
 @Entity
@@ -12,7 +13,16 @@ import javax.persistence.*;
 public class Products {
 
     @Id
-    @Column(name="Id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    String name;
+    String description;
+    String weight;
+    String unit;
+    double price;
+    File image;
+
+    @ManyToOne
+    @JoinColumn(name = "seller.id", nullable = false)
+    Seller seller;
 }

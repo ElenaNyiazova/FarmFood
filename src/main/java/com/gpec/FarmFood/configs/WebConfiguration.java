@@ -1,5 +1,6 @@
 package com.gpec.FarmFood.configs;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.context.ContextLoaderListener;
@@ -13,6 +14,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+@Configuration
 @EnableSpringDataWebSupport
 public class WebConfiguration extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -26,11 +28,8 @@ public class WebConfiguration extends AbstractAnnotationConfigDispatcherServletI
         servletAppContext.register(MvcConfig.class);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(servletAppContext);
-        // throw NoHandlerFoundException to controller ExceptionHandler.class. Used for <error-page> analogue
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
 
-        //register and map the dispatcher servlet
-        //note Dispatcher servlet with constructor arguments
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", dispatcherServlet);
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
@@ -41,10 +40,6 @@ public class WebConfiguration extends AbstractAnnotationConfigDispatcherServletI
         encodingFilter.addMappingForUrlPatterns(null, true, "/*");
     }
 
-
-    /**
-     * added to load spring security filter in root context (created in onStartup())
-     */
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[] {SecurityConfig.class};
