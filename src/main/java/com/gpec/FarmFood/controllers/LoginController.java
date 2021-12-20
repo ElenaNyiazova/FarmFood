@@ -11,14 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 
+    UserDetails user;
+
     @Autowired
     UserService userService;
 
-    @Autowired
-    UserDetails user;
+//    @Autowired
+//    UserDetails user;
 
     @GetMapping(value = "/login/{userEmeil}/{password}")
     public String userLogin(String userEmail, String password) {
+
         if (userEmail == null || password == null) {
             throw new IllegalArgumentException(" App exception: User Email or password not entered! ");
         }
@@ -47,5 +50,10 @@ public class LoginController {
     @PostMapping(value = "/delete/{userEmail}/{password}")
     public String userDelete(String userEmail, String password) {
         return null; //userService.deleteUser(userEmail, password);
+    }
+
+    @GetMapping(value = "/")
+    public String returnString(){
+        return "[User(email=emeil, password=password)]";
     }
 }
