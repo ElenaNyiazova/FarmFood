@@ -9,14 +9,14 @@ import javax.persistence.*;
 @Entity
 @Table(name = "reviews")
 @NoArgsConstructor
-public class Reviews {
+public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-//
-//    @ManyToOne
-//    @JoinColumn(name="user_id")
+
+    @ManyToOne
+    @JoinColumn(name="user_id")
     private User user;
 
     @ManyToOne

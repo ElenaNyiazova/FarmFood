@@ -1,9 +1,10 @@
 package com.gpec.FarmFood.repositories;
 
-import com.gpec.FarmFood.model.db.Products;
+import com.gpec.FarmFood.model.db.City;
+import com.gpec.FarmFood.model.db.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductsRepository extends JpaRepository<Products, Long> {
+public interface CityRepository extends JpaRepository<City, Long> {
 }

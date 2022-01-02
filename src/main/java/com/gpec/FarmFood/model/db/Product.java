@@ -10,7 +10,7 @@ import java.io.File;
 @Entity
 @Table(name = "products")
 @NoArgsConstructor
-public class Products {
+public class Product {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -25,4 +25,8 @@ public class Products {
     @ManyToOne
     @JoinColumn(name = "seller.id", nullable = false)
     Seller seller;
+
+    @ManyToOne
+    @JoinColumn(name = "city.id", nullable = false)
+    City city;
 }

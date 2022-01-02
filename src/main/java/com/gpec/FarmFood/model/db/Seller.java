@@ -34,5 +34,5 @@ public class Seller {
 
     @OneToMany(cascade = {CascadeType.MERGE})
     @JoinTable(name = "review_id")
-    private Set<Reviews> reports;
+    private Set<Review> reports;
 }
