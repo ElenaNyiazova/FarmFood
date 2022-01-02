@@ -27,9 +27,10 @@
     <distributionManagement>
         <repository>
             <uniqueVersion>false</uniqueVersion>
-            <id>test</id>
-            <name>test</name>
-            <url>jdbc:postgresql://localhost:5432/testdb</url>
+            <id>id-db</id>
+            <name>farm-foog-db</name>
+<!--            <url>jdbc:postgresql://ec2-52-30-133-191.eu-west-1.compute.amazonaws.com:5432/decvgj4hiok1gh?sslmode=require</url>-->
+            <url>jdbc:postgresql://localhost:5432/farm-food</url>
 <!--            <layout>default</layout>-->
         </repository>
     </distributionManagement>
@@ -142,6 +143,10 @@
         </dependency>
     </dependencies>
 
+    <scm>
+        <url>https://github.com/ElenaNyiazova/FarmFood/tree/beck-added-Maven-and-must-it-work</url>
+    </scm>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -199,7 +204,7 @@
 
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
+                    <version>2.8.2</version> <!--  todo edit plugin version -->
                 </plugin>
             </plugins>
         </pluginManagement>
