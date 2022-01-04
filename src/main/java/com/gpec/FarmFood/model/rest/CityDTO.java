@@ -22,6 +22,5 @@ public class CityDTO {
     public CityDTO(City city) {
         this.id = city.getId();
         this.name = city.getName();
-
     }
 }

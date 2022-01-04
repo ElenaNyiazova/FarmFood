@@ -25,7 +25,9 @@ public class ReviewDTO {
 
     public ReviewDTO(Review reviews) {
         this.id = reviews.getId();
-        //this.user = к
-
+        this.user = reviews.getUser();
+        this.seller = reviews.getSeller();
+        this.grade = reviews.getGrade();
+        this.comment = reviews.getComment();
     }
 }

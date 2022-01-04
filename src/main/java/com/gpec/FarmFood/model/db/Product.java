@@ -27,6 +27,6 @@ public class Product {
     Seller seller;
 
     @ManyToOne
-    @JoinColumn(name = "city.id", nullable = false)
+    @JoinColumn(name = "city.id", nullable = false)//todo add in db if need to do it ???
     City city;
 }

@@ -30,7 +30,7 @@ public class ProguctController {
 //        return new Gson().toJson();
     }
 
-    @GetMapping(value = "/products")
+    @GetMapping(value = "/product/all")
     public String getAllProducts() {
         return new Gson().toJson(productService.findAllProducts());
     }

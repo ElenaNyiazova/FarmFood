@@ -1,6 +1,7 @@
 package com.gpec.FarmFood.model.rest;
 
 import com.gpec.FarmFood.model.db.City;
+import com.gpec.FarmFood.model.db.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,9 +21,8 @@ public class RoleDTO {
     private Long id;
     private String name;
 
-//    public CityDTO(City city) {
-//        this.id = city.getId();
-//        this.name = city.getName();
-//
-//    }
+    public RoleDTO(Role role) {
+        this.id = role.getId();
+        this.name = role.getName();
+    }
 }

@@ -37,6 +37,5 @@ public class ContactDTO {
         this.viber = contact.getViber();
         this.whatsapp = contact.getWhatsapp();
         this.telegram = contact.getTelegram();
-
     }
 }

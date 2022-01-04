@@ -10,14 +10,14 @@ import java.util.List;
 @Service
 public class ProductService {
     @Autowired
-    private ProductRepository productsRepository;
+    private ProductRepository productRepository;
 
-    public Product findOneById(Long productId){ return productsRepository.getById(productId); }
+    public Product findOneById(Long productId){ return productRepository.getById(productId); }
     public List<Product> findAllBySellerId(Long sellerId){
-        return productsRepository.findAllBySeller(sellerId);
+        return productRepository.findAllBySeller(sellerId);
     }
-    public List<Product> findAllByCityId(Long cityId){ return productsRepository.findAllByCity(cityId); }
+    public List<Product> findAllByCityId(Long cityId){ return productRepository.findAllByCity(cityId); }
     public List<Product> findAllProducts(){
-        return productsRepository.findAll();
+        return productRepository.findAll();
     }
 }

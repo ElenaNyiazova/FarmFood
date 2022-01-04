@@ -1,6 +1,7 @@
 package com.gpec.FarmFood.model.rest;
 
 import com.gpec.FarmFood.model.db.City;
+import com.gpec.FarmFood.model.db.Seller;
 import com.gpec.FarmFood.model.db.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,9 +23,12 @@ public class SellerDTO {
     User user;
     private City city;
 
-//    public CityDTO(City city) {
-//        this.id = city.getId();
-//        this.name = city.getName();
-//
-//    }
+    public SellerDTO(Seller seller) {
+        this.id = seller.getId();
+        this.name = seller.getName();
+        this.description = seller.getDescription();
+        this.grade = seller.getGrade();
+        this.user = seller.getUser();
+        this.city = seller.getCity();
+    }
 }

@@ -1,5 +1,6 @@
 package com.gpec.FarmFood.model.rest;
 
+import com.gpec.FarmFood.model.db.City;
 import com.gpec.FarmFood.model.db.Product;
 import com.gpec.FarmFood.model.db.Seller;
 import lombok.AllArgsConstructor;
@@ -8,6 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.io.File;
 
 @Data
@@ -25,6 +28,7 @@ public class ProductDTO {
     double price;
     File image;
     Seller seller;
+    City city;
 
     public ProductDTO(Product product) {
         this.id = product.getId();
@@ -35,5 +39,6 @@ public class ProductDTO {
         this.price = product.getPrice();
         this.image = product.getImage();
         this.seller = product.getSeller();
+        this.city = product.getCity();
     }
 }
